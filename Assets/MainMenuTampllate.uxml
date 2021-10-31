@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="UI/stule.uss" />
+    <ui:VisualElement name="Manu-Placeholder" style="color: rgba(0, 0, 0, 255); flex-grow: 1; -unity-text-align: upper-center; justify-content: center; align-items: center;">
+        <ui:IMGUIContainer name="Menu-Container" style="height: 640px; width: 540px; background-color: rgba(51, 25, 50, 255); border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; align-items: center; justify-content: center; flex-direction: column; -unity-text-align: upper-center;">
+            <ui:Label text="Main menu" display-tooltip-when-elided="true" name="Menu-Label" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; font-size: 32px; -unity-text-align: middle-center; white-space: nowrap; -unity-text-outline-color: rgba(79, 152, 125, 255); flex-direction: column; border-left-color: rgba(231, 56, 56, 255); border-right-color: rgba(231, 56, 56, 255); border-top-color: rgba(231, 56, 56, 255); border-bottom-color: rgba(231, 56, 56, 255); -unity-font-style: normal; color: rgba(253, 253, 253, 255); position: absolute; top: 30px;" />
+            <ui:Button text="Strat Game" display-tooltip-when-elided="true" name="Menu-StartButton" class="button-style" />
+            <ui:Button text="Exit" display-tooltip-when-elided="true" name="Menu-ExitButton" class="button-style" />
+        </ui:IMGUIContainer>
+    </ui:VisualElement>
+</ui:UXML>
