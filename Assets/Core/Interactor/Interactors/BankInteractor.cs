@@ -9,7 +9,7 @@ namespace Core
 
         public override void OnCreate()
         {
-            _bankRepository = BankComponent.sceneManager.GetRepository<BankRepository>();
+            _bankRepository = Game.GetRepository<BankRepository>();
         }
 
         public override void OnInitialize()

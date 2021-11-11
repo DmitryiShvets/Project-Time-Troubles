@@ -7,14 +7,11 @@ namespace Gameplay
 {
     public class BankComponent : MonoBehaviour
     {
-        public static SceneManagerBase sceneManager;
 
         // Start is called before the first frame update
         void Start()
         {
-            sceneManager = new SceneManagerRoot();
-            sceneManager.InitSceneMap();
-            sceneManager.LoadCurrentSceneAsync();
+           Game.Run();  
 
         }
 
