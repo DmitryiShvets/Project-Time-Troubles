@@ -1,79 +1,78 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
+using UnityEditor;
 
-
-public class UIController : MonoBehaviour
+namespace UI
 {
-    public Button startButton;
-
-    public Button exitButton;
-
-    public ActionsManager actions;
-
-    private VisualElement root;
-
-    private bool _menuVisible = false;
-
-    private void Awake()
-    { 
-        root = GetComponent<UIDocument>().rootVisualElement;
-        actions = new ActionsManager();
-        root.visible = _menuVisible;
-    }
-
-    private void OnEnable()
+    public class UIController : MonoBehaviour
     {
-        actions.Enable();
-    }
+        private Button _startButton;
 
-    private void OnDisable()
-    {
-        actions.Disable();
-    }
+        private Button _exitButton;
 
-    // Start is called before the first frame update
-    void Start()
-    { 
-       // root = GetComponent<UIDocument>().rootVisualElement;
-        startButton = root.Q<Button>("Menu-StartButton");
-        exitButton = root.Q<Button>("Menu-ExitButton");
-        startButton.clicked += StartBtnPressed;
-        exitButton.clicked += ExitBtnPressed;
+        private VisualElement _rootMenu;
 
-        actions.Ui.PauseGame.performed += (context) => { ActivateMenu(); };
-    }
+        private bool _menuVisible = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    void StartBtnPressed()
-    {
-        SceneManager.LoadScene("Scenes/world");
-        // ActivateMenu();
-        Debug.Log("Game started");
-    }
-
-    void ExitBtnPressed()
-    {
-        Application.Quit();
-        Debug.Log("Game Closed");
-    }
-
-    private void ActivateMenu()
-    {
-        if (_menuVisible)
+        private void Awake()
         {
-            root.visible = false;
-            _menuVisible = false;
+            _rootMenu = GetComponent<UIDocument>().rootVisualElement;
+            _rootMenu.visible = _menuVisible;
         }
-        else
+
+
+        // Start is called before the first frame update
+        void Start()
         {
-            root.visible = true;
-            _menuVisible = true;
+            // root = GetComponent<UIDocument>().rootVisualElement;
+            _startButton = _rootMenu.Q<Button>("Menu-StartButton");
+            _exitButton = _rootMenu.Q<Button>("Menu-ExitButton");
+            _startButton.clicked += StartBtnPressed;
+            _exitButton.clicked += ExitBtnPressed;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+        }
+
+        void StartBtnPressed()
+        {
+            // var scene = SceneManager.GetSceneByBuildIndex(1); 
+            // SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("Player"),scene);
+            SceneManager.LoadScene("Scenes/world");
+
+            // ActivateMenu();
+            Debug.Log("Game started");
+        }
+
+        void ExitBtnPressed()
+        {
+            if (EditorApplication.isPlaying)
+            {
+                EditorApplication.ExitPlaymode();
+                Debug.Log("Game Closed");
+            }
+            else
+            {
+                Application.Quit();
+                Debug.Log("Game Closed");
+            }
+        }
+
+        public void ActivateMenu()
+        {
+            if (_menuVisible)
+            {
+                _rootMenu.visible = false;
+                _menuVisible = false;
+            }
+            else
+            {
+                _rootMenu.visible = true;
+                _menuVisible = true;
+            }
         }
     }
 }
