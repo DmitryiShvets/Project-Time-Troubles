@@ -1,3 +1,4 @@
+using System;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -48,5 +49,10 @@ public class Enemy : MonoBehaviour
     {
         aliveState.isAlive = false;
         Destroy(gameObject);
+    }
+
+    public void OnMouseDown()
+    {
+        Debug.Log("Mouse Clicked!");
     }
 }
