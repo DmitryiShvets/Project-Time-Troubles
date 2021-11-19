@@ -1,70 +1,77 @@
-.button-style {
-    height: 117px;
-    width: 344px;
-    -unity-background-image-tint-color: rgba(135, 22, 22, 255);
-    background-color: rgba(100, 88, 219, 255);
-    -unity-background-scale-mode: stretch-to-fill;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    white-space: nowrap;
-    -unity-text-align: middle-center;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.button {
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     font-size: 20px;
+    color: rgba(255, 255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.59);
+    border-left-color: rgb(10, 9, 9);
+    border-right-color: rgb(10, 9, 9);
+    border-top-color: rgb(10, 9, 9);
+    border-bottom-color: rgb(10, 9, 9);
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: auto;
+    height: auto;
 }
 
-.button-style:hover {
-    height: 117px;
-    width: 344px;
-    -unity-background-image-tint-color: rgb(135, 22, 22);
-    background-color: rgb(56, 42, 190);
-    -unity-background-scale-mode: stretch-to-fill;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    white-space: nowrap;
-    -unity-text-align: middle-center;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 20px;
+.button:hover {
+    border-left-color: rgba(255, 255, 255, 255);
+    border-right-color: rgba(255, 255, 255, 255);
+    border-top-color: rgba(255, 255, 255, 255);
+    border-bottom-color: rgba(255, 255, 255, 255);
 }
 
-.button-style:active {
-    height: 117px;
-    width: 344px;
-    -unity-background-image-tint-color: rgb(135, 22, 22);
-    background-color: rgb(56, 42, 190);
-    -unity-background-scale-mode: stretch-to-fill;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    white-space: nowrap;
-    -unity-text-align: middle-center;
-    margin-left: 10px;
-    margin-right: 10px;
+.button:active {
+    border-left-color: rgba(255, 255, 255, 255);
+    border-right-color: rgba(255, 255, 255, 255);
+    border-top-color: rgba(255, 255, 255, 255);
+    border-bottom-color: rgba(255, 255, 255, 255);
+    -unity-font-style: bold;
+    background-color: rgba(51, 50, 50, 0.59);
+}
+
+.screen {
+    flex-grow: 1;
+    align-items: center;
+}
+
+.screen-background {
+    background-image: url('/Assets/UI/menu-background.png');
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+.menu-center-panel {
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.menu-background-color {
+    background-color: rgba(0, 0, 0, 0.39);
+}
+
+.menu-buttons-list {
+    width: 50%;
+    min-width: 200px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu-button {
+    max-width: none;
+    max-height: none;
+    width: 100%;
+    height: 100px;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 20px;
-    color: rgba(0, 0, 0, 255);
-    -unity-font-style: normal;
+    font-size: 40px;
 }
