@@ -72,7 +72,7 @@ namespace Core
             SetPosition(position);
             model.input.ChangeState(InputController.State.DialogControl);
             buttonCount = 0;
-            selectedButton = -1;
+            selectedButton = 0;
         }
 
         public void Show(Vector3 position, string text, string buttonA)

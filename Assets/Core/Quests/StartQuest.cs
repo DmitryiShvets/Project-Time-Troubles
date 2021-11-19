@@ -2,7 +2,7 @@
 namespace Core.Events
 {
     /// <summary>
-    /// This event will start a quest (which is attached to an NPC).
+    /// Этот ивент будет начинать квест (который прикреплен к нпс)
     /// </summary>
     /// <typeparam name="StartQuest"></typeparam>
     public class StartQuest : Event<StartQuest>
@@ -15,8 +15,8 @@ namespace Core.Events
             if (!quest.isStarted)
             {
                 quest.isStarted = true;
-                quest.OnStartQuest();
-                npc.StartQuest(quest);
+                quest.OnStartQuest(); // Спавн предметов для квеста
+                npc.StartQuest(quest); // Сказать нпс что у него появился активный квест
             }
         }
     }

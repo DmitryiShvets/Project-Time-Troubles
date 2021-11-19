@@ -28,6 +28,7 @@ namespace Core
         public SpawnMode spawnMode = SpawnMode.CloneAndEnable;
         bool disableItemsOnStart = true;
 
+        //Массив игровых объектов которые становятся активными при старте квеста
         public GameObject[] enableOnQuestStart;
         public GameObject[] spawnOnQuestStart;
         public ItemRequirement[] requiredItems;
@@ -36,9 +37,8 @@ namespace Core
 
         public bool destroySpawnsOnQuestComplete = true;
 
-      //  public Cutscene introCutscenePrefab, outroCutscenePrefab;
-
-        List<GameObject> cleanup = new List<GameObject>();
+        //Лист предметов которые будут удалены после завершения квеста
+        List<GameObject> destroyItemsList = new List<GameObject>();
 
         public bool isStarted = false;
         public bool isFinished = false;
@@ -47,7 +47,8 @@ namespace Core
 
         void Awake()
         {
-            //if required, make sure that items that will be enabled by this quest are disabled
+           
+            //(Если требуется) убедиться что предметы которые должны быть активными для квеста - неактивные
             if (disableItemsOnStart)
             {
                 if (enableOnQuestStart != null)
@@ -67,6 +68,7 @@ namespace Core
             }
         }
 
+        //При старте квеста спавнятся либо активируются квестовые предметы 
         public void OnStartQuest()
         {
             isFinished = false;
@@ -78,6 +80,8 @@ namespace Core
             //         cs.OnFinish += (i) => model.musicController.CrossFade(model.musicController.audioClip);
             //     }
             // }
+            
+            //Сделать активными предметы которые должны быть активными для выполнения задания
             if (enableOnQuestStart != null)
                 foreach (var i in enableOnQuestStart)
                     if (i != null)
@@ -89,20 +93,21 @@ namespace Core
                     {
                         var clone = GameObject.Instantiate(i);
                         clone.SetActive(true);
-                        if (destroySpawnsOnQuestComplete) cleanup.Add(clone);
+                        if (destroySpawnsOnQuestComplete) destroyItemsList.Add(clone);
                     }
                     break;
                 case SpawnMode.CloneOnly:
                     foreach (var i in spawnOnQuestStart)
                     {
                         var clone = GameObject.Instantiate(i);
-                        if (destroySpawnsOnQuestComplete) cleanup.Add(clone);
+                        if (destroySpawnsOnQuestComplete) destroyItemsList.Add(clone);
                     }
                     break;
             }
 
         }
 
+        //Проверка хватает ли квестовых предметов в инвентаре для сдачи квеста
         public bool IsQuestComplete()
         {
             var inv = new HashSet<string>(model.InventoryItems);
@@ -113,7 +118,7 @@ namespace Core
             }
             return true;
         }
-
+        //Выдача предметов за квест в инвентарь игрока
         public void RewardItemsToPlayer()
         {
             foreach (var i in rewardItems)
@@ -133,20 +138,20 @@ namespace Core
             // }
 
         }
-
+        //При завершении квеста происходит удаление квестовых предметов и спавн новых предметов 
         public void OnFinishQuest()
         {
             if (destroySpawnsOnQuestComplete)
             {
-                foreach (var i in cleanup)
+                foreach (var item in destroyItemsList)
                 {
-                    if (i != null) Destroy(i);
+                    if (item != null) Destroy(item);
                 }
             }
 
-            foreach (var i in spawnOnQuestComplete)
+            foreach (var item in spawnOnQuestComplete)
             {
-                var clone = GameObject.Instantiate(i);
+                var clone = GameObject.Instantiate(item);
                 clone.SetActive(true);
             }
             isFinished = true;
