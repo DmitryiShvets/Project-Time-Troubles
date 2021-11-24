@@ -37,8 +37,8 @@ public class UIController : MonoBehaviour
     void Start()
     { 
        // root = GetComponent<UIDocument>().rootVisualElement;
-        startButton = root.Q<Button>("Menu-StartButton");
-        exitButton = root.Q<Button>("Menu-ExitButton");
+        startButton = root.Q<Button>("start-button");
+        exitButton = root.Q<Button>("exit-button");
         startButton.clicked += StartBtnPressed;
         exitButton.clicked += ExitBtnPressed;
 
