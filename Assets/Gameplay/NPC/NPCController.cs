@@ -10,10 +10,12 @@ namespace Core
     /// </summary>
     public class NPCController : MonoBehaviour
     {
+        //Лист диалогов у нпс которые будут отрисовываться 
         public List<ConversationScript> conversationList;
 
         Quest activeQuest = null;
 
+        //Массив квестов у нпс которые
         Quest[] quests;
 
         GameModel model = Schedule.GetModel<GameModel>();
@@ -57,9 +59,10 @@ namespace Core
             if (activeQuest != null) throw new System.Exception("Only one quest should be active.");
             activeQuest = q;
         }
-
+        //Возвращает диалог который будет отрисовываться на экране 
         ConversationScript GetConversation()
         {
+            //Если аквтивных ксестов нету то возвращается первый диалог в списке диалогов нпс
             if (activeQuest == null)
                 return conversationList.Count > 0 ? conversationList[0] : null;
             foreach (var q in quests)
@@ -69,7 +72,9 @@ namespace Core
                     if (q.IsQuestComplete())
                     {
                         CompleteQuest(q);
-                        conversationList.Remove(conversationList.First());
+                        //Когда текущий квест у нпс завершается то удаляется диалог который выдает этот квест
+                        conversationList.Remove(conversationList.First()); 
+                            
                         return q.questCompletedConversation;
                     }
 
