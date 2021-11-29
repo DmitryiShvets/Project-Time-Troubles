@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="UI/stule.uss" />
+    <Style src="stule.uss" />
     <ui:VisualElement name="main-menu-screen" class="screen screen-background">
         <ui:VisualElement name="menu-center-panel" class="menu-center-panel menu-background-color">
             <ui:VisualElement name="menu-start-title" style="width: 100%; height: 35%; min-height: 150px;">
