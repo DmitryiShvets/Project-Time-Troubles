@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 823572861883581200}
   m_Layer: 0
   m_Name: SlimeEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlive: 1
+  obj: {fileID: 0}
+  aliveState: {fileID: 0}
   changeTimer: 2
   speed: 3
 --- !u!225 &-2776838285066686633

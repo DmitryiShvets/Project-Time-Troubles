@@ -1,15 +1,17 @@
-using System;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
-    // public bool isAlive;
+    public bool isAlive;
+
+    public GameObject obj;
 
     private float timer;
 
-    [FormerlySerializedAs("AliveState")] public AliveState aliveState;
+    [FormerlySerializedAs("AliveState")]
+    public AliveState aliveState;
 
     public float changeTimer;
 
@@ -45,14 +47,5 @@ public class Enemy : MonoBehaviour
         rBody.MovePosition(pos);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        aliveState.isAlive = false;
-        Destroy(gameObject);
-    }
 
-    public void OnMouseDown()
-    {
-        Debug.Log("Mouse Clicked!");
-    }
 }
