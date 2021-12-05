@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -2516996542145766833}
   - component: {fileID: -2776838285066686633}
   - component: {fileID: 823572861883581200}
+  - component: {fileID: 4417745194898796523}
   m_Layer: 0
   m_Name: SlimeEnemy
   m_TagString: Enemy
@@ -195,3 +196,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476d1e6eeb131b14591ebbcef602b16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4417745194898796523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900647425859342050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaed9356aa50a54b91c9a8484b71175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 30
+  particleEffect: {fileID: 8384669908784896129, guid: 198ea618b37e7a6499d3fe161bdf05ea, type: 3}
+  HitPointDamage: {fileID: 1004735490076195926, guid: 56aea43c4a45d4a4087fed1bad9972ec, type: 3}
+  start: 0
+  start2: 0
+  move: 0

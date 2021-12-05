@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AttackHand : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class AttackHand : MonoBehaviour
     {
        
 
-        if (Input.GetKeyDown("f"))
+        if (Keyboard.current.fKey.wasPressedThisFrame)
         {
             start = true;
             Instantiate(attackZonePrefab, colliderAttackZoneObject.position, colliderAttackZoneObject.rotation);
