@@ -26,4 +26,11 @@
 ## Доп информация для проверяющих
 (Передвижение - ***w,a,s,d***;  ближний бой - ***f***; выбрать ответ в диалоге или выйти из него - ***space***; меню, пауза - ***escape***; если подойти к двери то можно вернуться в меню; вся музыка в игре была специально выкручена до самого нуля;)
 
+референсы откуда брались идеи и материалы:
+>https://learn.unity.com/tutorial/develop-the-player-experience?uv=2020.3&projectId=5ccc189dedbc2a3ae01f0c0e#5ccc4455edbc2a4228d8e77f
+>https://blog.unity.com/technology/isometric-2d-environments-with-tilemap
+>https://pablogamedev.itch.io/
+>https://www.kenney.nl/assets/page:5?q=2d
+
+
 
