@@ -23,7 +23,7 @@ public class AttackHand : MonoBehaviour
     private Transform downLeft;
     [SerializeField]
     private Transform downRight;
-    bool start;
+  //  bool start;
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class AttackHand : MonoBehaviour
 
         if (Keyboard.current.fKey.wasPressedThisFrame)
         {
-            start = true;
+          //  start = true;
             Instantiate(attackZonePrefab, colliderAttackZoneObject.position, colliderAttackZoneObject.rotation);
         }
 

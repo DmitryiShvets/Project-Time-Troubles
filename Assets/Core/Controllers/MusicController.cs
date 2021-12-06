@@ -23,8 +23,8 @@ namespace Core
 
         void Update()
         {
-            audioSourceA.volume = Mathf.SmoothDamp(audioSourceA.volume, 1f, ref audioSourceAVolumeVelocity, crossFadeTime, 1);
-            audioSourceB.volume = Mathf.SmoothDamp(audioSourceB.volume, 0f, ref audioSourceBVolumeVelocity, crossFadeTime, 1);
+            //audioSourceA.volume = Mathf.SmoothDamp(audioSourceA.volume, 1f, ref audioSourceAVolumeVelocity, crossFadeTime, 1);
+           // audioSourceB.volume = Mathf.SmoothDamp(audioSourceB.volume, 0f, ref audioSourceBVolumeVelocity, crossFadeTime, 1);
         }
 
         void OnEnable()
@@ -33,6 +33,7 @@ namespace Core
             audioSourceA.spatialBlend = 0;
             audioSourceA.clip = audioClip;
             audioSourceA.loop = true;
+            audioSourceA.volume = 0.1f;
             audioSourceA.outputAudioMixerGroup = audioMixerGroup;
             audioSourceA.Play();
 

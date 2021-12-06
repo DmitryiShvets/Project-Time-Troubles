@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b1bf52df00f75478edb56270284f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackZonePrefab: {fileID: 0}
+  attackZonePrefab: {fileID: 6281533891211389759, guid: 28c4d2a4c74ff7f4cb0d7ef4cfb567c7, type: 3}
   colliderAttackZoneObject: {fileID: 834541567}
   up: {fileID: 651832130}
   down: {fileID: 1401279836}
@@ -356,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3339481643503506216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.011, y: -0.046, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.16434272, y: 0.16434272, z: 0.16434272}
   m_Children: []
   m_Father: {fileID: 3339481645408498932}
@@ -405,7 +405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3339481644051735610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.013, y: -0.0503, z: 0}
+  m_LocalPosition: {x: 0.005, y: -0.273, z: 0}
   m_LocalScale: {x: 1, y: 0.991, z: 1}
   m_Children: []
   m_Father: {fileID: 3339481645326394339}

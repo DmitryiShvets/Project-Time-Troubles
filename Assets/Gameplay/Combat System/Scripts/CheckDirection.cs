@@ -36,7 +36,7 @@ public class CheckDirection : MonoBehaviour
             downLeft = false;
             downRight = false;
 
-            Debug.Log("Двигаешься вправо");
+          //  Debug.Log("Двигаешься вправо");
         }
         if (IsometricPlayerMovementController.instance.movement.x == 0 && IsometricPlayerMovementController.instance.movement.y < 0)
         {
@@ -49,7 +49,7 @@ public class CheckDirection : MonoBehaviour
             downLeft = false;
             downRight = false;
 
-            Debug.Log("Двигаешься вправо");
+         //   Debug.Log("Двигаешься вправо");
         }
         if (IsometricPlayerMovementController.instance.movement.x > 0 && IsometricPlayerMovementController.instance.movement.y == 0)
         {
@@ -62,7 +62,7 @@ public class CheckDirection : MonoBehaviour
             downLeft = false;
             downRight = false;
 
-            Debug.Log("Двигаешься вправо");
+         //   Debug.Log("Двигаешься вправо");
         }
         if (IsometricPlayerMovementController.instance.movement.x < 0 && IsometricPlayerMovementController.instance.movement.y == 0)
         {
@@ -74,7 +74,7 @@ public class CheckDirection : MonoBehaviour
             upRight = false;
             downLeft = false;
             downRight = false;
-            Debug.Log("Двигаешься влево");
+        //    Debug.Log("Двигаешься влево");
         }
         if (IsometricPlayerMovementController.instance.movement.x > 0 && IsometricPlayerMovementController.instance.movement.y > 0)
         {
@@ -86,7 +86,7 @@ public class CheckDirection : MonoBehaviour
             upRight = true;
             downLeft = false;
             downRight = false;
-            Debug.Log("Двигаешься по диагонали вверх вправо");
+         //   Debug.Log("Двигаешься по диагонали вверх вправо");
         }
         if (IsometricPlayerMovementController.instance.movement.x < 0 && IsometricPlayerMovementController.instance.movement.y > 0)
         {
@@ -98,7 +98,7 @@ public class CheckDirection : MonoBehaviour
             upRight = false;
             downLeft = false;
             downRight = false;
-            Debug.Log("Двигаешься по диагонали вверх влево");
+         //   Debug.Log("Двигаешься по диагонали вверх влево");
         }
         if (IsometricPlayerMovementController.instance.movement.x < 0 && IsometricPlayerMovementController.instance.movement.y < 0)
         {
@@ -110,7 +110,7 @@ public class CheckDirection : MonoBehaviour
             upRight = false;
             downLeft = true;
             downRight = false;
-            Debug.Log("Двигаешься по диагонали вниз влево");
+        //    Debug.Log("Двигаешься по диагонали вниз влево");
         }
         if (IsometricPlayerMovementController.instance.movement.x > 0 && IsometricPlayerMovementController.instance.movement.y < 0)
         {
@@ -122,7 +122,7 @@ public class CheckDirection : MonoBehaviour
             upRight = false;
             downLeft = false;
             downRight = true;
-            Debug.Log("Двигаешься по диагонали вниз вправо");
+          //  Debug.Log("Двигаешься по диагонали вниз вправо");
         }
     }
 }

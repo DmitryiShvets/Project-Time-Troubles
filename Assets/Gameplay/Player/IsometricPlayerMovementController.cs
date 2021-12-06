@@ -39,7 +39,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
 
         var input = _playerAction.Player.Movement.ReadValue<Vector2>();
 
-        //  Vector2 currentPos = rbody.position;
+          Vector2 currentPos = rbody.position;
 
         float hInput = input.x;
         float vInput = input.y;
@@ -48,7 +48,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
         inputVector = Vector2.ClampMagnitude(inputVector, 1);
 
         movement = inputVector * movementSpeed;
-        Vector2 newPos = _posState.pos + movement * Time.fixedDeltaTime;
+        Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
 
 
         //Debug.Log(movement + " " + newPos);

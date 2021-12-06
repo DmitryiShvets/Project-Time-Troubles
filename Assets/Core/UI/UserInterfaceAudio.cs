@@ -39,12 +39,12 @@ namespace Core
 
         void Update()
         {
-            if (syllables.Count > 0 && syllables.Peek().time < Time.time)
-            {
-                var s = syllables.Dequeue();
-                audioSource.pitch = Random.Range(0.8f, 1.2f);
-                Play(vocals[s.index]);
-            }
+            // if (syllables.Count > 0 && syllables.Peek().time < Time.time)
+            // {
+            //     var s = syllables.Dequeue();
+            //     audioSource.pitch = Random.Range(0.8f, 1.2f);
+            //     Play(vocals[s.index]);
+            // }
         }
 
         void PlaySpeech(int seed, int syllableCount, float pitch)
@@ -66,6 +66,7 @@ namespace Core
 
         public static void OnCollect()
         {
+            
             if (instance != null) instance.Play(instance.onCollect);
         }
 

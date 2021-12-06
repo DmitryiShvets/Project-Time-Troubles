@@ -40,7 +40,7 @@ namespace UI
         {
             // var scene = SceneManager.GetSceneByBuildIndex(1); 
             // SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("Player"),scene);
-            SceneManager.LoadScene("Scenes/world");
+            SceneManager.LoadScene("Scenes/home");
 
             // ActivateMenu();
             Debug.Log("Game started");
@@ -48,16 +48,10 @@ namespace UI
 
         void ExitBtnPressed()
         {
-            if (EditorApplication.isPlaying)
-            {
-                EditorApplication.ExitPlaymode();
-                Debug.Log("Game Closed");
-            }
-            else
-            {
+           
                 Application.Quit();
                 Debug.Log("Game Closed");
-            }
+         
         }
 
         public void ActivateMenu()

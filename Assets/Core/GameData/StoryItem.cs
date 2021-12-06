@@ -65,7 +65,11 @@ namespace Core
                     if (!model.HasSeenStoryItem(requiredStoryItem.ID))
                         return;
             if (text != string.Empty)
+            {
                 MessageBar.Show(text);
+            }
+              
+                
             if (ID != string.Empty)
                 model.RegisterStoryItem(ID);
             if (audioClip == null)
