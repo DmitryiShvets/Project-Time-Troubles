@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
-{
+{   //  Scenes/Temple
+    public string lvlName;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,6 @@ public class Exit : MonoBehaviour
     
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        SceneManager.LoadScene("Scenes/Menu");
+        SceneManager.LoadScene(lvlName);
     }
 }
