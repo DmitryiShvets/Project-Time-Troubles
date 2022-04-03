@@ -35,6 +35,7 @@ namespace Core
                 Destroy(instance);
             else
                 instance = this;
+           
         }
 
         void Update()
@@ -82,7 +83,11 @@ namespace Core
 
         internal static void OnStoryItem()
         {
-            if (instance != null) instance.Play(instance.onStoryItem);
+            if (instance != null)
+            {
+                instance.audioSource.volume = 0.1f;
+                instance.Play(instance.onStoryItem);
+            }
         }
 
         public static void OnShowDialog()

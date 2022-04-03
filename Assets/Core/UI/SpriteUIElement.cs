@@ -8,7 +8,7 @@ namespace Core
     [ExecuteInEditMode]
     public class SpriteUIElement : MonoBehaviour
     {
-        new public Camera camera;
+        public Camera camera;
 
         public int pixelsPerUnit = 64;
 

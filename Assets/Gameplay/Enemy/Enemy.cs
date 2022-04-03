@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     {
         _item.SetActive(false);
         rBody = GetComponent<Rigidbody2D>();
-        timer = changeTimer / 2;
+        timer = changeTimer ;
         aliveState.ResetState();
 
         if (!aliveState.isAlive) Destroy(gameObject);
@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         }
 
         var pos = rBody.position;
-        pos.x = pos.x + Time.deltaTime * direction * speed;
+        pos.x = pos.x + (Time.deltaTime * direction * speed);
         rBody.MovePosition(pos);
     }
 

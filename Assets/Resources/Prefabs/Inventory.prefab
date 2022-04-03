@@ -99,9 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   pixelsPerUnit: 64
-  anchor: {x: 0, y: 0}
-  offset: {x: 0, y: 0}
-  hideOffset: {x: 0, y: 0}
+  anchor: {x: 0, y: 0.5}
+  offset: {x: 0.1, y: 0}
+  hideOffset: {x: -2, y: 0}
   curve:
     serializedVersion: 2
     m_Curve:
@@ -364,7 +364,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 21040265067069690, guid: 4422fd8cf2666b84386346b5283ad2a7, type: 2}
+  - {fileID: 1834789566665403979, guid: 08d226c53c37de14788dbaf7fa1f5763, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -408,8 +408,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4422fd8cf2666b84386346b5283ad2a7, type: 2}
-  m_sharedMaterial: {fileID: 21040265067069690, guid: 4422fd8cf2666b84386346b5283ad2a7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08d226c53c37de14788dbaf7fa1f5763, type: 2}
+  m_sharedMaterial: {fileID: 1834789566665403979, guid: 08d226c53c37de14788dbaf7fa1f5763, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

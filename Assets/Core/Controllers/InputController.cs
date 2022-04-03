@@ -11,6 +11,7 @@ namespace Core
     {
         public float stepSize = 0.1f;
         GameModel model = Schedule.GetModel<GameModel>();
+        
 
         public enum State
         {

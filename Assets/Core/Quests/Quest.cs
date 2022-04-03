@@ -47,10 +47,11 @@ namespace Core
 
         void Awake()
         {
-           
+           model.inventory.Clear();
             //(Если требуется) убедиться что предметы которые должны быть активными для квеста - неактивные
             if (disableItemsOnStart)
             {
+                
                 if (enableOnQuestStart != null)
                     foreach (var i in enableOnQuestStart)
                         if (i != null)

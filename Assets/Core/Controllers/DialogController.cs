@@ -132,7 +132,18 @@ namespace Core
             onButton = null;
         }
 
-        void Awake()
+        // void Awake()
+        // {
+        //     dialogLayout.gameObject.SetActive(false);
+        //     buttons = dialogLayout.buttons;
+        //     dialogLayout.buttonA.onClickEvent += () => OnButton(0);
+        //     dialogLayout.buttonB.onClickEvent += () => OnButton(1);
+        //     dialogLayout.buttonC.onClickEvent += () => OnButton(2);
+        //     spriteUIElement = GetComponent<SpriteUIElement>();
+        //     mainCamera = Camera.main;
+        // }
+
+        private void Start()
         {
             dialogLayout.gameObject.SetActive(false);
             buttons = dialogLayout.buttons;

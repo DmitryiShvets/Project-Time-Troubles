@@ -12,6 +12,7 @@ namespace Core
     /// </summary>
     public class StoryItem : MonoBehaviour, ISerializationCallbackReceiver
     {
+        [SerializeField] private GameObject _tip;
         public string ID;
         [Multiline]
         public string text = "There is no story to be found here.";
@@ -42,6 +43,7 @@ namespace Core
         void Awake()
         {
             ConnectRelations();
+            _tip.SetActive(true);
         }
 
         public void ConnectRelations()
@@ -66,6 +68,7 @@ namespace Core
                         return;
             if (text != string.Empty)
             {
+                _tip.SetActive(false);
                 MessageBar.Show(text);
             }
               

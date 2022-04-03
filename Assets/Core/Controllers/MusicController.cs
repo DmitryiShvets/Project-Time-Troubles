@@ -33,7 +33,8 @@ namespace Core
             audioSourceA.spatialBlend = 0;
             audioSourceA.clip = audioClip;
             audioSourceA.loop = true;
-            audioSourceA.volume = 0.1f;
+            audioSourceA.volume = 0.05f;
+            
             audioSourceA.outputAudioMixerGroup = audioMixerGroup;
             audioSourceA.Play();
 

@@ -17,7 +17,7 @@ namespace Core
         public Animator animator;
         public bool flipX = false;
 
-        new Rigidbody2D rigidbody2D;
+        Rigidbody2D rigidbody2D;
         SpriteRenderer spriteRenderer;
         PixelPerfectCamera pixelPerfectCamera;
 
