@@ -23,13 +23,17 @@ public class AttackHand : MonoBehaviour
     private Transform downLeft;
     [SerializeField]
     private Transform downRight;
-  //  bool start;
+    //  bool start;
+
+    Animator animator;
 
     void Start()
     {
         colliderAttackZoneObject.position = up.position;
+        animator = GetComponent<Animator>();
     }
 
+    
    
     void Update()
     {
@@ -39,6 +43,7 @@ public class AttackHand : MonoBehaviour
         {
           //  start = true;
             Instantiate(attackZonePrefab, colliderAttackZoneObject.position, colliderAttackZoneObject.rotation);
+            animator.Play(SlashEffect);
         }
 
         if (CheckDirection.instance.up)
