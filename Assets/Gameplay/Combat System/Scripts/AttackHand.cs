@@ -30,20 +30,26 @@ public class AttackHand : MonoBehaviour
     void Start()
     {
         colliderAttackZoneObject.position = up.position;
-        animator = GetComponent<Animator>();
+      
     }
 
-    
+    private void Awake()
+    {
+        //cache the animator component
+        animator = GetComponentInChildren<Animator>();
+     }
+
    
     void Update()
     {
-       
+
 
         if (Keyboard.current.fKey.wasPressedThisFrame)
         {
           //  start = true;
             Instantiate(attackZonePrefab, colliderAttackZoneObject.position, colliderAttackZoneObject.rotation);
-            animator.Play(SlashEffect);
+         animator.Play("SlashEffect");
+                       
         }
 
         if (CheckDirection.instance.up)
