@@ -14,7 +14,11 @@ namespace Core
         //over the shared reference, rather than create a new instance.
         //To preserve this behaviour, this script must be deserialized last.
         public GameModel model;
+        void Start()
+        {
+            Game.Run();  
 
+        }
         protected virtual void OnEnable()
         {
             Schedule.SetModel<GameModel>(model);

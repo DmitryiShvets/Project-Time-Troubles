@@ -3,6 +3,7 @@ using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Core;
+using Gameplay;
 using UnityEditor;
 
 public class Enemy : MonoBehaviour
@@ -52,7 +53,8 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnDestroy()
-    {
+    {   
+        Bank.AddCoins(this,100);
         _item.SetActive(true);
     }
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Core
 {
-    public class ConfigEx : SceneConfig
+    public class HomeConfig : SceneConfig
     {
         //Имя сцены.. используеся в коцфиге для загрузки
-        public const string SC_NAME = "World";
+        public const string SC_NAME = "home";
 
         public override Dictionary<Type, Interactor> CreateAllInteractors()
         {

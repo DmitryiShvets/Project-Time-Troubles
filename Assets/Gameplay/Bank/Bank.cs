@@ -31,6 +31,7 @@ namespace Gameplay
         {
             CheckState();
             _bankInteractor.AddCoins(sender, value);
+            Debug.Log($"{value} coins add - now {Bank.GetCoins}");
         }
 
         public static void SpendCoins(object sender, int value)

@@ -9,12 +9,6 @@ namespace Gameplay
     {
 
         // Start is called before the first frame update
-        void Start()
-        {
-           Game.Run();  
-
-        }
-
 
         public IEnumerator StartGame()
         {
