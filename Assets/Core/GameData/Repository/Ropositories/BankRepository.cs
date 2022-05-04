@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 namespace Core
@@ -8,7 +7,6 @@ namespace Core
         private const string KEY = "BANK_KEY";
 
         public int Coins { get; set; }
-
 
 
         public override void OnInitialize()

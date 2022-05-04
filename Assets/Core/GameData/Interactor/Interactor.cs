@@ -1,5 +1,4 @@
-﻿
-namespace Core
+﻿namespace Core
 {
     public abstract class Interactor : IInteractor
     {

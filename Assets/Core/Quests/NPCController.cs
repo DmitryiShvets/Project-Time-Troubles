@@ -33,9 +33,9 @@ namespace Core
             {
                 Debug.Log("QUEST GIVER!");
                 var ev = Schedule.Add<ShowConversation>();
-                ev.conversation = c;
-                ev.npc = this;
-                ev.gameObject = gameObject;
+                ev.conversation = c; //Текущий диалог
+                ev.npc = this; // У кого взят квест
+                ev.gameObject = gameObject;  // У кого взят квест
                 ev.conversationItemKey = "";
             }
         }

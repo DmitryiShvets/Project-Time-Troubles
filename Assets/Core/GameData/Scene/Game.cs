@@ -7,12 +7,18 @@ namespace Core
 {
     public abstract class Game
     {
-        private static SceneManagerBase sceneManager { get;  set; }
+        private static SceneManagerBase sceneManager { get; set; }
 
         public static void Run()
         {
             sceneManager = new SceneManagerRoot();
             Coroutines.StartRoutine(InitializeGameRoutine());
+        }
+        
+        //Загружает новую сцену
+        public static void LoadScene(string sceneName)
+        {
+            sceneManager.LoadNewSceneAsync(sceneName);
         }
 
         private static IEnumerator InitializeGameRoutine()

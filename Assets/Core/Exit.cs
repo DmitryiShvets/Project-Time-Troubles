@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +28,7 @@ public class Exit : MonoBehaviour
     
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        SceneManager.LoadScene(lvlName);
+        Game.LoadScene(lvlName);
+        //  SceneManager.LoadScene(lvlName);
     }
 }

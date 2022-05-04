@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using Core;
-
 using Tools;
 using UnityEngine;
 
 namespace Core
 {
-
-
     public class Scene
     {
         private InteractorBase _interactorBase;
@@ -26,6 +23,7 @@ namespace Core
         {
             return Coroutines.StartRoutine(InitializeRoutine());
         }
+
         private IEnumerator InitializeRoutine()
         {
             _interactorBase.CreateAllInteractors();
@@ -43,16 +41,14 @@ namespace Core
             _interactorBase.OnStartAllInteractors();
             _repositoryBase.OnStartAllRepositories();
             yield return null;
-            
-          
         }
 
-        public T GetRepository<T> ()where T:Repository
+        public T GetRepository<T>() where T : Repository
         {
             return _repositoryBase.GetRepository<T>();
         }
-        
-        public T GetInteractor<T> ()where T:Interactor
+
+        public T GetInteractor<T>() where T : Interactor
         {
             return _interactorBase.GetInteractor<T>();
         }
