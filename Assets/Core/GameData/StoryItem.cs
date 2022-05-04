@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-
 using UnityEngine;
 
 
@@ -14,15 +13,15 @@ namespace Core
     {
         [SerializeField] private GameObject _tip;
         public string ID;
-        [Multiline]
-        public string text = "There is no story to be found here.";
+        [Multiline] public string text = "There is no story to be found here.";
         public AudioClip audioClip;
 
         public bool disableWhenDiscovered = false;
 
         public HashSet<StoryItem> requiredStoryItems;
+
         public HashSet<InventoryItem> requiredInventoryItems;
-       // public Cutscene cutscenePrefab;
+        // public Cutscene cutscenePrefab;
 
         [System.NonSerialized] public HashSet<StoryItem> dependentStoryItems = new HashSet<StoryItem>();
 
@@ -71,8 +70,8 @@ namespace Core
                 _tip.SetActive(false);
                 MessageBar.Show(text);
             }
-              
-                
+
+
             if (ID != string.Empty)
                 model.RegisterStoryItem(ID);
             if (audioClip == null)
@@ -92,10 +91,10 @@ namespace Core
 
         public void OnBeforeSerialize()
         {
-            if(requiredInventoryItems != null)
+            if (requiredInventoryItems != null)
                 _requiredInventoryItems = requiredInventoryItems.ToArray();
-            
-            if(requiredStoryItems != null)
+
+            if (requiredStoryItems != null)
                 _requiredStoryItems = requiredStoryItems.ToArray();
         }
 
@@ -103,12 +102,14 @@ namespace Core
         {
             requiredStoryItems = new HashSet<StoryItem>();
             if (_requiredStoryItems != null)
-                foreach (var i in _requiredStoryItems) requiredStoryItems.Add(i);
+                foreach (var i in _requiredStoryItems)
+                    requiredStoryItems.Add(i);
 
 
             requiredInventoryItems = new HashSet<InventoryItem>();
             if (_requiredInventoryItems != null)
-                foreach (var i in _requiredInventoryItems) requiredInventoryItems.Add(i);
+                foreach (var i in _requiredInventoryItems)
+                    requiredInventoryItems.Add(i);
         }
     }
 }

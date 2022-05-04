@@ -1,7 +1,6 @@
 using UnityEngine;
 
 
-
 namespace Core
 {
     /// <summary>
@@ -9,16 +8,14 @@ namespace Core
     /// </summary>
     public class GameController : MonoBehaviour
     {
-        //This model is public and can be modified in the inspector.
-        //The reference is shared where needed, and Unity will deserialize
-        //over the shared reference, rather than create a new instance.
-        //To preserve this behaviour, this script must be deserialized last.
+   
         public GameModel model;
-        void Start()
-        {
-            Game.Run();  
 
-        }
+        // void Awake()
+        // {
+        //     Game.Run();
+        // }
+
         protected virtual void OnEnable()
         {
             Schedule.SetModel<GameModel>(model);

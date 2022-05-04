@@ -54,7 +54,6 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {   
-        Bank.AddCoins(this,100);
         _item.SetActive(true);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Gameplay;
 using UnityEngine;
 using TMPro;
 
@@ -12,6 +13,7 @@ public class HealthSystemEnemy : MonoBehaviour
     public bool start;
     public bool start2;
     public bool move;
+
     void Start()
     {
         instance = this;
@@ -19,7 +21,6 @@ public class HealthSystemEnemy : MonoBehaviour
 
     public void Damage(int damage)
     {
-
         start2 = true;
 
         hp -= damage;
@@ -28,34 +29,25 @@ public class HealthSystemEnemy : MonoBehaviour
         go.transform.GetChild(0).GetComponent<TMP_Text>().text = damage.ToString();
 
         Invoke("ResetBool", 0.2f);
-
-
-
-
     }
+
     void Update()
     {
-       
-
-
-        if (hp<=0)
+        if (hp <= 0)
         {
             hp = 0;
 
-            if(!start)
+            if (!start)
             {
                 start = true;
-                
+
                 Instantiate(particleEffect, transform.position, transform.rotation);
             }
 
+            Bank.AddCoins(this, 100);
             Destroy(gameObject);
         }
-
-
     }
-
-    
 
 
     private void ResetBool()

@@ -16,7 +16,7 @@ namespace Core
         public void CreateAllInteractors()
         {
             _interactorsMap = _sceneConfig.CreateAllInteractors();
-           // this.CreateInteractor<BankInteractor>();
+            // this.CreateInteractor<BankInteractor>();
         }
 
         private void CreateInteractor<T>() where T : Interactor, new()
