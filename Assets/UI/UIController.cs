@@ -41,9 +41,8 @@ namespace UI
         {
             // var scene = SceneManager.GetSceneByBuildIndex(1); 
             // SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("Player"),scene);
-
-            Game.LoadScene("home");
-        //    SceneManager.LoadScene("Scenes/home");
+            //Game.LoadScene("home");
+            SceneManager.LoadScene("Scenes/home");
 
             // ActivateMenu();
             Debug.Log("Game started");
