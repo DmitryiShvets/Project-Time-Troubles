@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
-public class Deal_damage : MonoBehaviour
+namespace Gameplay
 {
-    private float damage = 0.25f;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    public class Deal_damage : MonoBehaviour
     {
-        if (other.name == "PlayerCollider")
+        private int damage = 1;
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            other.GetComponentInParent<Hp>().TakeDamage(damage);
-            Debug.Log(other.gameObject.name);
+            if (other.name == "PlayerCollider")
+            {
+                other.GetComponentInParent<PlayerController>().TakeDamage(damage);
+                Debug.Log(other.gameObject.name);
+            }
         }
     }
+
 }
 

@@ -11,14 +11,18 @@ namespace Core
         public override Dictionary<Type, Interactor> CreateAllInteractors()
         {
             var interactorsMap = new Dictionary<Type, Interactor>();
-            CreateInteractor<BankInteractor>(interactorsMap);
+            FillInteractorMap(ref interactorsMap);
+            // CreateInteractor<BankInteractor>(interactorsMap);
+            // CreateInteractor<PlayerHealthInteractor>(interactorsMap);
             return interactorsMap;
         }
 
         public override Dictionary<Type, Repository> CreateAllRepositories()
         {
             var repositoriesMap = new Dictionary<Type, Repository>();
-            CreateRepository<BankRepository>(repositoriesMap);
+            FillRepositoryMap(ref repositoriesMap);
+            // CreateRepository<BankRepository>(repositoriesMap);
+            // CreateRepository<PlayerHealthRepository>(repositoriesMap);
             return repositoriesMap;
         }
 
