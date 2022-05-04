@@ -9,7 +9,9 @@ namespace Core
     /// <typeparam name="Event"></typeparam>
     public abstract class Event : System.IComparable<Event>
     {
-        public virtual void Execute() { }
+        public virtual void Execute()
+        {
+        }
 
         protected GameModel model = Schedule.GetModel<GameModel>();
 
@@ -24,7 +26,6 @@ namespace Core
 
         internal virtual void Cleanup()
         {
-
         }
     }
 
@@ -39,8 +40,7 @@ namespace Core
         internal override void ExecuteEvent()
         {
             Execute();
-            OnExecute?.Invoke((T)this);
+            OnExecute?.Invoke((T) this);
         }
     }
-
 }

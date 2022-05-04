@@ -11,9 +11,9 @@ namespace Core.Events
     /// <typeparam name="ShowConversation"></typeparam>
     public class ShowConversation : Event<ShowConversation>
     {
-        public NPCController npc;
-        public GameObject gameObject;
-        public ConversationScript conversation;
+        public NPCController npc; //
+        public GameObject gameObject; //Ссылка на игровой обькт вызвавший это событие
+        public ConversationScript conversation; //Диалог который нужно отрисовать
         public string conversationItemKey;
 
         public override void Execute()
@@ -26,12 +26,13 @@ namespace Core.Events
                 ci = conversation.Get(conversationItemKey);
 
 
-            //if this item contains an unstarted quest, schedule a start quest event for the quest.
+           
+            //Добавляет квест в очередь если он не начат или не завершен
             if (ci.quest != null)
             {
                 if (!ci.quest.isStarted)
                 {
-                    var ev = Schedule.Add<StartQuest>(1);
+                    var ev = Schedule.Add<StartQuest>(1); //Добавление квеста в очередь
                     ev.quest = ci.quest;
                     ev.npc = npc;
                 }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 namespace Core
 {
-
     /// <summary>
     /// A Priority Queue implemented using a Heap structure.
     /// </summary>
@@ -13,11 +12,20 @@ namespace Core
     {
         List<T> items;
 
-        public int Count { get { return items.Count; } }
+        public int Count
+        {
+            get { return items.Count; }
+        }
 
-        public bool IsEmpty { get { return items.Count == 0; } }
+        public bool IsEmpty
+        {
+            get { return items.Count == 0; }
+        }
 
-        public T First { get { return items[0]; } }
+        public T First
+        {
+            get { return items[0]; }
+        }
 
         public void Clear() => items.Clear();
 
@@ -42,7 +50,6 @@ namespace Core
 
         public T Pop()
         {
-
             //if there are more than 1 items, returned item will be first in tree.
             //then, add last item to front of tree, shrink the list
             //and find correct index in tree for first item.
@@ -59,6 +66,7 @@ namespace Core
             {
                 item = last;
             }
+
             return item;
         }
 
@@ -81,6 +89,7 @@ namespace Core
                 items[pos] = parent;
                 pos = parentpos;
             }
+
             items[pos] = newitem;
         }
 
@@ -106,6 +115,7 @@ namespace Core
                 //move down the tree and repeat.
                 childpos = 2 * pos + 1;
             }
+
             //the child position for the new item.
             items[pos] = newitem;
             SiftDown(startpos, pos);

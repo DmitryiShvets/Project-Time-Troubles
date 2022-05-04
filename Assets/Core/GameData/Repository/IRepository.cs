@@ -1,4 +1,3 @@
-
 namespace Core
 {
     public interface IRepository
@@ -17,7 +16,5 @@ namespace Core
         /// Called when all repositories and interactors started;
         /// </summary>
         void OnStart();
-        
-     
     }
 }

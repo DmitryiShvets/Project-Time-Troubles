@@ -19,7 +19,7 @@ namespace Core
 
         Dictionary<GameObject, HashSet<string>> conversations = new Dictionary<GameObject, HashSet<string>>();
 
-  public  Dictionary<string, int> inventory = new Dictionary<string, int>();
+        public Dictionary<string, int> inventory = new Dictionary<string, int>();
         Dictionary<string, Sprite> inventorySprites = new Dictionary<string, Sprite>();
 
         HashSet<string> storyItems = new HashSet<string>();
