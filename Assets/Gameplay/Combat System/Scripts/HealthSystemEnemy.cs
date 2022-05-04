@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Gameplay;
 using UnityEngine;
 using TMPro;
+using UnityEditor;
+using UnityEngine.UIElements;
 
 public class HealthSystemEnemy : MonoBehaviour
 {
@@ -10,12 +12,16 @@ public class HealthSystemEnemy : MonoBehaviour
     public int hp;
     public GameObject particleEffect;
     public GameObject HitPointDamage;
+    public GameObject pref;
     public bool start;
     public bool start2;
     public bool move;
+    private Vector3 _position;
 
     void Start()
     {
+        _position = transform.localPosition;
+        //   _transform.position = gameObject.transform.position;
         instance = this;
     }
 
@@ -44,11 +50,20 @@ public class HealthSystemEnemy : MonoBehaviour
                 Instantiate(particleEffect, transform.position, transform.rotation);
             }
 
-            Bank.AddCoins(this, 100);
-            Destroy(gameObject);
+            Destroy();
         }
     }
 
+    private void Destroy()
+    {
+        if (gameObject)
+        {
+            Bank.AddCoins(this, 100);
+            GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
+            obh.transform.position = _position;
+            Destroy(gameObject);
+        }
+    }
 
     private void ResetBool()
     {

@@ -8,7 +8,7 @@ using UnityEditor;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private GameObject _item;
+  //  [SerializeField] private GameObject _item;
     public bool isAlive;
 
     public GameObject obj;
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _item.SetActive(false);
+    //    _item.SetActive(false);
         rBody = GetComponent<Rigidbody2D>();
         timer = changeTimer ;
         aliveState.ResetState();
@@ -54,6 +54,6 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {   
-        _item.SetActive(true);
+     //  if(_item) _item.SetActive(true);
     }
 }
