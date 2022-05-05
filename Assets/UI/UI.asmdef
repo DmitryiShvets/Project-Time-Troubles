@@ -1,0 +1,21 @@
+{
+    "name": "Ui",
+    "rootNamespace": "",
+    "references": [
+        "UnityEngine.UIElementsModule",
+        "Actions",
+        "Unity.InputSystem",
+        "Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        ""
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
