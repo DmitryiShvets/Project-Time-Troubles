@@ -11,6 +11,8 @@ namespace UI
         private Button _startButton;
 
         private Button _exitButton;
+        
+        private Button _settingsButton;
 
         private VisualElement _rootMenu;
 
@@ -28,8 +30,10 @@ namespace UI
             // root = GetComponent<UIDocument>().rootVisualElement;
             _startButton = _rootMenu.Q<Button>("start-button");
             _exitButton = _rootMenu.Q<Button>("exit-button");
+            _settingsButton = _rootMenu.Q<Button>("settings-button");
             _startButton.clicked += StartBtnPressed;
             _exitButton.clicked += ExitBtnPressed;
+            _settingsButton.clicked += SettingsBtnPressed;
         }
 
         // Update is called once per frame
@@ -46,15 +50,19 @@ namespace UI
         //    SceneManager.LoadScene("Scenes/home");
 
             // ActivateMenu();
-            Debug.Log("Game started");
+        }
+
+        void SettingsBtnPressed()
+        {
+            Game.LoadScene(Game.GetLastScene());
         }
 
         void ExitBtnPressed()
         {
             Application.Quit();
-            Debug.Log("Game Closed");
         }
 
+        
         public void ActivateMenu()
         {
             if (_menuVisible)

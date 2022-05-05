@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects;
 using Tools;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Core
 {
@@ -9,16 +11,30 @@ namespace Core
     {
         private static SceneManagerBase sceneManager { get; set; }
 
+        private static ActualSceneState _scriptableObject;
+
         public static void Run()
         {
             sceneManager = new SceneManagerRoot();
             Coroutines.StartRoutine(InitializeGameRoutine());
+            _scriptableObject = Resources.Load<ActualSceneState>("LastScene");
         }
-        
+
+        public static string GetActualScene()
+        {
+            return sceneManager.actyalScene.GetActualScene();
+        }
+
+        public static string GetLastScene()
+        {
+            return _scriptableObject.lastScene;
+        }
+
         //Загружает новую сцену
         public static void LoadScene(string sceneName)
         {
             sceneManager.LoadNewSceneAsync(sceneName);
+            _scriptableObject.lastScene = sceneName;
         }
 
         private static IEnumerator InitializeGameRoutine()

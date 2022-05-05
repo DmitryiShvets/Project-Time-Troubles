@@ -5,6 +5,8 @@ namespace Core
     public class GameStartController : MonoBehaviour
     {
         private static bool isInitialized;
+        [SerializeField]
+        private string sceneName="Temple";
 
         void Awake()
         {
@@ -13,9 +15,11 @@ namespace Core
                 isInitialized = true;
                 DontDestroyOnLoad(gameObject);
                 Game.Run();
+               // Game.LoadScene(sceneName);
             }
             else
             {
+              
                 Destroy(gameObject);
             }
         }

@@ -19,6 +19,11 @@ namespace Core
             _repositoryBase = new RepositoryBase(sceneConfig);
         }
 
+        public string GetActualScene()
+        {
+            return _sceneConfig.sceneName;
+        }
+        
         public Coroutine InitializeAsync()
         {
             return Coroutines.StartRoutine(InitializeRoutine());
