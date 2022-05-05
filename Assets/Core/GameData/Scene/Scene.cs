@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Core;
 using Tools;
 using UnityEngine;
@@ -17,8 +18,12 @@ namespace Core
             _sceneConfig = sceneConfig;
             _interactorBase = new InteractorBase(sceneConfig);
             _repositoryBase = new RepositoryBase(sceneConfig);
+        
         }
 
+      
+       
+        
         public string GetActualScene()
         {
             return _sceneConfig.sceneName;

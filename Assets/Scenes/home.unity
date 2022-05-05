@@ -4974,6 +4974,10 @@ PrefabInstance:
       propertyPath: pref
       value: 
       objectReference: {fileID: 2032187431607821279, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
+    - target: {fileID: 4417745194898796523, guid: 79bd5243c211eb94280860711a6d10d4, type: 3}
+      propertyPath: aliveState
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a7d7dbbc08c14541a40b60f25b556f3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79bd5243c211eb94280860711a6d10d4, type: 3}
 --- !u!1 &1127268149 stripped
@@ -14296,6 +14300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2122133862945460035, guid: 8270b4b874f379e4db476256f7050d59, type: 3}
+      propertyPath: movementSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3381686104203753895, guid: 8270b4b874f379e4db476256f7050d59, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -14338,6 +14346,10 @@ PrefabInstance:
       propertyPath: pref
       value: 
       objectReference: {fileID: 2032187431607821279, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
+    - target: {fileID: 934079875723413626, guid: e2f31c9268324614c90a92fa640a0a3e, type: 3}
+      propertyPath: aliveState
+      value: 
+      objectReference: {fileID: 11400000, guid: 447cb66743803fc4087598115d70d429, type: 2}
     - target: {fileID: 3159287955050146163, guid: e2f31c9268324614c90a92fa640a0a3e, type: 3}
       propertyPath: m_Name
       value: SlimeEnemy

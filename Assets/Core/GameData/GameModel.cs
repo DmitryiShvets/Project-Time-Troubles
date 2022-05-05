@@ -39,7 +39,7 @@ namespace Core
             inventory.TryGetValue(name, out c);
             return c;
         }
-
+        //Добавляет только предмет по ссылке
         public void AddInventoryItem(InventoryItem item)
         {
             int c = 0;
@@ -47,6 +47,16 @@ namespace Core
             c += item.count;
             inventorySprites[item.name] = item.sprite;
             inventory[item.name] = c;
+            inventoryController.Refresh();
+        }
+        //Добавляет любой предмет
+        public void AddInventoryItem(string name,int count,Sprite icon)
+        {
+            int c = 0;
+            inventory.TryGetValue(name, out c);
+            c += count;
+            inventorySprites[name] = icon;
+            inventory[name] = c;
             inventoryController.Refresh();
         }
 

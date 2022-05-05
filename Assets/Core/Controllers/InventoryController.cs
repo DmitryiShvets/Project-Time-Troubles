@@ -42,11 +42,11 @@ namespace Core
                 e.gameObject.SetActive(true);
                 cursor.y -= stepSize;
             }
-
-            if (displayCount > 0)
-                sizer.Show();
-            else
-                sizer.Hide();
+            //
+            // if (displayCount > 0)
+            //     sizer.Show();
+            // else
+            //     sizer.Hide();
         }
     }
 }

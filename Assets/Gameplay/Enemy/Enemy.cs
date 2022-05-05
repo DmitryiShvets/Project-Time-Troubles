@@ -1,5 +1,4 @@
 using System;
-using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Core;
@@ -8,14 +7,7 @@ using UnityEditor;
 
 public class Enemy : MonoBehaviour
 {
-  //  [SerializeField] private GameObject _item;
-    public bool isAlive;
-
-    public GameObject obj;
-
     private float timer;
-
-    [FormerlySerializedAs("AliveState")] public AliveState aliveState;
 
     public float changeTimer;
 
@@ -29,12 +21,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    //    _item.SetActive(false);
         rBody = GetComponent<Rigidbody2D>();
-        timer = changeTimer ;
-        aliveState.ResetState();
-
-        if (!aliveState.isAlive) Destroy(gameObject);
+        timer = changeTimer;
     }
 
     // Update is called once per frame
@@ -50,10 +38,5 @@ public class Enemy : MonoBehaviour
         var pos = rBody.position;
         pos.x = pos.x + (Time.deltaTime * direction * speed);
         rBody.MovePosition(pos);
-    }
-
-    private void OnDestroy()
-    {   
-     //  if(_item) _item.SetActive(true);
     }
 }

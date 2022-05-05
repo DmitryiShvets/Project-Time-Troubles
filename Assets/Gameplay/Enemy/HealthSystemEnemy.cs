@@ -4,30 +4,33 @@ using Gameplay;
 using UnityEngine;
 using TMPro;
 using UnityEditor;
+using ScriptableObjects;
 using UnityEngine.UIElements;
 
 public class HealthSystemEnemy : MonoBehaviour
 {
-    public static HealthSystemEnemy instance;
+//    public static HealthSystemEnemy instance;
     public int hp;
     public GameObject particleEffect;
     public GameObject HitPointDamage;
     public GameObject pref;
     public bool start;
-    public bool start2;
-    public bool move;
+   // public bool start2;
+   // public bool move;
     private Vector3 _position;
+    public AliveState aliveState;
 
     void Start()
     {
         _position = transform.localPosition;
         //   _transform.position = gameObject.transform.position;
-        instance = this;
+    //    instance = this;
+        if (!aliveState.isAlive) Destroy(gameObject);
     }
 
     public void Damage(int damage)
     {
-        start2 = true;
+      //  start2 = true;
 
         hp -= damage;
 
@@ -58,6 +61,7 @@ public class HealthSystemEnemy : MonoBehaviour
     {
         if (gameObject)
         {
+            aliveState.isAlive = false;
             Bank.AddCoins(this, 100);
             GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
             obh.transform.position = _position;
@@ -67,7 +71,7 @@ public class HealthSystemEnemy : MonoBehaviour
 
     private void ResetBool()
     {
-        start2 = false;
+    //    start2 = false;
         start = false;
     }
 }

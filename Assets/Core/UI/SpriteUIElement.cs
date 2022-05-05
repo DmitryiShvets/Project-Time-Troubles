@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.U2D;
 
 namespace Core
@@ -25,7 +26,7 @@ namespace Core
         Vector2 animationOffset;
 
         float t = 0;
-        float direction = 0;
+        float direction = -1;
 
         [ContextMenu("Show")]
         public void Show()
@@ -56,12 +57,17 @@ namespace Core
 
         void Update()
         {
+            if (Keyboard.current.tabKey.wasPressedThisFrame || Keyboard.current.iKey.wasPressedThisFrame)
+            {
+                Toggle();
+            }
+
             if (camera != null)
             {
                 t = Mathf.Clamp01(t + (direction * Time.deltaTime / animationDuration));
 
                 animationOffset = Vector2.LerpUnclamped(hideOffset, Vector3.zero, curve.Evaluate(t));
-                var p = (Vector2)camera.ViewportToWorldPoint(anchor + offset + animationOffset);
+                var p = (Vector2) camera.ViewportToWorldPoint(anchor + offset + animationOffset);
                 transform.position = p;
                 if (pixelPerfectCamera != null && Application.isPlaying)
                 {

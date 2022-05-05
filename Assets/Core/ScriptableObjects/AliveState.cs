@@ -8,15 +8,9 @@ namespace ScriptableObjects
     {
         public bool isAlive;
 
-        private void Reset()
-        {
-            throw new NotImplementedException();
-        }
-
         public void ResetState()
         {
             this.isAlive = true;
         }
-        
     }
 }
