@@ -20,7 +20,7 @@ namespace Core
         Dictionary<GameObject, HashSet<string>> conversations = new Dictionary<GameObject, HashSet<string>>();
 
         public Dictionary<string, int> inventory = new Dictionary<string, int>();
-        Dictionary<string, Sprite> inventorySprites = new Dictionary<string, Sprite>();
+        public Dictionary<string, Sprite> inventorySprites = new Dictionary<string, Sprite>();
 
         HashSet<string> storyItems = new HashSet<string>();
 
@@ -39,6 +39,7 @@ namespace Core
             inventory.TryGetValue(name, out c);
             return c;
         }
+
         //Добавляет только предмет по ссылке
         public void AddInventoryItem(InventoryItem item)
         {
@@ -49,8 +50,9 @@ namespace Core
             inventory[item.name] = c;
             inventoryController.Refresh();
         }
+
         //Добавляет любой предмет
-        public void AddInventoryItem(string name,int count,Sprite icon)
+        public void AddInventoryItem(string name, int count, Sprite icon)
         {
             int c = 0;
             inventory.TryGetValue(name, out c);

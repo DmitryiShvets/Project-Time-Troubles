@@ -2,6 +2,8 @@
 using System.Collections;
 using System.IO;
 using System.Threading;
+using System.Xml.Linq;
+using Core;
 using UnityEngine;
 using Tools;
 
@@ -10,6 +12,9 @@ namespace StorageSystem
     public sealed class FileStorage : Storage
     {
         public string filePath { get; }
+
+
+        GameModel model = Schedule.GetModel<GameModel>();
 
         public FileStorage(string fileName)
         {
@@ -24,40 +29,13 @@ namespace StorageSystem
 
         #region SAVE
 
-        protected override void SaveInternal()
+        public override void Save()
         {
-            var file = File.Create(filePath);
-            formatter.Serialize(file, data);
-            file.Close();
-        }
-
-        protected override void SaveAsyncInternal(Action callback = null)
-        {
-            var thread = new Thread(() => SaveDataTaskThreaded(callback));
-            thread.Start();
-        }
-
-        private void SaveDataTaskThreaded(Action callback)
-        {
-            Save();
-            callback?.Invoke();
-        }
-
-        protected override Coroutine SaveWithRoutineInternal(Action callback = null)
-        {
-            return Coroutines.StartRoutine(SaveRoutine(callback));
-        }
-
-        private IEnumerator SaveRoutine(Action callback)
-        {
-            var threadEnded = false;
-
-            SaveAsync(() => { threadEnded = true; });
-
-            while (!threadEnded)
-                yield return null;
-
-            callback?.Invoke();
+            var root = new XElement("root");
+            root.Add(_dictSurrogate.Serialize(model.inventory));
+            root.Add(_dictSurrogate.Serialize(model.inventorySprites));
+            var data = new XDocument(root);
+            File.WriteAllText(filePath, data.ToString());
         }
 
         #endregion
@@ -65,50 +43,17 @@ namespace StorageSystem
 
         #region LOAD
 
-        protected override void LoadInternal()
+        public override void Load()
         {
-            if (!File.Exists(filePath))
+            if (File.Exists(filePath))
             {
-                var gameDataByDefault = new GameData();
-                data = gameDataByDefault;
-                Save();
+                var data = File.ReadAllText(filePath);
+                var inventory = _dictSurrogate.DeserializeItems(data);
+                var inventorySprites = _dictSurrogate.DeserializeSprite(data);
+                model.inventory = inventory;
+                model.inventorySprites = inventorySprites;
+                model.inventoryController.Refresh();
             }
-
-            var file = File.Open(filePath, FileMode.Open);
-            data = (GameData) formatter.Deserialize(file);
-            file.Close();
-        }
-
-
-        protected override void LoadAsyncInternal(Action<GameData> callback = null)
-        {
-            var thread = new Thread(() => LoadDataTaskThreaded(callback));
-            thread.Start();
-        }
-
-        private void LoadDataTaskThreaded(Action<GameData> callback)
-        {
-            Load();
-            callback?.Invoke(data);
-        }
-
-
-        protected override Coroutine LoadWithRoutineInternal(Action<GameData> callback = null)
-        {
-            return Coroutines.StartRoutine(LoadRoutine(callback));
-        }
-
-        private IEnumerator LoadRoutine(Action<GameData> callback)
-        {
-            var threadEnded = false;
-            var gameData = new GameData();
-
-            LoadAsync((loadedData) => { threadEnded = true; });
-
-            while (!threadEnded)
-                yield return null;
-
-            callback?.Invoke(gameData);
         }
 
         #endregion
