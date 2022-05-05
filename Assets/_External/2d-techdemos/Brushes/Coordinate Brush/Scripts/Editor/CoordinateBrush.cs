@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using  UnityEditor;
 namespace UnityEditor
 {
     [CustomGridBrush(true, false, false, "Coordinate Brush")]
