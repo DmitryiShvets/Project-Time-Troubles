@@ -8,6 +8,12 @@ namespace Gameplay
 {
     public class PlayerController : MonoBehaviour
     {
+        public HealthBar healthBar;
+
+        private void Start()
+        {
+            healthBar.SetMaxHealth(5);
+        }
         public void TakeDamage(int damage)
         {
             if (!Player.isInitialized)
@@ -21,6 +27,8 @@ namespace Gameplay
             {
                 Die();
             }
+
+            healthBar.SetHealth(Player.GetHealth);
         }
 
         private void Die()

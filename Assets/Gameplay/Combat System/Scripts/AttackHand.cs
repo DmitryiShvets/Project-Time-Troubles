@@ -50,7 +50,6 @@ public class AttackHand : MonoBehaviour
 
         if (Keyboard.current.fKey.wasPressedThisFrame)
         {
-            //name_anim = "SlashEffectRight";
             //  start = true;
             Instantiate(attackZonePrefab, colliderAttackZoneObject.position, colliderAttackZoneObject.rotation);
             animator.Play(name_anim);
