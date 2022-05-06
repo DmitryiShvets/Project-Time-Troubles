@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core;
@@ -12,8 +13,16 @@ namespace Gameplay
 
         private void Start()
         {
-            healthBar.SetMaxHealth(5);
+            StartCoroutine(InitHP());
         }
+
+        IEnumerator InitHP()
+        {
+            yield return new WaitForSeconds(0.001f);
+            healthBar.SetHealth(Player.GetHealth);
+        }
+
+
         public void TakeDamage(int damage)
         {
             if (!Player.isInitialized)

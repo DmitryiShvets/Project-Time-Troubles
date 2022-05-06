@@ -11,7 +11,7 @@ namespace Core
 
         public override void OnInitialize()
         {
-            //  Health = PlayerPrefs.GetInt(KEY, 5); //Пока не инициализируем из памяти для тестов
+            //Health = PlayerPrefs.GetInt(KEY, 5); //Пока не инициализируем из памяти для тестов
             Health = 5;
             Debug.Log($"PlayerHealthRepository - Initialize. Current hp - {Health}");
         }
