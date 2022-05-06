@@ -9,6 +9,7 @@ namespace Core
 {
     public abstract class SceneManagerBase
     {
+        
         public Scene actyalScene { get; private set; }
 
         public bool isLoading { get; private set; }
@@ -44,7 +45,7 @@ namespace Core
             if (isLoading) throw new Exception("Scene is loading now!");
 
             var sceneName = SceneManager.GetActiveScene().name;
-            
+
             var config = _sceneConfigsMap[sceneName];
             return Coroutines.StartRoutine(LoadCurrentSceneRoutine(config));
         }
@@ -81,7 +82,7 @@ namespace Core
         {
             return actyalScene.GetRepository<T>();
         }
-        
+
         public T GetInteractor<T>() where T : Interactor
         {
             return actyalScene.GetInteractor<T>();

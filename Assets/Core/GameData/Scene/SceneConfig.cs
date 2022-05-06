@@ -12,6 +12,19 @@ namespace Core
 
         public abstract string sceneName { get; }
 
+        public void FillInteractorMap(ref Dictionary<Type, Interactor> map)
+        {
+            CreateInteractor<BankInteractor>(map);
+            CreateInteractor<PlayerHealthInteractor>(map);
+          
+        }
+        public void FillRepositoryMap(ref Dictionary<Type, Repository> map)
+        {
+            CreateRepository<BankRepository>(map);
+            CreateRepository<PlayerHealthRepository>(map);
+          
+        }
+
         public void CreateInteractor<T>(Dictionary<Type, Interactor> interactorsMap)
             where T : Interactor, new()
         {

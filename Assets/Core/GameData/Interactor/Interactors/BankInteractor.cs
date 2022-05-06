@@ -1,4 +1,3 @@
-
 using Gameplay;
 
 namespace Core
@@ -32,5 +31,4 @@ namespace Core
             _bankRepository.Save();
         }
     }
-    
 }
