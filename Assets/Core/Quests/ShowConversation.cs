@@ -13,21 +13,23 @@ namespace Core.Events
     {
         public NPCController npc; //
         public GameObject gameObject; //Ссылка на игровой обькт вызвавший это событие
-        public ConversationScript conversation; //Диалог который нужно отрисовать
-        public string conversationItemKey;
+        public ConversationScript conversation; //скрипт который мы передали при вызове ивента
+        public string conversationItemKey; //id диалога который нужно отрисовать
 
         public override void Execute()
         {
             ConversationPiece ci;
-            //default to first conversation item if no key is specified, else find the right conversation item.
+            //По умолчанию показывается первый диалог у нпс если ключ пустой иначе находится уже показанный диалог
             if (string.IsNullOrEmpty(conversationItemKey))
-                ci = conversation.items[0];
+                ci = conversation.items[0]; //Текущие диалоги у нпс
             else
                 ci = conversation.Get(conversationItemKey);
 
 
            
-            //Добавляет квест в очередь если он не начат или не завершен
+            //Если у диалога есть квест то обрабатываем это 
+            // если этот квест еще не начат то вызываем ивент StartQuest
+            // если этот квест уже завершен то присваиваем диалогу первый диалог при завершении квеста
             if (ci.quest != null)
             {
                 if (!ci.quest.isStarted)
@@ -39,10 +41,11 @@ namespace Core.Events
                 if (ci.quest.isFinished && ci.quest.questCompletedConversation != null)
                 {
                     ci = ci.quest.questCompletedConversation.items[0];
+                    
                 }
             }
 
-            //calculate a position above the player's sprite.
+            //вычисляем позицию возле игрока где рисовать диалог
             var position = gameObject.transform.position;
             var sr = gameObject.GetComponent<SpriteRenderer>();
             if (sr != null)
@@ -50,7 +53,7 @@ namespace Core.Events
                 position += new Vector3(0, 2 * sr.size.y + (ci.options.Count == 0 ? 0.1f : 0.2f), 0);
             }
 
-            //show the dialog
+            //отрисовываем текст
             model.dialog.Show(position, ci.text);
             var animator = gameObject.GetComponent<Animator>();
             if (animator != null)
@@ -68,36 +71,36 @@ namespace Core.Events
             //speak some gibberish at two speech syllables per word.
             UserInterfaceAudio.Speak(gameObject.GetInstanceID(), ci.text.Split(' ').Length * 2, 1);
 
-            //if this conversation item has an id, register it in the model.
+            //если у диалога есть id то регистрируем его в моделе
             if (!string.IsNullOrEmpty(ci.id))
                 model.RegisterConversation(gameObject, ci.id);
 
-            //setup conversation choices, if any.
+            //отрисовывает кнопки диалога (ответы персонажа)
             if (ci.options.Count == 0)
             {
-                //do nothing
+                //ни делаем ничего
             }
             else
             {
-                //Create option buttons below the dialog.
+                //Создает кнопку отвеса чу чуть ниже диалога
                 for (var i = 0; i < ci.options.Count; i++)
                 {
                     model.dialog.SetButton(i, ci.options[i].text);
                 }
 
-                //if user pickes this option, schedule an event to show the new option.
+                //устанавливем каллбек когда игрок нажал на кнопку (выбрал вариант ответа)
                 model.dialog.onButton += (index) =>
                 {
-                    //hide the old text, so we can display the new.
+                    //скрываем текст
                     model.dialog.Hide();
 
-                    //This is the id of the next conversation piece.
+                    //получаем id следующего диалога который нужно отрисовать.
                     var next = ci.options[index].targetId;
 
-                    //Make sure it actually exists!
+                    //проверка что этот диалог существуюет!
                     if (conversation.ContainsKey(next))
                     {
-                        //find the conversation piece object and setup a new event with correct parameters.
+                        //вызывает новый ивент ShowConversation что бы отрисовать следующий диалог
                         var c = conversation.Get(next);
                         var ev = Schedule.Add<ShowConversation>(0.25f);
                         ev.conversation = conversation;
@@ -112,7 +115,7 @@ namespace Core.Events
 
             }
 
-            //if conversation has an icon associated, this will display it.
+            //если у диалога есть иконка отрисовываем её
             model.dialog.SetIcon(ci.image);
         }
 

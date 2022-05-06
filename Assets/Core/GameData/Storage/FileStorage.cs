@@ -34,6 +34,7 @@ namespace StorageSystem
             var root = new XElement("root");
             root.Add(_dictSurrogate.Serialize(model.inventory));
             root.Add(_dictSurrogate.Serialize(model.inventorySprites));
+            root.Add(_npcSurrogate.Serialize(model.npsList));
             var data = new XDocument(root);
             File.WriteAllText(filePath, data.ToString());
         }
@@ -50,9 +51,11 @@ namespace StorageSystem
                 var data = File.ReadAllText(filePath);
                 var inventory = _dictSurrogate.DeserializeItems(data);
                 var inventorySprites = _dictSurrogate.DeserializeSprite(data);
+                var npc = _npcSurrogate.DeserializeItems(data);
                 model.inventory = inventory;
                 model.inventorySprites = inventorySprites;
                 model.inventoryController.Refresh();
+                model.InitializeNpc(npc);
             }
         }
 

@@ -18,6 +18,7 @@ namespace Core
         private void Start()
         {
             _storage = new FileStorage(_storageFileName);
+            
             Debug.Log(_storage.filePath);
             _storage.Load();
         }

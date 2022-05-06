@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Core
@@ -16,6 +17,7 @@ namespace Core
         public InputController input;
         public InventoryController inventoryController;
         public MusicController musicController;
+        public List<NPCController> npsList;
 
         Dictionary<GameObject, HashSet<string>> conversations = new Dictionary<GameObject, HashSet<string>>();
 
@@ -26,6 +28,21 @@ namespace Core
 
         public IEnumerable<string> InventoryItems => inventory.Keys;
 
+        public void InitializeNpc( Dictionary<string, Dictionary<string, bool>> map)
+        {
+            foreach (var npc in npsList)
+            {
+                if (map.ContainsKey(npc.name))
+                {
+                    foreach (var quest in npc.quests)
+                    {
+                        quest.isFinished = map[npc.name][quest.name];
+                    }
+                }
+                npc.Check();
+            }
+        }
+        
         public Sprite GetInventorySprite(string name)
         {
             Sprite s;

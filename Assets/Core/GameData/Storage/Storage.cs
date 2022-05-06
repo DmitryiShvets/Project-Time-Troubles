@@ -9,6 +9,7 @@ namespace StorageSystem
     {
         public static DictionarySerializationSurrogate _dictSurrogate = new DictionarySerializationSurrogate();
 
+        public static NpcSerializationSurrogate _npcSurrogate = new NpcSerializationSurrogate();
         public abstract void Save();
 
         public abstract void Load();
