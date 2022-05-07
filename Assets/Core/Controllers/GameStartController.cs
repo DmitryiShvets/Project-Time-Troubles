@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Core
 {
@@ -18,6 +19,11 @@ namespace Core
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void Start()
+        {
+            Game.AddItem();
         }
     }
 }

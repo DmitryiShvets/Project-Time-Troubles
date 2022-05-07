@@ -16,13 +16,25 @@ namespace Core
         Quest activeQuest = null;
 
         //Массив квестов у нпс которые
-        Quest[] quests;
+        public Quest[] quests;
 
         GameModel model = Schedule.GetModel<GameModel>();
 
         void OnEnable()
         {
             quests = gameObject.GetComponentsInChildren<Quest>();
+            Check();
+        }
+        //Проверка завершенных квестов если квест у нпс завершен то из списка диалогов удаляется диалог начинающий этот квест
+        public void Check()
+        {
+            foreach (var q in quests)
+            {
+                if (q.isFinished)
+                {
+                    conversationList.Remove(conversationList.First());
+                }
+            }
         }
 
         //При попадании игрока в коллайдер происходит вызов ивента "Показать диалог"
@@ -32,10 +44,11 @@ namespace Core
             if (c != null)
             {
                 Debug.Log("QUEST GIVER!");
+
                 var ev = Schedule.Add<ShowConversation>();
                 ev.conversation = c; //Текущий диалог
                 ev.npc = this; // У кого взят квест
-                ev.gameObject = gameObject;  // У кого взят квест
+                ev.gameObject = gameObject; // У кого взят квест
                 ev.conversationItemKey = "";
             }
         }
@@ -59,6 +72,7 @@ namespace Core
             if (activeQuest != null) throw new System.Exception("Only one quest should be active.");
             activeQuest = q;
         }
+
         //Возвращает диалог который будет отрисовываться на экране 
         ConversationScript GetConversation()
         {
@@ -73,8 +87,8 @@ namespace Core
                     {
                         CompleteQuest(q);
                         //Когда текущий квест у нпс завершается то удаляется диалог который выдает этот квест
-                        conversationList.Remove(conversationList.First()); 
-                            
+                        conversationList.Remove(conversationList.First());
+
                         return q.questCompletedConversation;
                     }
 

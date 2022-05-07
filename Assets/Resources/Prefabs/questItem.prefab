@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2032187431607821266}
   - component: {fileID: 2032187431607821277}
   - component: {fileID: 2032187431607821276}
+  - component: {fileID: 634757203493841146}
   m_Layer: 0
   m_Name: questItem
   m_TagString: Untagged
@@ -114,3 +115,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: 1
   sprite: {fileID: 8033092973025764044, guid: db608d0f8cf9f31448dafbee787b0e75, type: 3}
+--- !u!114 &634757203493841146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032187431607821279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34aab08274d04fa3a1289ba0ca919b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1

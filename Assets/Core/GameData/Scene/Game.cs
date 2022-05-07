@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using ScriptableObjects;
+using StorageSystem;
 using Tools;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Core
 {
@@ -9,16 +13,69 @@ namespace Core
     {
         private static SceneManagerBase sceneManager { get; set; }
 
+        private static ActualSceneState _scriptableObject;
+
+        private static PositionState _positionState;
+
+        private static DictionarySerializationSurrogate _dictSurrogate = new DictionarySerializationSurrogate();
+
+
         public static void Run()
         {
             sceneManager = new SceneManagerRoot();
             Coroutines.StartRoutine(InitializeGameRoutine());
+            _scriptableObject = Resources.Load<ActualSceneState>("LastScene");
+            _positionState = Resources.Load<PositionState>("PositonState");
         }
-        
+
+        public static void StartGame()
+        {
+            LoadScene("home");
+        }
+
+        public static void ContinueGame()
+        {
+            LoadScene(GetLastScene());
+        }
+
+        public static void AddItem()
+        {
+            MessageBar.Show($"You collected: questItem x 2");
+            GameModel model = Schedule.GetModel<GameModel>();
+            Sprite[] sprite = Resources.LoadAll<Sprite>("Items");
+            // model.AddInventoryItem("questItem", 2, sprite.First());
+            // model.AddInventoryItem("questItem1",2,sprite[1]);
+            // model.AddInventoryItem("questItem2",2,sprite.First());
+            // model.AddInventoryItem("questItem3",2,sprite.First());
+            // model.AddInventoryItem("questItem4",2,sprite.First());
+        }
+
+        public static string GetActualScene()
+        {
+            return sceneManager.actyalScene.GetActualScene();
+        }
+
+        public static string GetLastScene()
+        {
+            return _scriptableObject.lastScene;
+        }
+
+        public static Vector3 GetPlayerPosition()
+        {
+            return _positionState.pos;
+        }
+
+        public static void SaveScene()
+        {
+            sceneManager.Save();
+        }
+
         //Загружает новую сцену
         public static void LoadScene(string sceneName)
         {
+            SaveScene();
             sceneManager.LoadNewSceneAsync(sceneName);
+            _scriptableObject.lastScene = sceneName;
         }
 
         private static IEnumerator InitializeGameRoutine()

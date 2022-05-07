@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core;
@@ -8,6 +9,20 @@ namespace Gameplay
 {
     public class PlayerController : MonoBehaviour
     {
+        public HealthBar healthBar;
+
+        private void Start()
+        {
+            StartCoroutine(InitHP());
+        }
+
+        IEnumerator InitHP()
+        {
+            yield return new WaitForSeconds(0.001f);
+            healthBar.SetHealth(Player.GetHealth);
+        }
+
+
         public void TakeDamage(int damage)
         {
             if (!Player.isInitialized)
@@ -21,6 +36,8 @@ namespace Gameplay
             {
                 Die();
             }
+
+            healthBar.SetHealth(Player.GetHealth);
         }
 
         private void Die()

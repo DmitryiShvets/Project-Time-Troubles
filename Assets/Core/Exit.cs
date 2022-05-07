@@ -3,32 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using Core;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
-{   //  Scenes/Temple
+{
+    //  Scenes/Temple
     public string lvlName;
+    private bool canUse;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        canUse = false;
+        StartCoroutine(Delay());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Delay() 
     {
-        
+        yield return new WaitForSeconds(1);
+        canUse = true;
     }
 
-   
-    public void OnCollisionStay2D(Collision2D other)
-    {
-        
-    }
-    
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Game.LoadScene(lvlName);
+        if (canUse) Game.LoadScene(lvlName);
         //  SceneManager.LoadScene(lvlName);
     }
 }

@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
+using System.Xml.Linq;
+using Core;
 using UnityEngine;
 using Tools;
 
@@ -10,6 +14,9 @@ namespace StorageSystem
     public sealed class FileStorage : Storage
     {
         public string filePath { get; }
+
+
+        GameModel model = Schedule.GetModel<GameModel>();
 
         public FileStorage(string fileName)
         {
@@ -24,40 +31,35 @@ namespace StorageSystem
 
         #region SAVE
 
-        protected override void SaveInternal()
+        public override void Save(string sceneName)
         {
-            var file = File.Create(filePath);
-            formatter.Serialize(file, data);
-            file.Close();
-        }
+            var root = new XElement("root");
+            root.Add(_dictSurrogate.Serialize(model.inventory)); //сохранение предметов в инвентаре
+            root.Add(_dictSurrogate.Serialize(model.inventorySprites)); //сохранение иконок предметов в инвентаре
 
-        protected override void SaveAsyncInternal(Action callback = null)
-        {
-            var thread = new Thread(() => SaveDataTaskThreaded(callback));
-            thread.Start();
-        }
+            XElement sceneXElement = new XElement(Game.GetActualScene()); //сохранение всех квестов на текущей локации
+            sceneXElement.Add(_npcSurrogate.Serialize(model.npsList));
+            sceneXElement.Add(_gameStateSurrogate.SerializationPlayerLocation(Game.GetPlayerPosition()));
+            sceneXElement.Add(_gameObjectSurrogate.SerializeGameObj(model.saveableGameObjects));
+            root.Add(sceneXElement);
 
-        private void SaveDataTaskThreaded(Action callback)
-        {
-            Save();
-            callback?.Invoke();
-        }
+            var scenes = GetAllScenesNpc(Game.GetActualScene()); //сохранение всех квестов на других локациях
+            if (scenes != null && scenes.Any())
+            {
+                foreach (var x in scenes)
+                {
+                    root.Add(x);
+                }
+            }
 
-        protected override Coroutine SaveWithRoutineInternal(Action callback = null)
-        {
-            return Coroutines.StartRoutine(SaveRoutine(callback));
-        }
+            //сохранение последней посещенной локации
+            XElement gameStateElement = new XElement("game-state");
+            gameStateElement.Add(_gameStateSurrogate.SerializeLastScene(Game.GetActualScene()));
 
-        private IEnumerator SaveRoutine(Action callback)
-        {
-            var threadEnded = false;
-
-            SaveAsync(() => { threadEnded = true; });
-
-            while (!threadEnded)
-                yield return null;
-
-            callback?.Invoke();
+            root.Add(gameStateElement);
+            var data = new XDocument(root);
+            File.WriteAllText(filePath, data.ToString());
+            Debug.Log(_gameStateSurrogate.SerializeLastScene(Game.GetLastScene()).ToString());
         }
 
         #endregion
@@ -65,50 +67,36 @@ namespace StorageSystem
 
         #region LOAD
 
-        protected override void LoadInternal()
+        public override void Load(string sceneName)
         {
-            if (!File.Exists(filePath))
+            if (File.Exists(filePath))
             {
-                var gameDataByDefault = new GameData();
-                data = gameDataByDefault;
-                Save();
+                var data = File.ReadAllText(filePath);
+                var inventory = _dictSurrogate.DeserializeItems(data); //загрузка предметов в инвентаре
+                var inventorySprites = _dictSurrogate.DeserializeSprite(data); //загрузка иконок предметов в инвентаре
+                var npc = _npcSurrogate.DeserializeItems(Game.GetActualScene(),
+                    data); //загрузка всех квестов на текущей локации
+                var lastScene = _gameStateSurrogate.DeserializeLastScene(data); //загрузка последней посещенной локации
+                var playerPos =
+                    _gameStateSurrogate.DeserializePlayerLocation(Game.GetActualScene(),
+                        data); //загрузка последней посещенной локации
+                var gameObjects = _gameObjectSurrogate.DeserializeGameObj(Game.GetActualScene(), data);
+                model.inventory = inventory;
+                model.inventorySprites = inventorySprites;
+                if (Game.GetActualScene() != "Menu")
+                    model.inventoryController.Refresh(); //проверка что мы сейчас не на локации меню
+                if (npc.Any()) model.InitializeNpc(npc);
+                model.InitializeLastScene(lastScene);
+                if (Game.GetActualScene() != "Menu") model.InitializeLastPosition(playerPos);
+                if (Game.GetActualScene() != "Menu") model.InitializeGameObj(gameObjects);
             }
-
-            var file = File.Open(filePath, FileMode.Open);
-            data = (GameData) formatter.Deserialize(file);
-            file.Close();
         }
 
-
-        protected override void LoadAsyncInternal(Action<GameData> callback = null)
+        private List<XElement> GetAllScenesNpc(string sceneName)
         {
-            var thread = new Thread(() => LoadDataTaskThreaded(callback));
-            thread.Start();
-        }
-
-        private void LoadDataTaskThreaded(Action<GameData> callback)
-        {
-            Load();
-            callback?.Invoke(data);
-        }
-
-
-        protected override Coroutine LoadWithRoutineInternal(Action<GameData> callback = null)
-        {
-            return Coroutines.StartRoutine(LoadRoutine(callback));
-        }
-
-        private IEnumerator LoadRoutine(Action<GameData> callback)
-        {
-            var threadEnded = false;
-            var gameData = new GameData();
-
-            LoadAsync((loadedData) => { threadEnded = true; });
-
-            while (!threadEnded)
-                yield return null;
-
-            callback?.Invoke(gameData);
+            if (!File.Exists(filePath)) return null;
+            var data = File.ReadAllText(filePath);
+            return _gameStateSurrogate.DeserializeScenes(sceneName, data);
         }
 
         #endregion
