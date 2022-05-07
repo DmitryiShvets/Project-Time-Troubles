@@ -14741,6 +14741,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1632954474}
     - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: model._dataStorage
+      value: 
+      objectReference: {fileID: 993245134}
+    - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
       propertyPath: model.inventoryController
       value: 
       objectReference: {fileID: 2115542492}

@@ -9,10 +9,11 @@ namespace Core
 {
     public abstract class SceneManagerBase
     {
-        
         public Scene actyalScene { get; private set; }
 
         public bool isLoading { get; private set; }
+        
+        GameModel model = Schedule.GetModel<GameModel>();
 
         protected Dictionary<string, SceneConfig> _sceneConfigsMap;
 
@@ -24,6 +25,10 @@ namespace Core
 
         public abstract void InitSceneMap();
 
+        public void Save()
+        {
+            model.Save(Game.GetActualScene());
+        }
 
         public Coroutine LoadNewSceneAsync(string sceneName)
         {

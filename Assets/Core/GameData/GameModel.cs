@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using ScriptableObjects;
 using UnityEngine;
 
 namespace Core
@@ -18,9 +19,9 @@ namespace Core
         public InventoryController inventoryController;
         public MusicController musicController;
         public List<NPCController> npsList;
-
+        public DataStorage _dataStorage;
+        private static ActualSceneState _scriptableObject;
         Dictionary<GameObject, HashSet<string>> conversations = new Dictionary<GameObject, HashSet<string>>();
-
         public Dictionary<string, int> inventory = new Dictionary<string, int>();
         public Dictionary<string, Sprite> inventorySprites = new Dictionary<string, Sprite>();
 
@@ -28,7 +29,7 @@ namespace Core
 
         public IEnumerable<string> InventoryItems => inventory.Keys;
 
-        public void InitializeNpc( Dictionary<string, Dictionary<string, bool>> map)
+        public void InitializeNpc(Dictionary<string, Dictionary<string, bool>> map)
         {
             foreach (var npc in npsList)
             {
@@ -39,10 +40,22 @@ namespace Core
                         quest.isFinished = map[npc.name][quest.name];
                     }
                 }
+
                 npc.Check();
             }
         }
+
+        public void Save(string sceneName)
+        {
+            _dataStorage.Save(sceneName);
+        }
         
+        public void InitializeLastScene(string lastScene)
+        {
+            _scriptableObject = Resources.Load<ActualSceneState>("LastScene");
+            _scriptableObject.lastScene = lastScene;
+        }
+
         public Sprite GetInventorySprite(string name)
         {
             Sprite s;

@@ -39861,6 +39861,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1929679096}
     - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: model._dataStorage
+      value: 
+      objectReference: {fileID: 1263149585}
+    - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
       propertyPath: model.inventoryController
       value: 
       objectReference: {fileID: 961413729}
@@ -39918,6 +39922,24 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 75616b99e6241f940878f82bcb5bb166, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+--- !u!1 &1263149584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5818361463712991466, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+  m_PrefabInstance: {fileID: 1263149583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1263149585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263149584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee78ae8456de00e42a118b8f2bd36bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _storageFileName: save.xml
 --- !u!1001 &1277906563
 PrefabInstance:
   m_ObjectHideFlags: 0

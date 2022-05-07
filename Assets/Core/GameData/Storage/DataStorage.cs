@@ -18,16 +18,21 @@ namespace Core
         private void Start()
         {
             _storage = new FileStorage(_storageFileName);
-            
+
             Debug.Log(_storage.filePath);
-            _storage.Load();
+            _storage.Load(Game.GetActualScene());
         }
 
+        public void Save(string sceneName)
+        {
+            _storage.Save(sceneName);
+        }
+    
         private void Update()
         {
             if (Keyboard.current.pKey.wasPressedThisFrame)
             {
-                _storage.Save();
+                _storage.Save(Game.GetActualScene());
             }
         }
     }

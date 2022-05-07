@@ -46,7 +46,7 @@ namespace UI
             // var scene = SceneManager.GetSceneByBuildIndex(1); 
             // SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("Player"),scene);
             
-            Game.LoadScene("home");
+            Game.StartGame();
             //SceneManager.LoadScene("Scenes/home");
 
             // ActivateMenu();
@@ -54,11 +54,12 @@ namespace UI
 
         void SettingsBtnPressed()
         {
-            Game.LoadScene(Game.GetLastScene());
+            Game.ContinueGame();
         }
 
         void ExitBtnPressed()
         {
+            Game.SaveScene();
             Application.Quit();
         }
 

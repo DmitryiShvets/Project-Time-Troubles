@@ -7,11 +7,13 @@ namespace StorageSystem
 {
     public abstract class Storage
     {
-        public static DictionarySerializationSurrogate _dictSurrogate = new DictionarySerializationSurrogate();
+        protected static readonly DictionarySerializationSurrogate _dictSurrogate = new DictionarySerializationSurrogate();
 
-        public static NpcSerializationSurrogate _npcSurrogate = new NpcSerializationSurrogate();
-        public abstract void Save();
+        protected static readonly NpcSerializationSurrogate _npcSurrogate = new NpcSerializationSurrogate();
 
-        public abstract void Load();
+        public static GameStateSerializationSurrogate _gameStateSurrogate = new GameStateSerializationSurrogate();
+        public abstract void Save(string sceneName);
+
+        public abstract void Load(string sceneName);
     }
 }

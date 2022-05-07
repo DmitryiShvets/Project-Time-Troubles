@@ -17,11 +17,21 @@ namespace Core
 
         private static DictionarySerializationSurrogate _dictSurrogate = new DictionarySerializationSurrogate();
 
+
         public static void Run()
         {
             sceneManager = new SceneManagerRoot();
             Coroutines.StartRoutine(InitializeGameRoutine());
             _scriptableObject = Resources.Load<ActualSceneState>("LastScene");
+        }
+
+        public static void StartGame()
+        {
+            LoadScene("home");
+        }
+        public static void ContinueGame()
+        {
+            LoadScene(GetLastScene());
         }
 
         public static void AddItem()
@@ -34,9 +44,6 @@ namespace Core
             // model.AddInventoryItem("questItem2",2,sprite.First());
             // model.AddInventoryItem("questItem3",2,sprite.First());
             // model.AddInventoryItem("questItem4",2,sprite.First());
-           
-            
-
         }
 
         public static string GetActualScene()
@@ -49,9 +56,15 @@ namespace Core
             return _scriptableObject.lastScene;
         }
 
+        public static void SaveScene()
+        {
+            sceneManager.Save();
+        }
+
         //Загружает новую сцену
         public static void LoadScene(string sceneName)
         {
+            SaveScene();
             sceneManager.LoadNewSceneAsync(sceneName);
             _scriptableObject.lastScene = sceneName;
         }

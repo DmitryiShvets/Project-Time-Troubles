@@ -14677,6 +14677,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1414569029}
     - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: model._dataStorage
+      value: 
+      objectReference: {fileID: 944568387}
+    - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
       propertyPath: model.npsList.Array.size
       value: 1
       objectReference: {fileID: 0}
