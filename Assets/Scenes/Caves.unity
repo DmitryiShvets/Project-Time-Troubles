@@ -262,6 +262,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8270b4b874f379e4db476256f7050d59, type: 3}
+--- !u!114 &14297666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2122133862945460035, guid: 8270b4b874f379e4db476256f7050d59, type: 3}
+  m_PrefabInstance: {fileID: 14297665}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2022b0c6e6d0d94da4e6057e91c4bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &103332649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1040,6 +1051,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 352082956}
     - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: model._PlayerMovement
+      value: 
+      objectReference: {fileID: 14297666}
+    - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
       propertyPath: model.inventoryController
       value: 
       objectReference: {fileID: 1041074663}
@@ -1114,7 +1129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee78ae8456de00e42a118b8f2bd36bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _storageFileName: save.xml
 --- !u!1001 &380136973
 PrefabInstance:
   m_ObjectHideFlags: 0

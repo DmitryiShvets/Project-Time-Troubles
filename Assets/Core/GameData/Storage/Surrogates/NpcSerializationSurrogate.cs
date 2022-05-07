@@ -8,9 +8,8 @@ namespace StorageSystem
 {
     public class NpcSerializationSurrogate
     {
-        public XElement Serialize(string sceneName,List<NPCController> npclist)
+        public XElement Serialize(List<NPCController> npclist)
         {
-            XElement result = new XElement(sceneName);
             XElement npcXElement = new XElement("npc");
             foreach (var npc in npclist)
             {
@@ -23,11 +22,11 @@ namespace StorageSystem
 
                 npcXElement.Add(xElement);
             }
-            result.Add(npcXElement);
-            return result;
+
+            return npcXElement;
         }
 
-        public Dictionary<string, Dictionary<string, bool>> DeserializeItems(string sceneName,string xDocument)
+        public Dictionary<string, Dictionary<string, bool>> DeserializeItems(string sceneName, string xDocument)
         {
             Dictionary<string, Dictionary<string, bool>> result = new Dictionary<string, Dictionary<string, bool>>();
             XElement npclist = XDocument.Parse(xDocument).Element("root")?.Element(sceneName)?.Element("npc");

@@ -19,8 +19,12 @@ namespace Core
         public InventoryController inventoryController;
         public MusicController musicController;
         public List<NPCController> npsList;
+
         public DataStorage _dataStorage;
+
+        public IsometricPlayerMovementController _PlayerMovement;
         private static ActualSceneState _scriptableObject;
+        private static PositionState _positionState;
         Dictionary<GameObject, HashSet<string>> conversations = new Dictionary<GameObject, HashSet<string>>();
         public Dictionary<string, int> inventory = new Dictionary<string, int>();
         public Dictionary<string, Sprite> inventorySprites = new Dictionary<string, Sprite>();
@@ -49,11 +53,21 @@ namespace Core
         {
             _dataStorage.Save(sceneName);
         }
-        
+
         public void InitializeLastScene(string lastScene)
         {
             _scriptableObject = Resources.Load<ActualSceneState>("LastScene");
             _scriptableObject.lastScene = lastScene;
+        }
+
+        public void InitializeLastPosition(Vector3 pos)
+        {
+            _positionState = Resources.Load<PositionState>("PositonState");
+            if (pos != Vector3.zero)
+            {
+                _positionState.pos = pos;
+                _PlayerMovement.Init();
+            }
         }
 
         public Sprite GetInventorySprite(string name)

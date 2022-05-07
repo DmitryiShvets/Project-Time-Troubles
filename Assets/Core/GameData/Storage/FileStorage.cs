@@ -34,12 +34,16 @@ namespace StorageSystem
         public override void Save(string sceneName)
         {
             var root = new XElement("root");
-            root.Add(_dictSurrogate.Serialize(model.inventory));
-            root.Add(_dictSurrogate.Serialize(model.inventorySprites));
+            root.Add(_dictSurrogate.Serialize(model.inventory)); //сохранение предметов в инвентаре
+            root.Add(_dictSurrogate.Serialize(model.inventorySprites)); //сохранение иконок предметов в инвентаре
 
-            root.Add(_npcSurrogate.Serialize(Game.GetActualScene(), model.npsList));
-            var scenes = GetAllScenesNpc(Game.GetActualScene());
-            if (scenes.Any())
+            XElement sceneXElement = new XElement(Game.GetActualScene()); //сохранение всех квестов на текущей локации
+            sceneXElement.Add(_npcSurrogate.Serialize(model.npsList));
+            sceneXElement.Add(_gameStateSurrogate.SerializationPlayerLocation(Game.GetPlayerPosition()));
+            root.Add(sceneXElement);
+
+            var scenes = GetAllScenesNpc(Game.GetActualScene()); //сохранение всех квестов на других локациях
+            if (scenes != null && scenes.Any())
             {
                 foreach (var x in scenes)
                 {
@@ -47,10 +51,14 @@ namespace StorageSystem
                 }
             }
 
-            root.Add(_gameStateSurrogate.Serialize(Game.GetActualScene()));
+            //сохранение последней посещенной локации
+            XElement gameStateElement = new XElement("game-state");
+            gameStateElement.Add(_gameStateSurrogate.SerializeLastScene(Game.GetActualScene()));
+
+            root.Add(gameStateElement);
             var data = new XDocument(root);
             File.WriteAllText(filePath, data.ToString());
-            Debug.Log(_gameStateSurrogate.Serialize(Game.GetLastScene()).ToString());
+            Debug.Log(_gameStateSurrogate.SerializeLastScene(Game.GetLastScene()).ToString());
         }
 
         #endregion
@@ -63,15 +71,21 @@ namespace StorageSystem
             if (File.Exists(filePath))
             {
                 var data = File.ReadAllText(filePath);
-                var inventory = _dictSurrogate.DeserializeItems(data);
-                var inventorySprites = _dictSurrogate.DeserializeSprite(data);
-                var npc = _npcSurrogate.DeserializeItems(Game.GetActualScene(), data);
-                var lastScene = _gameStateSurrogate.DeserializeItems(data);
+                var inventory = _dictSurrogate.DeserializeItems(data); //загрузка предметов в инвентаре
+                var inventorySprites = _dictSurrogate.DeserializeSprite(data); //загрузка иконок предметов в инвентаре
+                var npc = _npcSurrogate.DeserializeItems(Game.GetActualScene(),
+                    data); //загрузка всех квестов на текущей локации
+                var lastScene = _gameStateSurrogate.DeserializeLastScene(data); //загрузка последней посещенной локации
+                var playerPos =
+                    _gameStateSurrogate.DeserializePlayerLocation(Game.GetActualScene(),
+                        data); //загрузка последней посещенной локации
                 model.inventory = inventory;
                 model.inventorySprites = inventorySprites;
-                if (Game.GetActualScene() != "Menu") model.inventoryController.Refresh();
+                if (Game.GetActualScene() != "Menu")
+                    model.inventoryController.Refresh(); //проверка что мы сейчас не на локации меню
                 model.InitializeNpc(npc);
                 model.InitializeLastScene(lastScene);
+                if (Game.GetActualScene() != "Menu") model.InitializeLastPosition(playerPos);
             }
         }
 

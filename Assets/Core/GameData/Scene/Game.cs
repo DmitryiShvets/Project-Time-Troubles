@@ -15,6 +15,8 @@ namespace Core
 
         private static ActualSceneState _scriptableObject;
 
+        private static PositionState _positionState;
+
         private static DictionarySerializationSurrogate _dictSurrogate = new DictionarySerializationSurrogate();
 
 
@@ -23,12 +25,14 @@ namespace Core
             sceneManager = new SceneManagerRoot();
             Coroutines.StartRoutine(InitializeGameRoutine());
             _scriptableObject = Resources.Load<ActualSceneState>("LastScene");
+            _positionState = Resources.Load<PositionState>("PositonState");
         }
 
         public static void StartGame()
         {
             LoadScene("home");
         }
+
         public static void ContinueGame()
         {
             LoadScene(GetLastScene());
@@ -54,6 +58,11 @@ namespace Core
         public static string GetLastScene()
         {
             return _scriptableObject.lastScene;
+        }
+
+        public static Vector3 GetPlayerPosition()
+        {
+            return _positionState.pos;
         }
 
         public static void SaveScene()

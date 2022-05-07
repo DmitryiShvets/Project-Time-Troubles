@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7aa94da220418dba59d54fbbb152db, type: 3}
   m_Name: LastScene
   m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0}
+  lastScene: home

@@ -9,7 +9,7 @@ namespace Core
 {
     public class DataStorage : MonoBehaviour
     {
-        [SerializeField] private string _storageFileName = "save.xml";
+        private string _storageFileName = "save1.xml";
 
         private bool _savingComplete;
         private FileStorage _storage;
@@ -27,7 +27,7 @@ namespace Core
         {
             _storage.Save(sceneName);
         }
-    
+
         private void Update()
         {
             if (Keyboard.current.pKey.wasPressedThisFrame)

@@ -1,4 +1,6 @@
-﻿using Core.Actions;
+﻿using System;
+using System.Collections;
+using Core.Actions;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -7,8 +9,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
     public static IsometricPlayerMovementController instance;
     public float movementSpeed = 1f;
     private IsometricCharacterRenderer isoRenderer;
-    [SerializeField]
-    private PositionState _posState;
+    [SerializeField] private PositionState _posState;
     private ActionsManager _playerAction;
     private Rigidbody2D rbody;
     public Vector2 movement;
@@ -20,6 +21,16 @@ public class IsometricPlayerMovementController : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
     }
+
+    private void Start()
+    {
+    }
+
+    public void Init()
+    {
+        gameObject.transform.position = _posState.pos;
+    }
+
 
     private void OnEnable()
     {
@@ -35,11 +46,9 @@ public class IsometricPlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-
         var input = _playerAction.Player.Movement.ReadValue<Vector2>();
 
-          Vector2 currentPos = rbody.position;
+        Vector2 currentPos = rbody.position;
 
         float hInput = input.x;
         float vInput = input.y;
@@ -53,14 +62,10 @@ public class IsometricPlayerMovementController : MonoBehaviour
 
         //Debug.Log(movement + " " + newPos);
 
-        
 
         isoRenderer.SetDirection(movement);
         rbody.MovePosition(newPos);
         _posState.pos = newPos;
-
-    } 
-
-   
-
+        _posState.pos.z = 3;
+    }
 }
