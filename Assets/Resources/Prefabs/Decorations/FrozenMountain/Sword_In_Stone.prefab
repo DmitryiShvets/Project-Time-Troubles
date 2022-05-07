@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 8042086564260579112}
   - component: {fileID: 7610332082247605971}
   - component: {fileID: 1003697329918172961}
+  - component: {fileID: -5830547423487844276}
   m_Layer: 0
   m_Name: Sword_In_Stone
   m_TagString: Untagged
@@ -109,6 +110,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -120,6 +123,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -152,5 +156,17 @@ SortingGroup:
   m_GameObject: {fileID: 5576010801043353373}
   m_Enabled: 1
   m_SortingLayerID: 2130146985
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-5830547423487844276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5576010801043353373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9cab311d93514498352db0d56c8b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
