@@ -14380,6 +14380,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2435975024795977396, guid: b7556a70c675e6d4f88a719e30fe3cf3, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435975024795977396, guid: b7556a70c675e6d4f88a719e30fe3cf3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2435975024795977397, guid: b7556a70c675e6d4f88a719e30fe3cf3, type: 3}
       propertyPath: lvlName
       value: Temple
