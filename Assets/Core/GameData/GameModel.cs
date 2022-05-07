@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Core.GameData.Storage;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -23,8 +24,10 @@ namespace Core
         public DataStorage _dataStorage;
 
         public IsometricPlayerMovementController _PlayerMovement;
+        public List<SaveableGameObject> saveableGameObjects;
         private static ActualSceneState _scriptableObject;
         private static PositionState _positionState;
+
         Dictionary<GameObject, HashSet<string>> conversations = new Dictionary<GameObject, HashSet<string>>();
         public Dictionary<string, int> inventory = new Dictionary<string, int>();
         public Dictionary<string, Sprite> inventorySprites = new Dictionary<string, Sprite>();
@@ -46,6 +49,18 @@ namespace Core
                 }
 
                 npc.Check();
+            }
+        }
+
+        public void InitializeGameObj(Dictionary<string, bool> objects)
+        {
+            if (objects.Any())
+            {
+                foreach (var obj in saveableGameObjects)
+                {
+                    obj.isActive = objects[obj.name];
+                    obj.Check();
+                }
             }
         }
 

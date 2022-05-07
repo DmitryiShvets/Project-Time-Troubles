@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.GameData.Storage;
 using Gameplay;
 using UnityEngine;
 using TMPro;
@@ -14,23 +16,32 @@ public class HealthSystemEnemy : MonoBehaviour
     public GameObject particleEffect;
     public GameObject HitPointDamage;
     public GameObject pref;
+
     public bool start;
-   // public bool start2;
-   // public bool move;
+
+    // public bool start2;
+    // public bool move;
     private Vector3 _position;
-    public AliveState aliveState;
+
+    //  public AliveState aliveState;
+    private SaveableGameObject state;
+
+    private void Awake()
+    {
+        state = GetComponent<SaveableGameObject>();
+    }
 
     void Start()
     {
         _position = transform.localPosition;
         //   _transform.position = gameObject.transform.position;
-    //    instance = this;
-        if (!aliveState.isAlive) Destroy(gameObject);
+        //    instance = this;
+        // if (!aliveState.isAlive) Destroy(gameObject);
     }
 
     public void Damage(int damage)
     {
-      //  start2 = true;
+        //  start2 = true;
 
         hp -= damage;
 
@@ -53,7 +64,12 @@ public class HealthSystemEnemy : MonoBehaviour
                 Instantiate(particleEffect, transform.position, transform.rotation);
             }
 
-            Destroy();
+            //  Destroy();
+            gameObject.SetActive(false);
+            state.isActive = false;
+            Bank.AddCoins(this, 100);
+            GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
+            obh.transform.position = _position;
         }
     }
 
@@ -61,7 +77,7 @@ public class HealthSystemEnemy : MonoBehaviour
     {
         if (gameObject)
         {
-            aliveState.isAlive = false;
+            state.isActive = false;
             Bank.AddCoins(this, 100);
             GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
             obh.transform.position = _position;
@@ -71,7 +87,7 @@ public class HealthSystemEnemy : MonoBehaviour
 
     private void ResetBool()
     {
-    //    start2 = false;
+        //    start2 = false;
         start = false;
     }
 }

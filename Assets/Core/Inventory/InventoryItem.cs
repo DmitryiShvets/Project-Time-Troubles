@@ -1,4 +1,5 @@
-
+using System;
+using Core.GameData.Storage;
 using UnityEngine;
 
 
@@ -13,8 +14,13 @@ namespace Core
     {
         public int count = 1;
         public Sprite sprite;
-
+        private SaveableGameObject state;
         GameModel model = Schedule.GetModel<GameModel>();
+
+        private void Awake()
+        {
+            state = GetComponent<SaveableGameObject>();
+        }
 
         void Reset()
         {
@@ -31,6 +37,7 @@ namespace Core
             MessageBar.Show($"You collected: {name} x {count}");
             model.AddInventoryItem(this);
             UserInterfaceAudio.OnCollect();
+            state.isActive = false;
             gameObject.SetActive(false);
         }
     }

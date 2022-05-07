@@ -40,6 +40,7 @@ namespace StorageSystem
             XElement sceneXElement = new XElement(Game.GetActualScene()); //сохранение всех квестов на текущей локации
             sceneXElement.Add(_npcSurrogate.Serialize(model.npsList));
             sceneXElement.Add(_gameStateSurrogate.SerializationPlayerLocation(Game.GetPlayerPosition()));
+            sceneXElement.Add(_gameObjectSurrogate.SerializeGameObj(model.saveableGameObjects));
             root.Add(sceneXElement);
 
             var scenes = GetAllScenesNpc(Game.GetActualScene()); //сохранение всех квестов на других локациях
@@ -79,13 +80,15 @@ namespace StorageSystem
                 var playerPos =
                     _gameStateSurrogate.DeserializePlayerLocation(Game.GetActualScene(),
                         data); //загрузка последней посещенной локации
+                var gameObjects = _gameObjectSurrogate.DeserializeGameObj(Game.GetActualScene(), data);
                 model.inventory = inventory;
                 model.inventorySprites = inventorySprites;
                 if (Game.GetActualScene() != "Menu")
                     model.inventoryController.Refresh(); //проверка что мы сейчас не на локации меню
-                model.InitializeNpc(npc);
+                if (npc.Any()) model.InitializeNpc(npc);
                 model.InitializeLastScene(lastScene);
                 if (Game.GetActualScene() != "Menu") model.InitializeLastPosition(playerPos);
+                if (Game.GetActualScene() != "Menu") model.InitializeGameObj(gameObjects);
             }
         }
 
