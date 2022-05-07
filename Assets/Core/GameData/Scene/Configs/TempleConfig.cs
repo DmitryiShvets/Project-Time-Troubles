@@ -11,8 +11,8 @@ namespace Core
         public override Dictionary<Type, Interactor> CreateAllInteractors()
         {
             var interactorsMap = new Dictionary<Type, Interactor>();
-           // FillInteractorMap(ref interactorsMap);
-            CreateInteractor<BankInteractor>(interactorsMap);
+            FillInteractorMap(ref interactorsMap);
+            // CreateInteractor<BankInteractor>(interactorsMap);
             return interactorsMap;
         }
 
@@ -26,5 +26,4 @@ namespace Core
 
         public override string sceneName => SC_NAME;
     }
-
 }
