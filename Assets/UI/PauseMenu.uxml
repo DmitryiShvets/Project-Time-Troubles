@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="stule.uss" />
+    <ui:VisualElement name="pause-menu-screen" class="screen screen-background" style="background-image: url(&apos;/Assets/UI/menu-background.png&apos;); -unity-background-scale-mode: scale-and-crop;">
+        <ui:VisualElement name="center-panel" class="menu-center-panel menu-background-color" style="background-image: none; height: 100%; background-color: rgba(0, 0, 0, 0.39);">
+            <ui:VisualElement name="buttons-list" class="menu-buttons-list" style="height: auto; background-image: none; -unity-background-scale-mode: stretch-to-fill; width: 60%; justify-content: flex-end;">
+                <ui:Button text="ПРОДОЛЖИТЬ ИГРУ" display-tooltip-when-elided="true" name="continue-button" tooltip="Продолжить игру с последнего сохранения" class="menu-button button" style="background-image: none; -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 5; -unity-slice-top: 5; -unity-slice-right: 5; -unity-slice-bottom: 5; height: 100px;" />
+                <ui:Button text="СОХРАНИТЬ" display-tooltip-when-elided="true" name="save-button" enable-rich-text="false" tooltip="Сохранить прогресс" class="button menu-button" />
+                <ui:Button text="НАЧАТЬ ЗАНОВО" display-tooltip-when-elided="true" name="start-button" tooltip="Начать игру заново (прогресс будет утерян)" class="button menu-button" />
+                <ui:Button text="ВЫЙТИ" display-tooltip-when-elided="true" name="exit-button" enable-rich-text="false" tooltip="Сохранить прогресс и выйти" class="button menu-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
