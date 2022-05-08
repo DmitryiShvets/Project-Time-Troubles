@@ -18,6 +18,8 @@ namespace StorageSystem
         protected static readonly GameObjectSerializationSurrogate _gameObjectSurrogate =
             new GameObjectSerializationSurrogate();
 
+        protected static readonly LootBoxesSerializationSurrogate _lootBoxesSurrogate =
+            new LootBoxesSerializationSurrogate();
 
         public abstract void Save(string sceneName);
 
