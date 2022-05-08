@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using ScriptableObjects;
 using StorageSystem;
@@ -16,9 +17,9 @@ namespace Core
         private static ActualSceneState _scriptableObject;
 
         private static PositionState _positionState;
-
-        private static DictionarySerializationSurrogate _dictSurrogate = new DictionarySerializationSurrogate();
-
+      
+        private static string saveFile = "save1.xml";
+        public static string SaveFile => saveFile;
 
         public static void Run()
         {
@@ -36,6 +37,15 @@ namespace Core
         public static void ContinueGame()
         {
             LoadScene(GetLastScene());
+        }
+
+        public static bool CanContinue()
+        {
+            var folder = "Saves";
+            var folderPath = $"{Application.persistentDataPath}/{folder}";
+
+            var filePath = $"{folderPath}/{saveFile}";
+            return File.Exists(filePath);
         }
 
         public static void AddItem()

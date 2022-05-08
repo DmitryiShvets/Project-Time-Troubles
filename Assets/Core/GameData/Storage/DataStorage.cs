@@ -9,7 +9,7 @@ namespace Core
 {
     public class DataStorage : MonoBehaviour
     {
-        private string _storageFileName = "save1.xml";
+        private string _storageFileName = Game.SaveFile;
 
         private bool _savingComplete;
         private FileStorage _storage;
