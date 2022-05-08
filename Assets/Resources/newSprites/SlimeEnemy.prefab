@@ -118,21 +118,21 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18670845}
+  m_Offset: {x: -0.015767038, y: -0.026412636}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.64855194}
+  m_Size: {x: 0.67415226, y: 0.53818446}
   m_EdgeRadius: 0
 --- !u!50 &7965346199324343417
 Rigidbody2D:
@@ -142,7 +142,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3159287955050146163}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -167,10 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61a40e133320f34daa977c67694e806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _item: {fileID: 0}
-  isAlive: 1
-  obj: {fileID: 0}
-  aliveState: {fileID: 11400000, guid: 447cb66743803fc4087598115d70d429, type: 2}
   changeTimer: 2
   speed: 3
 --- !u!225 &7552201367022028998
@@ -212,6 +208,5 @@ MonoBehaviour:
   hp: 30
   particleEffect: {fileID: 8384669908784896129, guid: 198ea618b37e7a6499d3fe161bdf05ea, type: 3}
   HitPointDamage: {fileID: 1004735490076195926, guid: 56aea43c4a45d4a4087fed1bad9972ec, type: 3}
+  pref: {fileID: 0}
   start: 0
-  start2: 0
-  move: 0

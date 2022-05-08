@@ -9,13 +9,24 @@ namespace Gameplay
     {
         private int damage = 1;
 
-        private void OnTriggerEnter2D(Collider2D other)
+        // private void OnTriggerEnter2D(Collider2D other)
+        // {
+        //     if (other.name == "PlayerCollider")
+        //     {
+        //         other.GetComponentInParent<PlayerController>().TakeDamage(damage);
+        //         Debug.Log(other.gameObject.name);
+        //     }
+        // }
+        //
+        public void OnCollisionEnter2D(Collision2D collision)
         {
-            if (other.name == "PlayerCollider")
+           
+            if (collision.gameObject.CompareTag("Player"))
             {
-                other.GetComponentInParent<PlayerController>().TakeDamage(damage);
-                Debug.Log(other.gameObject.name);
+                collision.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+                Debug.Log(collision.gameObject.name);
             }
+          
         }
     }
 
