@@ -17,11 +17,15 @@ public class DamageEnemy : MonoBehaviour
             Destroy(gameObject);
             
         }
-        else
+     
+
+        if (collision.CompareTag("BreakableObject"))
         {
-           
+
+            collision.GetComponent<BreakObject>().Damage(damage);
+            Destroy(gameObject);
+
         }
-       
     }
 
     private void Update()
