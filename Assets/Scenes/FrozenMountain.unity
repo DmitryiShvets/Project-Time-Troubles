@@ -1204,7 +1204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5576010801043353373, guid: 2fa3d3de91e434c5a8a1bfa3e7fe02b8, type: 3}
       propertyPath: m_Name
-      value: Sword_In_Stone (1)
+      value: Sword_In_Stone
       objectReference: {fileID: 0}
     - target: {fileID: 7610332082247605971, guid: 2fa3d3de91e434c5a8a1bfa3e7fe02b8, type: 3}
       propertyPath: m_Size.x
@@ -1330,6 +1330,19 @@ CircleCollider2D:
   m_Offset: {x: 0.046316385, y: 0.0030728877}
   serializedVersion: 2
   m_Radius: 0.35310245
+--- !u!114 &246568323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246568317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34aab08274d04fa3a1289ba0ca919b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1
 --- !u!1 &260704460
 GameObject:
   m_ObjectHideFlags: 0
@@ -39997,6 +40010,14 @@ PrefabInstance:
       propertyPath: model.inventoryController
       value: 
       objectReference: {fileID: 961413729}
+    - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: model.saveableGameObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: model.saveableGameObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 246568323}
     - target: {fileID: 5818361463712991464, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
       propertyPath: m_RootOrder
       value: 6
