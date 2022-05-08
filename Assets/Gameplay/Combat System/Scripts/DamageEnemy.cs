@@ -18,8 +18,7 @@ public class DamageEnemy : MonoBehaviour
             
         }
      
-
-        if (collision.CompareTag("BreakableObject"))
+        if (collision.CompareTag("Loot"))
         {
 
             collision.GetComponent<BreakObject>().Damage(damage);
