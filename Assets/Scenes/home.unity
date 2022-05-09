@@ -224,6 +224,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &207385509
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.099
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.026
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.7427053
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549834, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549836, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: text
+      value: "\u041D\u0443 \u0438 \u043A\u0442\u043E \u044D\u0442\u043E \u0431\u044B\u043B????"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549838, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_Name
+      value: StoryItem (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549839, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_Radius
+      value: 0.30490142
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549839, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.059722964
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549839, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.051418077
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
 --- !u!1 &218274555
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,23 +371,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: AA2
-    text: "\u041C\u043E\u043B\u043E\u0434\u0435\u0446"
+    text: "\u041C\u043E\u043B\u043E\u0434\u0435\u0446! \u0433\u043E\u0442\u043E\u0432
+      \u043F\u0435\u0440\u0435\u0439\u0442\u0438 \u043A \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u043C\u0443
+      \u0437\u0430\u0434\u0430\u043D\u0438\u044E?"
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
     options:
-    - text: "\u042D\u0442\u043E \u0431\u044B\u043B\u043E \u043B\u0435\u0433\u043A\u043E"
+    - text: "\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u043C\u0443?!"
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: AA3
       enabled: 0
   - id: AA3
-    text: "C\u043E\u0432\u0441\u0435\u043C \u0437\u0430\u0431\u044B\u043B \u0441\u043A\u0430\u0437\u0430\u0442\u044C,
-      \u0442\u0435\u0431\u044F \u043A\u0442\u043E-\u0442\u043E \u0436\u0434\u0435\u0442
-      \u0437\u0430 \u0434\u0432\u0435\u0440\u044C\u044E!"
+    text: "\u0422\u044B \u0437\u0430\u043C\u0435\u0442\u0438\u043B \u043D\u043E\u0432\u044B\u0439
+      \u0441\u0430\u0440\u043A\u043E\u0432\u0430\u0433 \u0432 \u0443\u0433\u043B\u0443
+      \u0441\u0432\u043E\u0435\u0433\u043E \u0434\u043E\u043C\u0430?"
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
+    options:
+    - text: "\u0422\u0430\u043A\u043E\u0435 \u0441\u043B\u043E\u0436\u043D\u043E
+        \u043D\u0435 \u0437\u0430\u043C\u0435\u0442\u0438\u0442\u044C..."
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: AA4
+      enabled: 0
+  - id: AA4
+    text: "\u041E\u0442\u043A\u0440\u043E\u0439 \u0435\u0433\u043E, \u0438 \u043F\u0440\u0438\u043D\u0435\u0441\u0438
+      \u043C\u043D\u0435 \u0442\u043E, \u0447\u0442\u043E \u0432\u043D\u0443\u0442\u0440\u0438.(\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435
+      E \u0434\u043B\u044F \u0432\u0437\u0430\u0438\u043C\u043E\u0434\u0435\u0441\u0442\u0432\u0438\u044F)"
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 1579024610}
     options: []
 --- !u!114 &218274559
 MonoBehaviour:
@@ -330,7 +419,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: A1
-    text: "\u0423\u0431\u0435\u0439 \u0438\u0445!"
+    text: "\u0422\u044B \u0441\u043F\u0440\u0430\u0432\u0438\u043B\u0441\u044F?"
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    options:
+    - text: "\u0414\u0430\u0439 \u043C\u043D\u0435 \u0432\u0440\u0435\u043C\u044F..."
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A2
+      enabled: 0
+  - id: A2
+    text: "\u0425\u043E\u0440\u043E\u0448\u043E."
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
@@ -683,6 +783,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6637098120957166363, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
   m_PrefabInstance: {fileID: 7685047980247968412}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &375264638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2032187431607821276, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
+  m_PrefabInstance: {fileID: 1088587286}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93014d54424461e4ab08e18d19338630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &375681218
 GameObject:
   m_ObjectHideFlags: 0
@@ -4732,41 +4843,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &890884968 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6637098120957166358, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
-  m_PrefabInstance: {fileID: 7685047980247968412}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &890884971 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6637098120957166364, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
   m_PrefabInstance: {fileID: 7685047980247968412}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890884968}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1feb95f97dd28f04aa037c80ca380774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &890884974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890884968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21e458d11a4099848a6bfadb0685b659, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items:
-  - id: A1
-    text: "\u041F\u0440\u0438\u0432\u0435\u0442 \u044F \u0431\u0430\u043A1111!!!"
-    image: {fileID: 0}
-    audio: {fileID: 0}
-    quest: {fileID: 0}
-    options: []
 --- !u!114 &939185584 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6342681890028683290, guid: d3b68d46502234c4ebccbe36089701b2, type: 3}
@@ -5014,11 +5101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2032187431607821267, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5
+      value: -7.34
       objectReference: {fileID: 0}
     - target: {fileID: 2032187431607821267, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.64
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 2032187431607821267, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5054,7 +5141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2032187431607821279, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
       propertyPath: m_Name
-      value: questItem1
+      value: questItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
@@ -5226,9 +5313,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.08912301, y: -0.012102127}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.8494475
 --- !u!210 &1198975721
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -5299,7 +5386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198975718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3647544, y: 0.28243184, z: 0}
+  m_LocalPosition: {x: 5.46, y: -0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 44851166}
@@ -5703,6 +5790,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1579024609}
   - component: {fileID: 1579024610}
+  - component: {fileID: 1579024612}
+  - component: {fileID: 1579024611}
   m_Layer: 0
   m_Name: uest2
   m_TagString: Untagged
@@ -5738,17 +5827,72 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: 
   desc: 
-  questInProgressConversation: {fileID: 0}
-  questCompletedConversation: {fileID: 0}
+  questInProgressConversation: {fileID: 1579024612}
+  questCompletedConversation: {fileID: 1579024611}
   spawnMode: 0
   enableOnQuestStart: []
   spawnOnQuestStart: []
-  requiredItems: []
+  requiredItems:
+  - item: {fileID: 375264638}
+    count: 1
   spawnOnQuestComplete: []
   rewardItems: []
   destroySpawnsOnQuestComplete: 1
   isStarted: 0
   isFinished: 0
+--- !u!114 &1579024611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579024608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e458d11a4099848a6bfadb0685b659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - id: A1
+    text: "\u0422\u044B \u0445\u043E\u0440\u043E\u0448 \u0432\u044B \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0438
+      \u043F\u043E\u0440\u0443\u0447\u0435\u043D\u0438\u0439! \u0423\u0432\u0438\u0434\u0438\u043C\u0441\u044F
+      \u0437\u0430 \u0442\u0432\u043E\u0435\u0439 \u0432\u0445\u043E\u0434\u043D\u043E\u0439
+      \u0434\u0432\u0435\u0440\u044C\u044E!"
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    options:
+    - text: "\u0427\u0442\u043E \u0442\u0443\u0442 \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442?"
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A2
+      enabled: 0
+  - id: A2
+    text: "\u042F \u0436\u0435 \u0441\u043A\u0430\u0437\u0430\u043B, \u0443\u0432\u0438\u0434\u0435\u043C\u0441\u044F
+      \u0437\u0430 \u0434\u0432\u0435\u0440\u044C\u044E!"
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    options: []
+--- !u!114 &1579024612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579024608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e458d11a4099848a6bfadb0685b659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - id: A1
+    text: "\u0422\u044B \u0443\u0436\u0435 \u043E\u0442\u043A\u0440\u044B\u043B \u0441\u0430\u0440\u043A\u043E\u0444\u0430\u0433?"
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    options: []
 --- !u!1001 &1592982786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5802,10 +5946,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4815293578255549836, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
       propertyPath: text
-      value: "\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u0435 \u0441
-        \u0411\u0430\u043A\u043E\u043C!\n\u041F\u043E\u0445\u043E\u0436\u0435, \u043E\u043D
-        \u0445\u043E\u0447\u0435\u0442 \u0432\u0430\u043C \u0447\u0442\u043E-\u0442\u043E
-        \u0441\u043A\u0430\u0437\u0430\u0442\u044C.\n(\u043D\u0430\u0436\u0438\u043C\u0430\u0439\u0442\u0435
+      value: "\u041F\u043E\u0447\u0435\u043C\u0443 \u0432 \u043C\u043E\u0451\u043C
+        \u0434\u043E\u043C\u0435 \u043A\u0430\u043A\u043E\u0439-\u0442\u043E \u043D\u0435\u0437\u043D\u0430\u043A\u043E\u043C\u0435\u0446?!\n(\u043D\u0430\u0436\u0438\u043C\u0430\u0439\u0442\u0435
         SPACE \u0447\u0442\u043E\u0431\u044B \u043E\u0442\u0432\u0435\u0442\u0438\u0442\u044C)"
       objectReference: {fileID: 0}
     - target: {fileID: 4815293578255549838, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
@@ -15046,12 +15188,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4815293578255549836, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
       propertyPath: text
-      value: "\u0414\u043B\u044F \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F
-        \u043D\u0430\u0436\u0438\u043C\u0430\u0439\u0442\u0435 W, A, S, D."
+      value: "\u041D\u0430\u0441\u0442\u0443\u043F\u0438\u043B \u043D\u043E\u0432\u044B\u0439
+        \u0434\u0435\u043D\u044C, \u0430 \u0437\u043D\u0430\u0447\u0438\u0442 \u043F\u0440\u0438\u0448\u043B\u043E
+        \u0432\u0440\u0435\u043C\u044F \u0441\u043D\u043E\u0432\u0430 \u0438\u0434\u0442\u0438
+        \u043D\u0430 \u0440\u0430\u0431\u043E\u0442\u0443. (\u0414\u043B\u044F \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F
+        \u043D\u0430\u0436\u0438\u043C\u0430\u0439\u0442\u0435 W, A, S, D.)"
       objectReference: {fileID: 0}
     - target: {fileID: 4815293578255549838, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
       propertyPath: m_Name
       value: StoryItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549839, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_Radius
+      value: 0.07064381
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549839, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.9478602
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815293578255549839, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.8622034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652587659465619539, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.943
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652587659465619539, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.884
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d32a2d04fccccf742bf966e384e3747c, type: 3}
@@ -15242,7 +15407,7 @@ PrefabInstance:
     - target: {fileID: 6637098120957166364, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: conversationList.Array.data[1]
       value: 
-      objectReference: {fileID: 890884974}
+      objectReference: {fileID: 0}
     - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: items.Array.size
       value: 3
@@ -15265,8 +15430,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: items.Array.data[1].text
-      value: "\u041F\u0440\u0438\u0432\u0435\u0442, \u043C\u043D\u0435 \u043D\u0443\u0436\u043D\u0430
-        \u0442\u0432\u043E\u044F \u043F\u043E\u043C\u043E\u0449\u044C! \n\u0412\u0438\u0434\u0438\u0448\u044C
+      value: "\u041C\u043D\u0435 \u043D\u0443\u0436\u043D\u0430 \u0442\u0432\u043E\u044F
+        \u043F\u043E\u043C\u043E\u0449\u044C! \n\u0412\u0438\u0434\u0438\u0448\u044C
         \u044D\u0442\u0438\u0445 \u0441\u043B\u0438\u0437\u043D\u0435\u0439 \u043D\u0430
         \u043A\u0443\u0445\u043D\u0435 \u0438 \u0432 \u0432\u0430\u043D\u043D\u043E\u0439
         \u043A\u043E\u043C\u043D\u0430\u0442\u0435?\n\u0418\u0437\u0431\u0430\u0432\u044C\u0441\u044F
@@ -15275,7 +15440,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: items.Array.data[2].text
-      value: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u043F\u043E\u043C\u043E\u0449\u044C!"
+      value: "\u042F \u0440\u0430\u0441\u0441\u043A\u0430\u0436\u0443 \u0442\u0435\u0431\u0435
+        \u0432\u0441\u0451, \u043A\u043E\u0433\u0434\u0430 \u0442\u044B \u0432\u044B\u043F\u043E\u043B\u043D\u0438\u0448\u044C
+        \u043C\u043E\u0451 \u0437\u0430\u0434\u0430\u043D\u0438\u0435!"
       objectReference: {fileID: 0}
     - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: items.Array.data[1].quest
@@ -15299,11 +15466,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: items.Array.data[0].options.Array.data[0].text
-      value: "\u041F\u0440\u0438\u0432\u0435\u0442"
+      value: "\u041A\u0430\u043A \u0442\u044B \u043F\u043E\u043F\u0430\u043B \u0432
+        \u043C\u043E\u0439 \u0434\u043E\u043C?!"
       objectReference: {fileID: 0}
     - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: items.Array.data[1].options.Array.data[0].text
-      value: "\u0421\u0434\u0435\u043B\u0430\u044E"
+      value: "\u0421\u043B\u0430\u0439\u043C\u044B?! \u0427\u0442\u043E \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442?!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
+      propertyPath: items.Array.data[2].options.Array.data[0].text
+      value: "... \u041B\u0430\u0434\u043D\u043E!"
       objectReference: {fileID: 0}
     - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: items.Array.data[0].options.Array.data[0].targetId
@@ -15315,7 +15487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: items.Array.data[2].options.Array.data[0].targetId
-      value: A12
+      value: A3
       objectReference: {fileID: 0}
     - target: {fileID: 7685047979718314601, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: requiredItems.Array.data[0].item

@@ -2304,6 +2304,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6949824732751576062, guid: d2c4a6f495abc3a42a2b04b40b08ae58, type: 3}
   m_PrefabInstance: {fileID: 214637065}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &248764636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4119736676359424531, guid: 779cc8c96a360c143923114977790c44, type: 3}
+  m_PrefabInstance: {fileID: 480452833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &248764637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248764636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d478fa4eca2917418a2132e0d2fbb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  particleEffect: {fileID: 0}
+  HitPointDamage: {fileID: 0}
+  pref: {fileID: 0}
+  start: 0
 --- !u!1001 &265509273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4513,6 +4535,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 606227308773609020, guid: b700ebd6b729cb440a189f734fbde24c, type: 3}
   m_PrefabInstance: {fileID: 455513125}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &466659558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 466659560}
+  - component: {fileID: 466659559}
+  m_Layer: 0
+  m_Name: questKeyToCaves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &466659559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466659558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf5faf696bea9a4a95d2b891126686e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: 
+  desc: 
+  questInProgressConversation: {fileID: 0}
+  questCompletedConversation: {fileID: 0}
+  spawnMode: 0
+  enableOnQuestStart: []
+  spawnOnQuestStart: []
+  requiredItems: []
+  spawnOnQuestComplete: []
+  rewardItems: []
+  destroySpawnsOnQuestComplete: 1
+  isStarted: 0
+  isFinished: 0
+--- !u!4 &466659560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466659558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1311583010}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &466809772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5031,6 +5109,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2977012350891887043, guid: de8128beb9631ed44aca56b9896c0693, type: 3}
   m_PrefabInstance: {fileID: 495537370}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &501072257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 501072259}
+  - component: {fileID: 501072258}
+  m_Layer: 0
+  m_Name: questKeyToCamp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &501072258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501072257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf5faf696bea9a4a95d2b891126686e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: 
+  desc: 
+  questInProgressConversation: {fileID: 0}
+  questCompletedConversation: {fileID: 0}
+  spawnMode: 0
+  enableOnQuestStart: []
+  spawnOnQuestStart: []
+  requiredItems: []
+  spawnOnQuestComplete: []
+  rewardItems: []
+  destroySpawnsOnQuestComplete: 1
+  isStarted: 0
+  isFinished: 0
+--- !u!4 &501072259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501072257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1311583010}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &509866083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16605,11 +16739,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2032187431607821267, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.6
+      value: -2.13
       objectReference: {fileID: 0}
     - target: {fileID: 2032187431607821267, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.291
+      value: -15.17
       objectReference: {fileID: 0}
     - target: {fileID: 2032187431607821267, guid: aafa465a3347af04da38f3aac21baa5e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31565,6 +31699,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6637098120957166364, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
+      propertyPath: conversationList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637098120957166364, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
+      propertyPath: conversationList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1311583012}
+    - target: {fileID: 6637098120957166364, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
+      propertyPath: conversationList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1311583011}
     - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: items.Array.size
       value: 4
@@ -31603,6 +31749,10 @@ PrefabInstance:
         \u0440\u043E\u0449\u0443"
       objectReference: {fileID: 0}
     - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
+      propertyPath: items.Array.data[3].quest
+      value: 
+      objectReference: {fileID: 501072258}
+    - target: {fileID: 6637098120957166365, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
       propertyPath: items.Array.data[1].options.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -31632,6 +31782,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
+--- !u!1 &1311583009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6637098120957166358, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
+  m_PrefabInstance: {fileID: 1311583008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1311583010 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6637098120957166363, guid: e4ca7150b8c1dec44a7e49162071782b, type: 3}
+  m_PrefabInstance: {fileID: 1311583008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1311583011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311583009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e458d11a4099848a6bfadb0685b659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - id: C1
+    text: "\u0427\u0442\u043E \u0431\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C
+      \u043A\u0430\u0440\u0442\u0443 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E
+      \u043A\u043E\u0442\u043E\u0440\u043E\u0439 \u043C\u043E\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438
+      \u043C\u0435\u0447 \u043D\u0430\u0439\u0434\u0438 \u043C\u043D\u0435 \u043A\u0440\u0438\u0441\u0442\u0430\u043B"
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 1601698003}
+    options: []
+--- !u!114 &1311583012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311583009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e458d11a4099848a6bfadb0685b659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - id: B1
+    text: "\u0427\u0442\u043E \u0431\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C
+      \u043A\u043B\u044E\u0447 \u043E\u0442 \u043F\u0435\u0449\u0435\u0440\u044B
+      \u0441\u043B\u043E\u043C\u0430\u0439 \u0432\u0441\u0435 \u0431\u043E\u0447\u043A\u0438"
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 466659559}
+    options: []
 --- !u!4 &1315342913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2977012350891887043, guid: de8128beb9631ed44aca56b9896c0693, type: 3}
@@ -33052,6 +33255,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2977012350891887043, guid: de8128beb9631ed44aca56b9896c0693, type: 3}
   m_PrefabInstance: {fileID: 993576076}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1601698002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601698004}
+  - component: {fileID: 1601698003}
+  m_Layer: 0
+  m_Name: questKeyToFrozen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1601698003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601698002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf5faf696bea9a4a95d2b891126686e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: 
+  desc: 
+  questInProgressConversation: {fileID: 0}
+  questCompletedConversation: {fileID: 0}
+  spawnMode: 0
+  enableOnQuestStart: []
+  spawnOnQuestStart: []
+  requiredItems: []
+  spawnOnQuestComplete: []
+  rewardItems: []
+  destroySpawnsOnQuestComplete: 1
+  isStarted: 0
+  isFinished: 0
+--- !u!4 &1601698004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601698002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1311583010}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1620278775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40684,11 +40943,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4726464643785429921, guid: 960e8c240ade88c4eb958d4cc2cfd465, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.39
+      value: -25.984
       objectReference: {fileID: 0}
     - target: {fileID: 4726464643785429921, guid: 960e8c240ade88c4eb958d4cc2cfd465, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.819
+      value: -3.104
       objectReference: {fileID: 0}
     - target: {fileID: 4726464643785429921, guid: 960e8c240ade88c4eb958d4cc2cfd465, type: 3}
       propertyPath: m_LocalPosition.z

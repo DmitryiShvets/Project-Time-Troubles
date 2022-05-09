@@ -9710,7 +9710,7 @@ GameObject:
   - component: {fileID: 1052819714}
   - component: {fileID: 1052819713}
   m_Layer: 0
-  m_Name: QuestWater
+  m_Name: questFindTrost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9788,15 +9788,69 @@ MonoBehaviour:
   spawnMode: 0
   enableOnQuestStart: []
   spawnOnQuestStart: []
-  requiredItems:
-  - item: {fileID: 80015574}
-    count: 1
+  requiredItems: []
   spawnOnQuestComplete: []
   rewardItems:
   - {fileID: 1253601937}
   destroySpawnsOnQuestComplete: 1
   isStarted: 0
   isFinished: 0
+--- !u!1 &1064632602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064632604}
+  - component: {fileID: 1064632603}
+  m_Layer: 0
+  m_Name: questFindEat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1064632603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064632602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf5faf696bea9a4a95d2b891126686e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: 
+  desc: 
+  questInProgressConversation: {fileID: 0}
+  questCompletedConversation: {fileID: 0}
+  spawnMode: 0
+  enableOnQuestStart: []
+  spawnOnQuestStart: []
+  requiredItems: []
+  spawnOnQuestComplete: []
+  rewardItems: []
+  destroySpawnsOnQuestComplete: 1
+  isStarted: 0
+  isFinished: 0
+--- !u!4 &1064632604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064632602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1229519637}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1069562928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11724,6 +11778,10 @@ PrefabInstance:
         \u0433\u043E\u0442\u043E\u0432\u0430 \u043F\u043E\u0431\u043E\u043B\u0442\u0430\u0442\u044C."
       objectReference: {fileID: 0}
     - target: {fileID: 1668568344624866673, guid: d9d899d306928384bb1efa1d1a9b6541, type: 3}
+      propertyPath: items.Array.data[3].quest
+      value: 
+      objectReference: {fileID: 1064632603}
+    - target: {fileID: 1668568344624866673, guid: d9d899d306928384bb1efa1d1a9b6541, type: 3}
       propertyPath: items.Array.data[0].options.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -11818,6 +11876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d899d306928384bb1efa1d1a9b6541, type: 3}
+--- !u!4 &1229519637 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7906554617369584491, guid: d9d899d306928384bb1efa1d1a9b6541, type: 3}
+  m_PrefabInstance: {fileID: 1229519636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1247924236
 PrefabInstance:
   m_ObjectHideFlags: 0
