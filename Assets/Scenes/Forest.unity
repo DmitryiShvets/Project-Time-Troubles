@@ -1693,7 +1693,7 @@ PrefabInstance:
       objectReference: {fileID: 1755779785}
     - target: {fileID: 3638152905399017909, guid: 95c82663d0b6ec14ba853e8268bdf582, type: 3}
       propertyPath: conversationList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3638152905399017909, guid: 95c82663d0b6ec14ba853e8268bdf582, type: 3}
       propertyPath: conversationList.Array.data[0]
@@ -1702,7 +1702,7 @@ PrefabInstance:
     - target: {fileID: 3638152905399017909, guid: 95c82663d0b6ec14ba853e8268bdf582, type: 3}
       propertyPath: conversationList.Array.data[1]
       value: 
-      objectReference: {fileID: 1063573196}
+      objectReference: {fileID: 1789422066}
     - target: {fileID: 6147631909134297099, guid: 95c82663d0b6ec14ba853e8268bdf582, type: 3}
       propertyPath: m_Name
       value: NPCArc
@@ -19229,7 +19229,7 @@ GameObject:
   - component: {fileID: 1755779784}
   - component: {fileID: 1755779786}
   m_Layer: 0
-  m_Name: Slimes
+  m_Name: questKillSlimes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19337,10 +19337,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: B1
-    text: lkj
+    text: "\u042F \u041C\u043E\u0433\u0443 \u0441\u0434\u0435\u043B\u0430\u0442\u044C
+      \u0434\u043B\u044F \u0442\u0435\u0431\u044F \u0442\u0440\u043E\u0441\u0442\u044C
+      \u043D\u043E \u043C\u043D\u0435 \u043D\u0443\u0436\u043D\u0430\u044F \u0432\u0435\u0442\u043A\u0430"
     image: {fileID: 0}
     audio: {fileID: 0}
-    quest: {fileID: 0}
+    quest: {fileID: 1999612291}
     options:
     - text: "\u041F\u0440\u0438\u0432\u0435\u0442, \u043C\u043E\u0436\u0435\u0448\u044C
         \u043C\u043D\u0435 \u043F\u043E\u043C\u043E\u0447\u044C?"
@@ -19348,12 +19350,6 @@ MonoBehaviour:
       audio: {fileID: 0}
       targetId: B2
       enabled: 0
-  - id: B2
-    text: 
-    image: {fileID: 0}
-    audio: {fileID: 0}
-    quest: {fileID: 0}
-    options: []
 --- !u!114 &1789422067 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3638152905399017909, guid: 95c82663d0b6ec14ba853e8268bdf582, type: 3}
@@ -20003,6 +19999,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5169340431650167973, guid: 0d8e7f3fa9268ed40b2891f4edc73cc6, type: 3}
   m_PrefabInstance: {fileID: 1992042875}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1999612289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999612290}
+  - component: {fileID: 1999612291}
+  m_Layer: 0
+  m_Name: questCreateTrost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1999612290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999612289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1789422070}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1999612291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999612289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf5faf696bea9a4a95d2b891126686e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: 
+  desc: 
+  questInProgressConversation: {fileID: 0}
+  questCompletedConversation: {fileID: 0}
+  spawnMode: 0
+  enableOnQuestStart: []
+  spawnOnQuestStart: []
+  requiredItems: []
+  spawnOnQuestComplete: []
+  rewardItems: []
+  destroySpawnsOnQuestComplete: 1
+  isStarted: 0
+  isFinished: 0
 --- !u!1001 &2011677837
 PrefabInstance:
   m_ObjectHideFlags: 0
