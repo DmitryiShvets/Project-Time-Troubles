@@ -41,6 +41,7 @@ namespace StorageSystem
             sceneXElement.Add(_npcSurrogate.Serialize(model.npsList));
             sceneXElement.Add(_gameStateSurrogate.SerializationPlayerLocation(Game.GetPlayerPosition()));
             sceneXElement.Add(_gameObjectSurrogate.SerializeGameObj(model.saveableGameObjects));
+            sceneXElement.Add(_lootBoxesSurrogate.SerializeLootBoxObj(model.saveableLootBoxes));
             root.Add(sceneXElement);
 
             var scenes = GetAllScenesNpc(Game.GetActualScene()); //сохранение всех квестов на других локациях
@@ -81,14 +82,16 @@ namespace StorageSystem
                     _gameStateSurrogate.DeserializePlayerLocation(Game.GetActualScene(),
                         data); //загрузка последней посещенной локации
                 var gameObjects = _gameObjectSurrogate.DeserializeGameObj(Game.GetActualScene(), data);
+                var lootBoxes = _lootBoxesSurrogate.DeserializeLootBoxObj(Game.GetActualScene(), data);
                 model.inventory = inventory;
                 model.inventorySprites = inventorySprites;
                 if (Game.GetActualScene() != "Menu")
                     model.inventoryController.Refresh(); //проверка что мы сейчас не на локации меню
-                if (npc.Any()) model.InitializeNpc(npc);
+                if (Game.GetActualScene() != "Menu")model.InitializeNpc(npc);
                 model.InitializeLastScene(lastScene);
                 if (Game.GetActualScene() != "Menu") model.InitializeLastPosition(playerPos);
                 if (Game.GetActualScene() != "Menu") model.InitializeGameObj(gameObjects);
+                if (Game.GetActualScene() != "Menu") model.InitializeLootBoxObj(lootBoxes);
             }
         }
 

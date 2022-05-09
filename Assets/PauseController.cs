@@ -23,7 +23,7 @@ namespace UI
 
         private void Awake()
         {
-            _rootMenu = GetComponent<UIDocument1>().rootVisualElement;
+            _rootMenu = GetComponent<UIDocument>().rootVisualElement;
             _rootMenu.visible = _menuVisible;
 
         }

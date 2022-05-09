@@ -25,6 +25,7 @@ namespace Core
 
         public IsometricPlayerMovementController _PlayerMovement;
         public List<SaveableGameObject> saveableGameObjects;
+        public List<LootBox> saveableLootBoxes;
         private static ActualSceneState _scriptableObject;
         private static PositionState _positionState;
 
@@ -38,17 +39,20 @@ namespace Core
 
         public void InitializeNpc(Dictionary<string, Dictionary<string, bool>> map)
         {
-            foreach (var npc in npsList)
+            if (map.Any())
             {
-                if (map.ContainsKey(npc.name))
+                foreach (var npc in npsList)
                 {
-                    foreach (var quest in npc.quests)
+                    if (map.ContainsKey(npc.name))
                     {
-                        quest.isFinished = map[npc.name][quest.name];
+                        foreach (var quest in npc.quests)
+                        {
+                            quest.isFinished = map[npc.name][quest.name];
+                        }
                     }
-                }
 
-                npc.Check();
+                    npc.Check();
+                }
             }
         }
 
@@ -59,6 +63,18 @@ namespace Core
                 foreach (var obj in saveableGameObjects)
                 {
                     obj.isActive = objects[obj.name];
+                    obj.Check();
+                }
+            }
+        }
+
+        public void InitializeLootBoxObj(Dictionary<string, bool> objects)
+        {
+            if (objects.Any())
+            {
+                foreach (var obj in saveableLootBoxes)
+                {
+                    obj.isUsed = objects[obj.name];
                     obj.Check();
                 }
             }
