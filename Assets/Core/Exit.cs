@@ -28,7 +28,7 @@ public class Exit : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (canUse) Game.LoadScene(lvlName);
+        if (canUse) Game.LoadSceneSave(lvlName);
         //  SceneManager.LoadScene(lvlName);
     }
 }

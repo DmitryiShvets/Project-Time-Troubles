@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core;
+using StorageSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -42,8 +43,7 @@ namespace Gameplay
 
         private void Die()
         {
-            Game.LoadScene("Menu");
-            //SceneManager.LoadScene(0);
+            Game.PlayerDie();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Core
         private static ActualSceneState _scriptableObject;
 
         private static PositionState _positionState;
-      
+
         private static string saveFile = "save1.xml";
         public static string SaveFile => saveFile;
 
@@ -31,20 +31,40 @@ namespace Core
 
         public static void StartGame()
         {
-            LoadScene("home");
+            var filePath = $"{Application.persistentDataPath}/Saves/{saveFile}";
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+                LoadSceneNoSave("Menu");
+                Coroutines.StartRoutine(Delay());
+            }
+            else
+            {
+                LoadSceneSave("home");
+            }
+        }
+
+        static IEnumerator Delay()
+        {
+            yield return new WaitForSeconds(0.5f);
+            LoadSceneSave("home");
+        }
+
+        public static void PlayerDie()
+        {
+            LoadSceneNoSave("Menu");
         }
 
         public static void ContinueGame()
         {
-            LoadScene(GetLastScene());
+            LoadSceneSave(GetLastScene());
         }
 
         public static bool CanContinue()
         {
-            var folder = "Saves";
-            var folderPath = $"{Application.persistentDataPath}/{folder}";
+            // var folderPath = $"{Application.persistentDataPath}/Saves";
 
-            var filePath = $"{folderPath}/{saveFile}";
+            var filePath = $"{Application.persistentDataPath}/Saves/{saveFile}";
             return File.Exists(filePath);
         }
 
@@ -80,10 +100,17 @@ namespace Core
             sceneManager.Save();
         }
 
-        //Загружает новую сцену
-        public static void LoadScene(string sceneName)
+        //Загружает новую сцену c сохранением старой
+        public static void LoadSceneSave(string sceneName)
         {
             SaveScene();
+            sceneManager.LoadNewSceneAsync(sceneName);
+            _scriptableObject.lastScene = sceneName;
+        }
+
+        //Загружает новую сцену без сохранения старой
+        public static void LoadSceneNoSave(string sceneName)
+        {
             sceneManager.LoadNewSceneAsync(sceneName);
             _scriptableObject.lastScene = sceneName;
         }
