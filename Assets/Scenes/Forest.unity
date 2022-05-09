@@ -16390,7 +16390,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3444846068126461454, guid: 95c82663d0b6ec14ba853e8268bdf582, type: 3}
   m_PrefabInstance: {fileID: 463301885}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789422065}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21e458d11a4099848a6bfadb0685b659, type: 3}
@@ -33227,7 +33227,7 @@ MonoBehaviour:
   spawnOnQuestStart: []
   requiredItems:
   - item: {fileID: 203094501}
-    count: 1
+    count: 9
   spawnOnQuestComplete: []
   rewardItems:
   - {fileID: 900872801}
@@ -33580,53 +33580,16 @@ MonoBehaviour:
   - item: {fileID: 203094501}
     count: 1
   spawnOnQuestComplete: []
-  rewardItems:
-  - {fileID: 900872801}
+  rewardItems: []
   destroySpawnsOnQuestComplete: 1
   isStarted: 0
   isFinished: 0
---- !u!1 &1789422065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6147631909134297099, guid: 95c82663d0b6ec14ba853e8268bdf582, type: 3}
-  m_PrefabInstance: {fileID: 463301885}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1789422066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789422065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21e458d11a4099848a6bfadb0685b659, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items:
-  - id: B1
-    text: lkj
-    image: {fileID: 0}
-    audio: {fileID: 0}
-    quest: {fileID: 0}
-    options:
-    - text: "\u041F\u0440\u0438\u0432\u0435\u0442, \u043C\u043E\u0436\u0435\u0448\u044C
-        \u043C\u043D\u0435 \u043F\u043E\u043C\u043E\u0447\u044C?"
-      image: {fileID: 0}
-      audio: {fileID: 0}
-      targetId: B2
-      enabled: 0
-  - id: B2
-    text: 
-    image: {fileID: 0}
-    audio: {fileID: 0}
-    quest: {fileID: 0}
-    options: []
 --- !u!114 &1789422067 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3638152905399017909, guid: 95c82663d0b6ec14ba853e8268bdf582, type: 3}
   m_PrefabInstance: {fileID: 463301885}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789422065}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1feb95f97dd28f04aa037c80ca380774, type: 3}
