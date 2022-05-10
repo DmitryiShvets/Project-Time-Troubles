@@ -53,10 +53,16 @@ namespace StorageSystem
             if (inventory != null)
                 foreach (var item in inventory.Elements())
                 {
-                    result[item.FirstAttribute.Name.ToString()] = sprite[0];
+                    result[item.FirstAttribute.Name.ToString()] = LoadSprite(item.FirstAttribute.Name.ToString());
                 }
 
             return result;
+        }
+
+        private Sprite LoadSprite(string spiteName)
+        {
+            var spr = Resources.Load<Sprite>(spiteName);
+            return spr != null ? spr : sprite[0];
         }
     }
 }
