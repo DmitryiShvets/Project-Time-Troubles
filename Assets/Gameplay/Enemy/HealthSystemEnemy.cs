@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core;
 using Core.GameData.Storage;
 using Gameplay;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class HealthSystemEnemy : MonoBehaviour
     public GameObject particleEffect;
     public GameObject HitPointDamage;
     public GameObject pref;
-
+    private GameModel model = Schedule.GetModel<GameModel>();
     public bool start;
 
     // public bool start2;
@@ -42,13 +43,15 @@ public class HealthSystemEnemy : MonoBehaviour
     public void Damage(int damage)
     {
         //  start2 = true;
+        if (model.HasItem("Sword") || Game.GetActualScene() == "home")
+        {
+            hp -= damage;
 
-        hp -= damage;
+            GameObject go = Instantiate(HitPointDamage, transform.position, transform.rotation);
+            go.transform.GetChild(0).GetComponent<TMP_Text>().text = damage.ToString();
 
-        GameObject go = Instantiate(HitPointDamage, transform.position, transform.rotation);
-        go.transform.GetChild(0).GetComponent<TMP_Text>().text = damage.ToString();
-
-        Invoke("ResetBool", 0.2f);
+            Invoke("ResetBool", 0.2f);
+        }
     }
 
     void Update()
