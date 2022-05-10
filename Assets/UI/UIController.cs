@@ -14,8 +14,6 @@ namespace UI
         
         private Button _continueButton;
 
-        private Button _saveButton;
-
         private VisualElement _rootMenu;
 
         //private VisualElement _startCheck;
@@ -36,13 +34,10 @@ namespace UI
             _startButton = _rootMenu.Q<Button>("start-button");
             _exitButton = _rootMenu.Q<Button>("exit-button");
             _continueButton = _rootMenu.Q<Button>("continue-button");
-            _saveButton = _rootMenu.Q<Button>("save-button");
-
             //_startCheck = _rootMenu.Q<VisualElement>("start-check");
 
             _startButton.clicked += StartBtnPressed;
             _exitButton.clicked += ExitBtnPressed;
-            _saveButton.clicked += SaveBtnPressed;
 
             if (Game.CanContinue())
                 _continueButton.SetEnabled(true);
@@ -76,10 +71,6 @@ namespace UI
             Game.ContinueGame();
         }
 
-        void SaveBtnPressed()
-        {
-            Game.SaveScene();   
-        }
         void ExitBtnPressed()
         {
             Game.SaveScene();
