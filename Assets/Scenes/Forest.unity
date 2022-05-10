@@ -3282,16 +3282,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
-  - first: {x: -2, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 3
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 7, y: 6, z: 0}
     second:
       serializedVersion: 2
@@ -3396,8 +3386,8 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 22
     m_Data: {fileID: 11400000, guid: c6301f103f0aaaa4b8c92f10d50d35d6, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: afcd0013f9f94a74595edebfa5196e08, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e9d547a2d7e5b5341a53ab4b3cf1a7d6, type: 2}
   - m_RefCount: 1
@@ -3411,8 +3401,8 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 47b5725ff292d4640b9d51ef4c74a00c, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 21300000, guid: 432494848cd5fa4488c8f90069b0982e, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: e81653f20ad54df41b1a75389ab46324, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 08940d5c9f064fd4682269d69c6049f5, type: 3}
   - m_RefCount: 1
@@ -3420,7 +3410,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 65f197e0b55d5174081ccf7fb6ac0799, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 20
+  - m_RefCount: 19
     m_Data:
       e00: 1
       e01: 0
@@ -3457,7 +3447,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 26
+  - m_RefCount: 25
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -5896,26 +5886,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -2, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 10
-      m_TileSpriteIndex: 4
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -1, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 11
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 3, y: 6, z: 0}
     second:
       serializedVersion: 2
@@ -6618,10 +6588,10 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: a742a29ac60d841d39bf94b399647333, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 9104a2fe95bc6794e8a4c69f4ffa4e63, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 88457ca846e6e4b448947b4fa1db3c45, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 8241174c8304b094c8773fd4fafc95fb, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 7fa49cf4a88c04426910476f99b98ed5, type: 2}
   - m_RefCount: 1
@@ -6631,7 +6601,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b34450756e99e469bb0f1a38140dc444, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 9
+  - m_RefCount: 8
     m_Data: {fileID: 21300000, guid: a776d11a6af034008bdcb032763c4c4c, type: 3}
   - m_RefCount: 41
     m_Data: {fileID: 21300000, guid: 2abfa0b69193b46c4b7848a29c8a3c6f, type: 3}
@@ -6639,7 +6609,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: e308331e58a9f474a89006337eb33d3e, type: 3}
   - m_RefCount: 143
     m_Data: {fileID: 21300000, guid: 83b9904c54dbe4b8ba227406b0a259c3, type: 3}
-  - m_RefCount: 9
+  - m_RefCount: 8
     m_Data: {fileID: 21300000, guid: cd8a00ab8c9644c449810e6556ee77f8, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: 21300000, guid: 6b9080908d34f4ed4b111f8752045ecf, type: 3}
@@ -6658,7 +6628,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: ed8786350b43746719629d0e1c8d5a45, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 293
+  - m_RefCount: 291
     m_Data:
       e00: 1
       e01: 0
@@ -6695,7 +6665,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 295
+  - m_RefCount: 293
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -8485,28 +8455,6 @@ CompositeCollider2D:
         Y: 9687500
       - X: -70000000
         Y: 9687500
-    - - X: -35000000
-        Y: 16875000
-      - X: -35000000
-        Y: 17187500
-      - X: -34687500
-        Y: 17343750
-      - X: -34687500
-        Y: 22500000
-      - X: -35625000
-        Y: 22500000
-      - X: -40000000
-        Y: 20468750
-      - X: -40000000
-        Y: 20000000
-      - X: -40312500
-        Y: 20000000
-      - X: -40312500
-        Y: 15000000
-      - X: -40156248
-        Y: 14687500
-      - X: -39687500
-        Y: 14687500
     - - X: 30000000
         Y: -468750
       - X: 30294118
@@ -10439,6 +10387,15 @@ CompositeCollider2D:
       - {x: -6.53125, y: 4.249971}
       - {x: -6.531234, y: 3.6874928}
       - {x: -6.0312448, y: 3.46875}
+    - - {x: -4.468756, y: 2.71875}
+      - {x: -3.96875, y: 2.9687667}
+      - {x: -3.9687793, y: 3.5}
+      - {x: -4, y: 3.499971}
+      - {x: -4.000047, y: 3.4531484}
+      - {x: -4.0580487, y: 3.482134}
+      - {x: -4.0781274, y: 3.4687464}
+      - {x: -4.5, y: 2.9062417}
+      - {x: -4.499971, y: 2.71875}
     - - {x: -7.0000057, y: 0.96875}
       - {x: -6.4999967, y: 1.2031281}
       - {x: -6.470584, y: 1.2325388}
@@ -10476,15 +10433,6 @@ CompositeCollider2D:
       - {x: -7.5312495, y: 1.2187322}
       - {x: -7.531234, y: 1.187493}
       - {x: -7.0312448, y: 0.96875}
-    - - {x: -4.468756, y: 2.71875}
-      - {x: -3.96875, y: 2.9687667}
-      - {x: -3.9687793, y: 3.5}
-      - {x: -4, y: 3.499971}
-      - {x: -4.000047, y: 3.4531484}
-      - {x: -4.0580487, y: 3.482134}
-      - {x: -4.0781274, y: 3.4687464}
-      - {x: -4.5, y: 2.9062417}
-      - {x: -4.499971, y: 2.71875}
     - - {x: 2.4999945, y: -0.28125}
       - {x: 3.0000033, y: -0.0468719}
       - {x: 3.029416, y: -0.0174612}
@@ -10541,17 +10489,6 @@ CompositeCollider2D:
       - {x: 1.96875, y: -0.0312678}
       - {x: 1.9687665, y: -0.0625071}
       - {x: 2.4687552, y: -0.28125}
-    - - {x: -3.9687557, y: 1.46875}
-      - {x: -3.5, y: 1.6875172}
-      - {x: -3.4999852, y: 1.7187574}
-      - {x: -3.46875, y: 1.7343916}
-      - {x: -3.4687793, y: 2.25}
-      - {x: -3.5625048, y: 2.2499976}
-      - {x: -4, y: 2.0468576}
-      - {x: -4.0000296, y: 2}
-      - {x: -4.03125, y: 1.9999708}
-      - {x: -4.031247, y: 1.4999945}
-      - {x: -4.015608, y: 1.46875}
     - - {x: 0.5000474, y: 0.2812737}
       - {x: 0.5000294, y: 0.703125}
       - {x: 0.5468805, y: 0.7031278}
@@ -32940,19 +32877,16 @@ MonoBehaviour:
       targetId: B4
       enabled: 0
   - id: B4
-    text: "\u041C\u043D\u0435 \u043D\u0443\u0436\u043D\u0430 \u0431\u0443\u0434\u0435\u0442
-      \u043E\u0447\u0435\u043D\u044C \u043A\u0440\u0435\u043F\u043A\u0430\u044F \u0432\u0435\u0442\u043A\u0430
-      \u0441 \u043E\u0434\u043D\u043E\u0433\u043E \u0438\u0437 \u044D\u0442\u0438\u0445
-      \u0434\u0435\u0440\u0435\u0432\u044C\u0435\u0432. \u0418\u0445 \u043B\u0438\u0441\u0442\u044C\u044F
-      \u0431\u0435\u0437\u0443\u043C\u043D\u043E \u0445\u0440\u0443\u043F\u043A\u0438\u0435,
-      \u043D\u043E \u043A\u0440\u0435\u043F\u043E\u0441\u0442\u0438 \u0441\u0442\u0432\u043E\u043B\u043E\u0432
-      \u0438 \u0432\u0435\u0442\u0432\u0435\u0439 \u043F\u043E\u0437\u0430\u0432\u0438\u0434\u0443\u0435\u0442
-      \u0434\u0430\u0436\u0435 \u0441\u0442\u0430\u043B\u044C."
+    text: "\u041C\u043D\u0435 \u043D\u0443\u0436\u043D\u044B \u0431\u0443\u0434\u0443\u0442
+      \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B \u0434\u043B\u044F \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F
+      \u0442\u0440\u043E\u0441\u0442\u0438. \u041F\u043E\u0434\u0443\u043C\u0430\u0439,
+      \u0447\u0442\u043E \u043C\u043E\u0436\u0435\u0442 \u0434\u043B\u044F \u044D\u0442\u043E\u0433\u043E
+      \u0441\u0433\u043E\u0434\u0438\u0442\u044C\u0441\u044F..."
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
     options:
-    - text: "\u042F \u043D\u0430\u0439\u0434\u0443 \u0435\u0451"
+    - text: "\u042F \u043D\u0430\u0439\u0434\u0443 \u0447\u0442\u043E-\u043D\u0438\u0431\u0443\u0434\u044C"
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: B5
@@ -33081,10 +33015,15 @@ MonoBehaviour:
   items:
   - id: B1
     text: "\u0423\u0445 \u0442\u044B! \u0425\u043E\u0440\u043E\u0448\u0430\u044F
-      \u0440\u0430\u0431\u043E\u0442\u0430! \u0414\u0430\u0439 \u043C\u043D\u0435
-      \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u0432\u0440\u0435\u043C\u044F,
-      \u044F \u0441\u0434\u0435\u043B\u0430\u044E \u0438\u0445 \u043D\u0435\u0451
-      \u043F\u043E\u0434\u0445\u043E\u0434\u044F\u0449\u0443\u044E \u0442\u0440\u043E\u0441\u0442\u044C\u044E"
+      \u0440\u0430\u0431\u043E\u0442\u0430! \u0414\u0443\u043C\u0430\u044E, \u044D\u0442\u0438
+      \u043E\u0431\u043B\u043E\u043C\u043A\u0438 \u043E\u0442 \u0431\u043E\u0447\u0435\u043A
+      \u043C\u043E\u0433\u0443\u0442 \u043F\u043E\u0441\u043B\u0443\u0436\u0438\u0442\u044C
+      \u0445\u043E\u0440\u043E\u0448\u0435\u0439 \u043E\u043F\u043E\u0440\u043E\u0439
+      \u0434\u043B\u044F \u043D\u0430\u0448\u0435\u0433\u043E \u043C\u0443\u0434\u0440\u0435\u0446\u0430.
+      \u0414\u0430\u0439 \u043C\u043D\u0435 \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u043E\u0435
+      \u0432\u0440\u0435\u043C\u044F, \u044F \u0441\u0434\u0435\u043B\u0430\u044E
+      \u0438\u0445 \u043D\u0435\u0451 \u043F\u043E\u0434\u0445\u043E\u0434\u044F\u0449\u0443\u044E
+      \u0442\u0440\u043E\u0441\u0442\u044C\u044E"
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
@@ -33113,59 +33052,59 @@ MonoBehaviour:
     audio: {fileID: 0}
     quest: {fileID: 0}
     options:
-    - text: "\u0422\u044B \u0441\u043A\u043E\u0440\u043E?"
+    - text: :')
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: B4
       enabled: 0
   - id: B4
-    text: "\u041D\u0415 \u0422\u041E\u0420\u041E\u041F\u0418 \u041C\u0415\u041D\u042F!!"
+    text: "\u0415\u0449\u0451 \u0447\u0443\u0442\u044C-\u0447\u0443\u0442\u044C..."
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
     options:
-    - text: "\u042F \u041D\u0415 \u0422\u041E\u0420\u041E\u041F\u041B\u042E!"
+    - text: "\u041E\u0437\u041E"
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: B5
       enabled: 0
   - id: B5
-    text: "\u042D\u0422\u041E \u0418\u041C\u0415\u041D\u041D\u041E \u0422\u041E,
-      \u0427\u0422\u041E \u0422\u042B \u0421\u0415\u0419\u0427\u0410\u0421 \u0414\u0415\u041B\u0410\u0415\u0428\u042C!"
+    text: "\u041F\u043E\u0447\u0442\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0430.
+      \u0418-\u0438-\u0438-\u0438..."
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
     options:
-    - text: "\u041D\u0435\u043F\u0440\u0430\u0432\u0434\u0430!"
+    - text: "\\(\u2605\u03C9\u2605)/"
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: B6
       enabled: 0
   - id: B6
-    text: "\u0413\u043E\u0442\u043E\u0432\u043E."
+    text: "\u0413\u043E\u0442\u043E\u0432\u043E!"
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
     options:
-    - text: "\u0423\u0436\u0435 \u0432\u0441\u0451?"
+    - text: "(\uFF89\u25D5\u30EE\u25D5)\uFF89*:\uFF65\uFF9F\u2727"
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: B7
       enabled: 0
   - id: B7
-    text: "\u0414\u0430, \u044F \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0430.
-      \u041C\u043E\u0436\u0435\u0448\u044C \u0437\u0430\u0431\u0438\u0440\u0430\u0442\u044C."
+    text: "\u042F \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0430. \u041C\u043E\u0436\u0435\u0448\u044C
+      \u0437\u0430\u0431\u0438\u0440\u0430\u0442\u044C!"
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
     options:
-    - text: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0431\u043E\u043B\u044C\u0448\u043E"
+    - text: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0431\u043E\u043B\u044C\u0448\u043E\u0435!"
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: B8
       enabled: 0
   - id: B8
-    text: ...
+    text: "\u0411\u0435\u0440\u0435\u0433\u0438 \u0441\u0435\u0431\u044F!"
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
@@ -33184,8 +33123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: A1
-    text: "\u0422\u044B \u0443\u0436\u0435 \u043D\u0430\u0448\u0451\u043B \u043F\u043E-\u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u043C\u0443
-      \u043A\u0440\u0435\u043F\u043A\u0443\u044E \u0432\u0435\u0442\u043A\u0443?"
+    text: "\u0422\u044B \u0443\u0436\u0435 \u043D\u0430\u0448\u0451\u043B \u043F\u043E\u0434\u0445\u043E\u0434\u044F\u0449\u0438\u0435
+      \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B?"
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
@@ -33197,8 +33136,9 @@ MonoBehaviour:
       enabled: 0
   - id: A2
     text: "\u042D\u0442\u043E \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C
-      \u0441\u043B\u043E\u0436\u043D\u043E. \u041D\u0435 \u043D\u0430 \u043A\u0430\u0436\u0434\u043E\u043C
-      \u0434\u0435\u0440\u0435\u0432\u0435 \u0435\u0441\u0442\u044C \u0442\u0430\u043A\u0430\u044F."
+      \u0441\u043B\u043E\u0436\u043D\u043E, \u043D\u043E \u044F \u0443\u0432\u0435\u0440\u0435\u043D\u0430,
+      \u0447\u0442\u043E \u0442\u044B \u043F\u0440\u0438\u0434\u0443\u043C\u0430\u0435\u0448\u044C
+      \u0447\u0442\u043E-\u043D\u0438\u0431\u0443\u0434\u044C!"
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
