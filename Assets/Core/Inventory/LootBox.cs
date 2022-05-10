@@ -38,8 +38,9 @@ namespace Core
             isUsed = true;
             UserInterfaceAudio.OnOpenBox();
             Check();
-           // GameObject obj = PrefabUtility.InstantiatePrefab(loot) as GameObject;
+            // GameObject obj = PrefabUtility.InstantiatePrefab(loot) as GameObject;
             GameObject o = Instantiate(loot);
+            o.name = o.name.Replace("(Clone)", "");
             if (o != null) o.transform.position = _spawnPos;
         }
 

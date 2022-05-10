@@ -11,7 +11,6 @@ using ScriptableObjects;
 using UnityEngine.UIElements;
 
 
-
 public class BreakObject : MonoBehaviour
 {
     //    public static HealthSystemEnemy instance;
@@ -73,12 +72,12 @@ public class BreakObject : MonoBehaviour
             UserInterfaceAudio.OnDestroyObj();
             Bank.AddCoins(this, 100);
             GameObject o = Instantiate(pref);
-           // GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
-           o.transform.position = _position;
+            o.name = o.name.Replace("(Clone)", "");
+            // GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
+            o.transform.position = _position;
         }
     }
 
-   
 
     private void ResetBool()
     {
@@ -86,6 +85,3 @@ public class BreakObject : MonoBehaviour
         start = false;
     }
 }
-
-
-

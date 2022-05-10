@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -11,7 +12,7 @@ namespace UI
         private Button _startButton;
 
         private Button _exitButton;
-        
+
         private Button _continueButton;
 
         private VisualElement _rootMenu;
@@ -24,7 +25,6 @@ namespace UI
         {
             _rootMenu = GetComponent<UIDocument>().rootVisualElement;
             _rootMenu.visible = _menuVisible;
-            
         }
 
         // Start is called before the first frame update
@@ -38,18 +38,15 @@ namespace UI
 
             _startButton.clicked += StartBtnPressed;
             _exitButton.clicked += ExitBtnPressed;
+            _continueButton.clicked += ContinueBtnPressed;
 
             if (Game.CanContinue())
                 _continueButton.SetEnabled(true);
             else _continueButton.SetEnabled(false);
-
-            _continueButton.clicked += ContinueBtnPressed;
-
+         
             //_startButton.RegisterCallback<ClickEvent>();
-
         }
-
-        
+    
 
         // Update is called once per frame
         void Update()
@@ -73,11 +70,10 @@ namespace UI
 
         void ExitBtnPressed()
         {
-          //  Game.SaveScene();
+            //  Game.SaveScene();
             Application.Quit();
         }
 
-        
 
         public void ActivateMenu()
         {

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +11,6 @@ namespace UI
 {
     public class PauseController : MonoBehaviour
     {
-
         private Button _startButton;
 
         private Button _exitButton;
@@ -26,7 +27,6 @@ namespace UI
         {
             _rootMenu = GetComponent<UIDocument>().rootVisualElement;
             _rootMenu.visible = _menuVisible;
-
         }
 
         // Start is called before the first frame update
@@ -36,6 +36,7 @@ namespace UI
             _exitButton = _rootMenu.Q<Button>("exit-button");
             _continueButton = _rootMenu.Q<Button>("continue-button");
             _saveButton = _rootMenu.Q<Button>("save-button");
+            _startButton.focusable = false;
 
             _startButton.clicked += StartBtnPressed;
             _exitButton.clicked += ExitBtnPressed;
@@ -43,22 +44,30 @@ namespace UI
             _continueButton.clicked += ContinueBtnPressed;
         }
 
+        IEnumerator Delay()
+        {
+            yield return new WaitForSeconds(1);
+            _startButton.SetEnabled(true);
+        }
+
         void ContinueBtnPressed()
         {
-           ActivateMenu();
+            ActivateMenu();
         }
+
         void SaveBtnPressed()
         {
             Game.SaveScene();
         }
 
         void StartBtnPressed()
-        { 
+        {
             Game.StartGame();
         }
+
         void ExitBtnPressed()
         {
-         //   Game.SaveScene();
+            //   Game.SaveScene();
             Application.Quit();
         }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Gameplay;
 using ScriptableObjects;
 using StorageSystem;
 using Tools;
@@ -31,6 +32,8 @@ namespace Core
 
         public static void StartGame()
         {
+            PlayerPrefs.DeleteAll();
+            
             var filePath = $"{Application.persistentDataPath}/Saves/{saveFile}";
             if (File.Exists(filePath))
             {

@@ -4,7 +4,7 @@
         <ui:VisualElement name="center-panel" class="menu-center-panel menu-background-color" style="background-image: none; height: 100%; background-color: rgba(0, 0, 0, 0.39);">
             <ui:VisualElement name="buttons-list" class="menu-buttons-list" style="height: auto; background-image: none; -unity-background-scale-mode: stretch-to-fill; width: 60%; justify-content: flex-end;">
                 <ui:Button text="ПРОДОЛЖИТЬ ИГРУ" display-tooltip-when-elided="true" name="continue-button" tooltip="Продолжить игру с последнего сохранения" class="menu-button button" style="background-image: none; -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 5; -unity-slice-top: 5; -unity-slice-right: 5; -unity-slice-bottom: 5; height: 100px;" />
-                <ui:Button text="СОХРАНИТЬ" display-tooltip-when-elided="true" name="save-button" enable-rich-text="false" tooltip="Сохранить прогресс" class="button menu-button" />
+                <ui:Button text="СОХРАНИТЬ" display-tooltip-when-elided="true" name="save-button" enable-rich-text="false" tooltip="Сохранить прогресс" focusable="true" class="button menu-button" />
                 <ui:Button text="НАЧАТЬ ЗАНОВО" display-tooltip-when-elided="true" name="start-button" tooltip="Начать игру заново (прогресс будет утерян)" class="button menu-button" />
                 <ui:Button text="ВЫЙТИ" display-tooltip-when-elided="true" name="exit-button" enable-rich-text="false" tooltip="Сохранить прогресс и выйти" class="button menu-button" />
             </ui:VisualElement>

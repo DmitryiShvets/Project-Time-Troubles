@@ -43,7 +43,7 @@ public class HealthSystemEnemy : MonoBehaviour
     public void Damage(int damage)
     {
         //  start2 = true;
-        if (model.HasItem("Sword") || Game.GetActualScene() == "home")
+        if (model.HasItem("sword") || Game.GetActualScene() == "home")
         {
             hp -= damage;
 
@@ -73,11 +73,11 @@ public class HealthSystemEnemy : MonoBehaviour
             Bank.AddCoins(this, 100);
             GameObject o = Instantiate(pref);
             //GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
+            o.name = o.name.Replace("(Clone)", "");
             o.transform.position = _position;
         }
     }
 
-   
 
     private void ResetBool()
     {

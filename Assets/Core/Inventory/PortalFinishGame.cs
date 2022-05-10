@@ -39,7 +39,7 @@ namespace Core
             if (gameFinished)
             {
                 Debug.Log("GAME finish");
-                //Game.LoadSceneSave(lvlName);
+                Game.LoadSceneSave("Finish");
             }
         }
     }
