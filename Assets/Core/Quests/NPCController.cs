@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Events;
@@ -12,19 +14,23 @@ namespace Core
     {
         //Лист диалогов у нпс которые будут отрисовываться 
         public List<ConversationScript> conversationList;
+        private List<ConversationScript> _conversationList = new List<ConversationScript>();
 
         Quest activeQuest = null;
 
-        //Массив квестов у нпс которые
+        //Массив квестов которые у нпс
         public Quest[] quests;
 
+
         GameModel model = Schedule.GetModel<GameModel>();
+
 
         void OnEnable()
         {
             quests = gameObject.GetComponentsInChildren<Quest>();
             Check();
         }
+
         //Проверка завершенных квестов если квест у нпс завершен то из списка диалогов удаляется диалог начинающий этот квест
         public void Check()
         {
@@ -32,14 +38,72 @@ namespace Core
             {
                 if (q.isFinished)
                 {
-                    conversationList.Remove(conversationList.First());
+                    for (int i = 0; i < conversationList.Count(); i++)
+                    {
+                        if (q.name == conversationList[i].GetQuest())
+                        {
+                            Debug.Log(q.name);
+                            conversationList.Remove(conversationList[i]);
+                        }
+                    }
                 }
             }
         }
 
+
+        private void CheckQuest()
+        {
+            foreach (var q in quests)
+            {
+                if (q.requirementQuest != null)
+                {
+                    bool xxx = model.IsCompleteQuest(q.requirementQuest.sceneName, q.requirementQuest.npcName,
+                        q.requirementQuest.questName);
+
+                    if ((!xxx && (q.requirementQuest.quest != null &&
+                                  !q.requirementQuest.quest.isFinished)) || !xxx)
+                    {
+                        for (int i = 0; i < conversationList.Count(); i++)
+                        {
+                            if (q.name == conversationList[i].GetQuest())
+                            {
+                                Debug.Log(q.name);
+                                _conversationList.Add(conversationList[i]);
+                                conversationList.Remove(conversationList[i]);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        bool exist = false;
+                        for (int i = 0; i < conversationList.Count(); i++)
+                        {
+                            if (q.name == conversationList[i].GetQuest())
+                            {
+                                exist = true;
+                            }
+                        }
+
+                        if (!exist)
+                        {
+                            foreach (var x in _conversationList)
+                            {
+                                if (q.name == x.GetQuest())
+                                {
+                                    conversationList.Insert(0, x);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
         //При попадании игрока в коллайдер происходит вызов ивента "Показать диалог"
         public void OnCollisionEnter2D(Collision2D collision)
         {
+            CheckQuest();
             var c = GetConversation();
             if (c != null)
             {

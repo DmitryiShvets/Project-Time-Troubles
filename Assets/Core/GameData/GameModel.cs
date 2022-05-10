@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Core.GameData.Storage;
+using Gameplay;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -36,6 +37,11 @@ namespace Core
         HashSet<string> storyItems = new HashSet<string>();
 
         public IEnumerable<string> InventoryItems => inventory.Keys;
+
+        public bool HasItem(string item)
+        {
+            return inventory.ContainsKey(item) && GetInventoryCount(item) >= 1;
+        }
 
         public void InitializeNpc(Dictionary<string, Dictionary<string, bool>> map)
         {
@@ -83,6 +89,11 @@ namespace Core
         public void Save(string sceneName)
         {
             _dataStorage.Save(sceneName);
+        }
+
+        public bool IsCompleteQuest(string sceneName, string nps, string quest)
+        {
+            return _dataStorage.IsCompleteQuest(sceneName, nps, quest);
         }
 
         public void InitializeLastScene(string lastScene)

@@ -794,7 +794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4680457135580208792, guid: 261e26ce30b51a04489371663664708f, type: 3}
       propertyPath: items.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4680457135580208792, guid: 261e26ce30b51a04489371663664708f, type: 3}
       propertyPath: items.Array.data[0].id
@@ -806,7 +806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4680457135580208792, guid: 261e26ce30b51a04489371663664708f, type: 3}
       propertyPath: items.Array.data[0].text
-      value: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0442\u0435\u0431\u0435!"
+      value: "\u0417\u0430\u0445\u043E\u0434\u0438 \u0435\u0449\u0435!"
       objectReference: {fileID: 0}
     - target: {fileID: 4680457135580208792, guid: 261e26ce30b51a04489371663664708f, type: 3}
       propertyPath: items.Array.data[1].text
@@ -828,7 +828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4680457135580208792, guid: 261e26ce30b51a04489371663664708f, type: 3}
       propertyPath: items.Array.data[0].options.Array.data[0].targetId
-      value: B2
+      value: B1
       objectReference: {fileID: 0}
     - target: {fileID: 5441445661862892062, guid: 261e26ce30b51a04489371663664708f, type: 3}
       propertyPath: quests.Array.size
@@ -849,7 +849,7 @@ PrefabInstance:
     - target: {fileID: 5441445661862892062, guid: 261e26ce30b51a04489371663664708f, type: 3}
       propertyPath: conversationList.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 273947583}
     - target: {fileID: 6210525502342733221, guid: 261e26ce30b51a04489371663664708f, type: 3}
       propertyPath: items.Array.size
       value: 4
@@ -959,14 +959,24 @@ PrefabInstance:
       propertyPath: items.Array.data[3].options.Array.data[0].targetId
       value: A5
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4680457135580208792, guid: 261e26ce30b51a04489371663664708f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 261e26ce30b51a04489371663664708f, type: 3}
 --- !u!4 &273947582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3219637859602324415, guid: 261e26ce30b51a04489371663664708f, type: 3}
   m_PrefabInstance: {fileID: 273947581}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &273947583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4680457135580208792, guid: 261e26ce30b51a04489371663664708f, type: 3}
+  m_PrefabInstance: {fileID: 273947581}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e458d11a4099848a6bfadb0685b659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &307872241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9714,6 +9724,7 @@ GameObject:
   - component: {fileID: 1052819715}
   - component: {fileID: 1052819714}
   - component: {fileID: 1052819713}
+  - component: {fileID: 1052819716}
   m_Layer: 0
   m_Name: questFindTrost
   m_TagString: Untagged
@@ -9805,20 +9816,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: FindTrost
   desc: 
+  requirementQuest: {fileID: 1052819716}
   questInProgressConversation: {fileID: 1052819714}
   questCompletedConversation: {fileID: 1052819713}
   spawnMode: 0
   enableOnQuestStart: []
   spawnOnQuestStart: []
-  requiredItems:
-  - item: {fileID: 80015574}
-    count: 1
+  requiredItems: []
   spawnOnQuestComplete: []
   rewardItems:
   - {fileID: 1253601937}
   destroySpawnsOnQuestComplete: 1
   isStarted: 0
   isFinished: 0
+--- !u!114 &1052819716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052819711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e0f8a58351424b9cf0b25c36d2490f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: CampDesert
+  npcName: NPCgrand
+  questName: questFindEat
+  quest: {fileID: 1064632603}
 --- !u!1 &1064632602
 GameObject:
   m_ObjectHideFlags: 0
@@ -9850,18 +9876,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf5faf696bea9a4a95d2b891126686e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: 
+  title: FintEat
   desc: 
+  requirementQuest: {fileID: 0}
   questInProgressConversation: {fileID: 1064632605}
   questCompletedConversation: {fileID: 1064632606}
   spawnMode: 0
   enableOnQuestStart: []
   spawnOnQuestStart: []
-  requiredItems:
-  - item: {fileID: 80015574}
-    count: 1
-  - item: {fileID: 80015574}
-    count: 1
+  requiredItems: []
   spawnOnQuestComplete: []
   rewardItems: []
   destroySpawnsOnQuestComplete: 1
@@ -11801,6 +11824,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 762286894583818954, guid: d9d899d306928384bb1efa1d1a9b6541, type: 3}
+      propertyPath: quests.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 762286894583818954, guid: d9d899d306928384bb1efa1d1a9b6541, type: 3}
+      propertyPath: quests.Array.data[0]
+      value: 
+      objectReference: {fileID: 1064632603}
+    - target: {fileID: 762286894583818954, guid: d9d899d306928384bb1efa1d1a9b6541, type: 3}
       propertyPath: conversationList.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -12056,6 +12087,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7906554617369584491, guid: d9d899d306928384bb1efa1d1a9b6541, type: 3}
   m_PrefabInstance: {fileID: 1229519636}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1229519638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 762286894583818954, guid: d9d899d306928384bb1efa1d1a9b6541, type: 3}
+  m_PrefabInstance: {fileID: 1229519636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1feb95f97dd28f04aa037c80ca380774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1247924236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19425,7 +19467,7 @@ PrefabInstance:
       objectReference: {fileID: 444550979}
     - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
       propertyPath: model.npsList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
       propertyPath: model.inventoryController
@@ -19435,6 +19477,10 @@ PrefabInstance:
       propertyPath: model.npsList.Array.data[0]
       value: 
       objectReference: {fileID: 1164371773}
+    - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: model.npsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1229519638}
     - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
       propertyPath: model.saveableGameObjects.Array.size
       value: 2

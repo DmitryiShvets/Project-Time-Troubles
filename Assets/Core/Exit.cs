@@ -10,7 +10,10 @@ public class Exit : MonoBehaviour
 {
     //  Scenes/Temple
     public string lvlName;
+    public string requirementItem;
     private bool canUse;
+
+    GameModel model = Schedule.GetModel<GameModel>();
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +22,7 @@ public class Exit : MonoBehaviour
         StartCoroutine(Delay());
     }
 
-    IEnumerator Delay() 
+    IEnumerator Delay()
     {
         yield return new WaitForSeconds(1);
         canUse = true;
@@ -28,7 +31,20 @@ public class Exit : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (canUse) Game.LoadSceneSave(lvlName);
-        //  SceneManager.LoadScene(lvlName);
+        if (canUse)
+        {
+            if (requirementItem != "")
+            {
+                if (model.HasItem(requirementItem))
+                {
+                    Game.LoadSceneSave(lvlName);
+                }
+            }
+            else
+            {
+                Game.LoadSceneSave(lvlName);
+            }
+        }
     }
+    //  SceneManager.LoadScene(lvlName);
 }

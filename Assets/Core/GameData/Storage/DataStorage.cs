@@ -14,6 +14,10 @@ namespace Core
         private bool _savingComplete;
         private FileStorage _storage;
 
+        public bool IsCompleteQuest(string sceneName, string npc, string quest)
+        {
+            return _storage.IsCompleteQuest(sceneName, npc, quest);
+        }
 
         private void Start()
         {
@@ -26,14 +30,6 @@ namespace Core
         public void Save(string sceneName)
         {
             _storage.Save(sceneName);
-        }
-
-        private void Update()
-        {
-            if (Keyboard.current.pKey.wasPressedThisFrame)
-            {
-                _storage.Save(Game.GetActualScene());
-            }
         }
     }
 }

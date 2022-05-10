@@ -20,10 +20,5 @@ namespace Core
                 Destroy(gameObject);
             }
         }
-
-        private void Start()
-        {
-            Game.AddItem();
-        }
     }
 }

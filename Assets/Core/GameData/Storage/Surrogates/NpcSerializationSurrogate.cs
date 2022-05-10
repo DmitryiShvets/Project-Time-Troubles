@@ -43,6 +43,27 @@ namespace StorageSystem
             return result;
         }
 
+        public bool IsCompleteQuest(string sceneName, string npc, string quest, string xDocument)
+        {
+            XElement npclist = XDocument.Parse(xDocument).Element("root")?.Element(sceneName)?.Element("npc");
+            if (npclist != null)
+            {
+                foreach (var xnpc in npclist.Elements())
+                {
+                    if (xnpc.Name.ToString() == npc)
+                    {
+                        foreach (var q in xnpc.Attributes())
+                        {
+                            if (q.Name.ToString() == quest && GetBool(q.Value)) return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+
+
         bool GetBool(string str)
         {
             return str == "true";

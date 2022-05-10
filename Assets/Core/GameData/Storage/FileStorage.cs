@@ -28,6 +28,18 @@ namespace StorageSystem
             filePath = $"{folderPath}/{fileName}";
         }
 
+        public bool IsCompleteQuest(string sceneName, string npc, string quest)
+        {
+            if (File.Exists(filePath))
+            {
+                var data = File.ReadAllText(filePath);
+                return _npcSurrogate.IsCompleteQuest(sceneName, npc, quest, data);
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         #region SAVE
 
@@ -87,7 +99,7 @@ namespace StorageSystem
                 model.inventorySprites = inventorySprites;
                 if (Game.GetActualScene() != "Menu")
                     model.inventoryController.Refresh(); //проверка что мы сейчас не на локации меню
-                if (Game.GetActualScene() != "Menu")model.InitializeNpc(npc);
+                if (Game.GetActualScene() != "Menu") model.InitializeNpc(npc);
                 model.InitializeLastScene(lastScene);
                 if (Game.GetActualScene() != "Menu") model.InitializeLastPosition(playerPos);
                 if (Game.GetActualScene() != "Menu") model.InitializeGameObj(gameObjects);

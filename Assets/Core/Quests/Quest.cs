@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core
 {
@@ -20,9 +21,10 @@ namespace Core
             public InventoryItem item;
             public int count = 1;
         }
-
+        
         public string title;
         public string desc;
+        public RQInfo requirementQuest;
         public ConversationScript questInProgressConversation, questCompletedConversation;
 
         public SpawnMode spawnMode = SpawnMode.CloneAndEnable;

@@ -8,9 +8,19 @@ namespace Core
     /// </summary>
     public class ConversationScript : MonoBehaviour, ISerializationCallbackReceiver
     {
-
         [HideInInspector] [SerializeField] public List<ConversationPiece> items = new List<ConversationPiece>();
         Dictionary<string, ConversationPiece> index = new Dictionary<string, ConversationPiece>();
+
+        public string GetQuest()
+        {
+            string quest = "none";
+            foreach (var x in items)
+            {
+                if (x.quest != null) quest = x.quest.name;
+            }
+
+            return quest;
+        }
 
         public bool ContainsKey(string id)
         {
@@ -45,6 +55,7 @@ namespace Core
                     }
                 }
             }
+
             for (var i = 0; i < items.Count; i++)
             {
                 if (items[i].id == originalConversationPiece.id)

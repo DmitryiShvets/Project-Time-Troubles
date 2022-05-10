@@ -35,20 +35,14 @@ namespace Core
             if (File.Exists(filePath))
             {
                 File.Delete(filePath);
-                LoadSceneNoSave("Menu");
-                Coroutines.StartRoutine(Delay());
+                LoadSceneNoSave("home");
             }
             else
             {
-                LoadSceneSave("home");
+                LoadSceneNoSave("home");
             }
         }
 
-        static IEnumerator Delay()
-        {
-            yield return new WaitForSeconds(0.5f);
-            LoadSceneSave("home");
-        }
 
         public static void PlayerDie()
         {
@@ -57,13 +51,11 @@ namespace Core
 
         public static void ContinueGame()
         {
-            LoadSceneSave(GetLastScene());
+            LoadSceneNoSave(GetLastScene());
         }
 
         public static bool CanContinue()
         {
-            // var folderPath = $"{Application.persistentDataPath}/Saves";
-
             var filePath = $"{Application.persistentDataPath}/Saves/{saveFile}";
             return File.Exists(filePath);
         }
