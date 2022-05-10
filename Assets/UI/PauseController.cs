@@ -6,17 +6,18 @@ using Core;
 
 namespace UI
 {
-    public class UIController : MonoBehaviour
+    public class PauseController : MonoBehaviour
     {
+
         private Button _startButton;
 
         private Button _exitButton;
-        
+
         private Button _continueButton;
 
-        private VisualElement _rootMenu;
+        private Button _saveButton;
 
-        //private VisualElement _startCheck;
+        private VisualElement _rootMenu;
 
         private bool _menuVisible = false;
 
@@ -24,60 +25,41 @@ namespace UI
         {
             _rootMenu = GetComponent<UIDocument>().rootVisualElement;
             _rootMenu.visible = _menuVisible;
-            
+
         }
 
         // Start is called before the first frame update
         void Start()
         {
-            // root = GetComponent<UIDocument>().rootVisualElement;
             _startButton = _rootMenu.Q<Button>("start-button");
             _exitButton = _rootMenu.Q<Button>("exit-button");
             _continueButton = _rootMenu.Q<Button>("continue-button");
-            //_startCheck = _rootMenu.Q<VisualElement>("start-check");
+            _saveButton = _rootMenu.Q<Button>("save-button");
 
             _startButton.clicked += StartBtnPressed;
             _exitButton.clicked += ExitBtnPressed;
-
-            if (Game.CanContinue())
-                _continueButton.SetEnabled(true);
-            else _continueButton.SetEnabled(false);
-
+            _saveButton.clicked += SaveBtnPressed;
             _continueButton.clicked += ContinueBtnPressed;
-
-            //_startButton.RegisterCallback<ClickEvent>();
-
-        }
-
-        
-
-        // Update is called once per frame
-        void Update()
-        {
-        }
-
-        void StartBtnPressed()
-        {
-            // var scene = SceneManager.GetSceneByBuildIndex(1); 
-            // SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("Player"),scene);    
-            Game.StartGame();
-            //SceneManager.LoadScene("Scenes/home");
-
-            // ActivateMenu();
         }
 
         void ContinueBtnPressed()
         {
-            Game.ContinueGame();
+           ActivateMenu();
+        }
+        void SaveBtnPressed()
+        {
+            Game.SaveScene();
         }
 
+        void StartBtnPressed()
+        { 
+            Game.StartGame();
+        }
         void ExitBtnPressed()
         {
             Game.SaveScene();
             Application.Quit();
         }
-
-        
 
         public void ActivateMenu()
         {
