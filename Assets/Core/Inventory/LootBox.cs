@@ -36,6 +36,7 @@ namespace Core
         private void ChangeState()
         {
             isUsed = true;
+            UserInterfaceAudio.OnOpenBox();
             Check();
             GameObject obj = PrefabUtility.InstantiatePrefab(loot) as GameObject;
             if (obj != null) obj.transform.position = _spawnPos;

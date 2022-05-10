@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Core
 {
-
     [RequireComponent(typeof(AudioSource))]
     public class UserInterfaceAudio : MonoBehaviour
     {
@@ -14,7 +13,8 @@ namespace Core
         public AudioClip onShowDialog, onHideDialog;
         public AudioClip onCollect;
         public AudioClip onStoryItem;
-
+        public AudioClip onDestroyObj;
+        public AudioClip onOpenBox;
         public AudioClip[] vocals;
 
         AudioSource audioSource;
@@ -35,7 +35,6 @@ namespace Core
                 Destroy(instance);
             else
                 instance = this;
-           
         }
 
         void Update()
@@ -55,7 +54,7 @@ namespace Core
             for (var i = 0; i < syllableCount; i++)
             {
                 now += Random.Range(0.1f, 0.3f);
-                syllables.Enqueue(new SpeechSyllable() { index = Random.Range(0, vocals.Length), time = now });
+                syllables.Enqueue(new SpeechSyllable() {index = Random.Range(0, vocals.Length), time = now});
             }
         }
 
@@ -67,8 +66,11 @@ namespace Core
 
         public static void OnCollect()
         {
-            
-            if (instance != null) instance.Play(instance.onCollect);
+            if (instance != null)
+            {
+                instance.audioSource.volume = 0.1f;
+                instance.Play(instance.onCollect);
+            }
         }
 
         public static void OnButtonEnter()
@@ -81,12 +83,30 @@ namespace Core
             if (instance != null) instance.Play(instance.onButtonExit);
         }
 
+        internal static void OnDestroyObj()
+        {
+            if (instance != null)
+            {
+                instance.audioSource.volume = 0.1f;
+                instance.Play(instance.onDestroyObj);
+            }
+        }
+
         internal static void OnStoryItem()
         {
             if (instance != null)
             {
                 instance.audioSource.volume = 0.1f;
                 instance.Play(instance.onStoryItem);
+            }
+        }
+
+        internal static void OnOpenBox()
+        {
+            if (instance != null)
+            {
+                instance.audioSource.volume = 0.1f;
+                instance.Play(instance.onOpenBox);
             }
         }
 

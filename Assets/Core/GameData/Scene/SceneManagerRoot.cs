@@ -13,6 +13,7 @@
             this._sceneConfigsMap[ForestConfig.SC_NAME] = new ForestConfig();
             this._sceneConfigsMap[FrozenMountainConfig.SC_NAME] = new FrozenMountainConfig();
             this._sceneConfigsMap[MenuConfig.SC_NAME] = new MenuConfig();
+            this._sceneConfigsMap[FinishConfig.SC_NAME] = new FinishConfig();
         }
     }
 }

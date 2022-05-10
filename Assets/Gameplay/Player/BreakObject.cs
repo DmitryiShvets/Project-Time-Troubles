@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core;
 using Core.GameData.Storage;
 using Gameplay;
 using UnityEngine;
@@ -69,6 +70,7 @@ public class BreakObject : MonoBehaviour
             //  Destroy();
             gameObject.SetActive(false);
             state.isActive = false;
+            UserInterfaceAudio.OnDestroyObj();
             Bank.AddCoins(this, 100);
             GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
             obh.transform.position = _position;

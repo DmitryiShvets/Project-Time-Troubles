@@ -16269,6 +16269,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5818361463712991465, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: onOpenBox
+      value: 
+      objectReference: {fileID: 8300000, guid: 4cbf9a35c512e0848857ed2c92cc9f13, type: 3}
+    - target: {fileID: 5818361463712991465, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: onDestroyObj
+      value: 
+      objectReference: {fileID: 8300000, guid: e6c3f7016f32c6042a948ed801691483, type: 3}
     - target: {fileID: 5818361463712991466, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
       propertyPath: m_Name
       value: controller

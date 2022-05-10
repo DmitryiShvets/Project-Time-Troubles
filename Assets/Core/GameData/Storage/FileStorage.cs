@@ -97,7 +97,7 @@ namespace StorageSystem
                 var lootBoxes = _lootBoxesSurrogate.DeserializeLootBoxObj(Game.GetActualScene(), data);
                 model.inventory = inventory;
                 model.inventorySprites = inventorySprites;
-                if (Game.GetActualScene() != "Menu")
+                if (Game.GetActualScene() != "Menu" && Game.GetActualScene() != "Finish")
                     model.inventoryController.Refresh(); //проверка что мы сейчас не на локации меню
                 if (Game.GetActualScene() != "Menu") model.InitializeNpc(npc);
                 model.InitializeLastScene(lastScene);
