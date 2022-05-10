@@ -7,12 +7,12 @@ namespace Core
         private const string KEY = "PLAYER_HEALTH_KEY";
 
         public int Health { get; set; }
-
+        public int maxHeath = 10;
 
         public override void OnInitialize()
         {
             //Health = PlayerPrefs.GetInt(KEY, 5); //Пока не инициализируем из памяти для тестов
-            Health = 5;
+            Health = maxHeath;
             Debug.Log($"PlayerHealthRepository - Initialize. Current hp - {Health}");
         }
 

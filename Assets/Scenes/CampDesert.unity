@@ -820,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 1052819715}
     - target: {fileID: 4680457135580208792, guid: 261e26ce30b51a04489371663664708f, type: 3}
       propertyPath: items.Array.data[0].options.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4680457135580208792, guid: 261e26ce30b51a04489371663664708f, type: 3}
       propertyPath: items.Array.data[0].options.Array.data[0].text
@@ -9822,10 +9822,12 @@ MonoBehaviour:
   spawnMode: 0
   enableOnQuestStart: []
   spawnOnQuestStart: []
-  requiredItems: []
+  requiredItems:
+  - item: {fileID: 4512915347856048160, guid: f5ecf2dac359e134d8b702fcdd25795d, type: 3}
+    count: 1
   spawnOnQuestComplete: []
   rewardItems:
-  - {fileID: 1253601937}
+  - {fileID: 8628685270822102653, guid: e82a9f0aa67706649af1a4462300428a, type: 3}
   destroySpawnsOnQuestComplete: 1
   isStarted: 0
   isFinished: 0
@@ -9884,7 +9886,11 @@ MonoBehaviour:
   spawnMode: 0
   enableOnQuestStart: []
   spawnOnQuestStart: []
-  requiredItems: []
+  requiredItems:
+  - item: {fileID: 8588227134915841558, guid: fc6173f14d777fa45b537655a163e3cc, type: 3}
+    count: 5
+  - item: {fileID: 6191201839660684865, guid: 07d982901197df042ab34e44fbad826e, type: 3}
+    count: 3
   spawnOnQuestComplete: []
   rewardItems: []
   destroySpawnsOnQuestComplete: 1

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gameplay;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,7 @@ public class HealthBar : MonoBehaviour
 
     private void Awake()
     {
-        slider.maxValue = 5;
+        slider.maxValue = 10;
         fill.color = gradient.Evaluate(1f);
     }
 

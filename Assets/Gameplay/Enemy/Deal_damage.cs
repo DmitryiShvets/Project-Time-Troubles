@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 
 namespace Gameplay
@@ -20,15 +19,10 @@ namespace Gameplay
         //
         public void OnCollisionEnter2D(Collision2D collision)
         {
-           
             if (collision.gameObject.CompareTag("Player"))
             {
                 collision.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
-                Debug.Log(collision.gameObject.name);
             }
-          
         }
     }
-
 }
-

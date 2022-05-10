@@ -61,7 +61,7 @@ namespace Core
                         q.requirementQuest.questName);
 
                     if ((!xxx && (q.requirementQuest.quest != null &&
-                                  !q.requirementQuest.quest.isFinished)) || !xxx)
+                                  !q.requirementQuest.quest.isFinished)) || (!xxx && q.requirementQuest.quest == null))
                     {
                         for (int i = 0; i < conversationList.Count(); i++)
                         {

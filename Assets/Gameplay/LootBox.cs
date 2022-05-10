@@ -28,7 +28,6 @@ namespace Core
             {
                 if (canUse && Keyboard.current.eKey.wasPressedThisFrame)
                 {
-                    Debug.Log("Сундук открыт");
                     ChangeState();
                 }
             }

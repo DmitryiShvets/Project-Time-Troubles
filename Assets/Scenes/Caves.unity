@@ -334,6 +334,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 636b92fb84c8af34a92b4c075cc2a378, type: 3}
+--- !u!114 &38023996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2433602480284076544, guid: 636b92fb84c8af34a92b4c075cc2a378, type: 3}
+  m_PrefabInstance: {fileID: 38023995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34aab08274d04fa3a1289ba0ca919b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &87632871
 GameObject:
   m_ObjectHideFlags: 0
@@ -6000,6 +6011,14 @@ PrefabInstance:
       propertyPath: model.inventoryController
       value: 
       objectReference: {fileID: 1041074663}
+    - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: model.saveableGameObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818361463712991463, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
+      propertyPath: model.saveableGameObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 38023996}
     - target: {fileID: 5818361463712991464, guid: d1ac2425651dfa446937ddc67c3c0c6b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -33492,6 +33511,10 @@ PrefabInstance:
     - target: {fileID: 2435975024795977397, guid: b7556a70c675e6d4f88a719e30fe3cf3, type: 3}
       propertyPath: lvlName
       value: FrozenMountain
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435975024795977397, guid: b7556a70c675e6d4f88a719e30fe3cf3, type: 3}
+      propertyPath: requirementItem
+      value: map
       objectReference: {fileID: 0}
     - target: {fileID: 2435975024795977399, guid: b7556a70c675e6d4f88a719e30fe3cf3, type: 3}
       propertyPath: m_RootOrder

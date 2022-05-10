@@ -1,4 +1,5 @@
 ﻿using Gameplay;
+
 namespace Core
 {
     public class PlayerHealthInteractor : Interactor
@@ -20,7 +21,13 @@ namespace Core
 
         public void AddHealth(object sender, int value)
         {
-            _playerHealthRepository.Health += value;
+            if (_playerHealthRepository.Health + value < _playerHealthRepository.maxHeath)
+                _playerHealthRepository.Health += value;
+            else
+            {
+                _playerHealthRepository.Health += _playerHealthRepository.maxHeath - _playerHealthRepository.Health;
+            }
+
             _playerHealthRepository.Save();
         }
 
