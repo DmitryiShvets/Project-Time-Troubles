@@ -4681,8 +4681,8 @@ MonoBehaviour:
   rewardItems:
   - {fileID: 6889894460260454651, guid: 017f00b5d6dbdb1408d3029a0f04d3d7, type: 3}
   destroySpawnsOnQuestComplete: 1
-  isStarted: 1
-  isFinished: 1
+  isStarted: 0
+  isFinished: 0
 --- !u!4 &466659560
 Transform:
   m_ObjectHideFlags: 0
@@ -5166,8 +5166,8 @@ MonoBehaviour:
   rewardItems:
   - {fileID: 7783093177904189918, guid: 3df476a8d8d75194a8723d90fcef5038, type: 3}
   destroySpawnsOnQuestComplete: 1
-  isStarted: 1
-  isFinished: 1
+  isStarted: 0
+  isFinished: 0
 --- !u!4 &501072259
 Transform:
   m_ObjectHideFlags: 0
@@ -36385,7 +36385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2122133862945460035, guid: 8270b4b874f379e4db476256f7050d59, type: 3}
       propertyPath: movementSpeed
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3381686104203753895, guid: 8270b4b874f379e4db476256f7050d59, type: 3}
       propertyPath: m_SortingLayer

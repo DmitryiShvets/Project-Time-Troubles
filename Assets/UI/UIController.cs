@@ -73,7 +73,7 @@ namespace UI
 
         void ExitBtnPressed()
         {
-            Game.SaveScene();
+          //  Game.SaveScene();
             Application.Quit();
         }
 

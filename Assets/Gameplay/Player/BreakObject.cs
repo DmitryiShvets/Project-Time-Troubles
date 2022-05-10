@@ -72,22 +72,13 @@ public class BreakObject : MonoBehaviour
             state.isActive = false;
             UserInterfaceAudio.OnDestroyObj();
             Bank.AddCoins(this, 100);
-            GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
-            obh.transform.position = _position;
+            GameObject o = Instantiate(pref);
+           // GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
+           o.transform.position = _position;
         }
     }
 
-    private void Destroy()
-    {
-        if (gameObject)
-        {
-            state.isActive = false;
-            Bank.AddCoins(this, 100);
-            GameObject obh = PrefabUtility.InstantiatePrefab(pref) as GameObject;
-            obh.transform.position = _position;
-            Destroy(gameObject);
-        }
-    }
+   
 
     private void ResetBool()
     {

@@ -1,8 +1,9 @@
+using Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using UnityEditor;
-using Core;
+
 
 namespace UI
 {
@@ -57,7 +58,7 @@ namespace UI
         }
         void ExitBtnPressed()
         {
-            Game.SaveScene();
+         //   Game.SaveScene();
             Application.Quit();
         }
 
