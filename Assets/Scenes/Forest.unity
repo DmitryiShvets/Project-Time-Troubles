@@ -32930,7 +32930,7 @@ MonoBehaviour:
     audio: {fileID: 0}
     quest: {fileID: 0}
     options:
-    - text: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0431\u043E\u043B\u044C\u0448\u043E\u0435"
+    - text: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0431\u043E\u043B\u044C\u0448\u043E"
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: B8
