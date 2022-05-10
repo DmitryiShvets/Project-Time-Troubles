@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Lobster-Regular
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -1141257978
   material: {fileID: -5559581065429196861}
-  materialHashCode: 0
+  materialHashCode: -2017714970
   m_Version: 1.1.0
   m_SourceFontFileGUID: 9db07a435a7311f4b93bba81e6618ef2
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 9db07a435a7311f4b93bba81e6618ef2, type: 3}
